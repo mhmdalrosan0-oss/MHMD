@@ -125,7 +125,7 @@ try {
   Step "Google Drive connected"
 
   # ---------- cc-sync script ----------
-  Set-ExecutionPolicy -Scope CurrentUser RemoteSigned -Force
+  try { Set-ExecutionPolicy -Scope CurrentUser RemoteSigned -Force -ErrorAction Stop } catch { }
   New-Item -ItemType Directory -Force -Path C:\Tools | Out-Null
   $script = @'
 param(
