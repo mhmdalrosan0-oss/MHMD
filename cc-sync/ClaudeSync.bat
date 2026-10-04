@@ -94,6 +94,37 @@ function LocalDir($proj) {
   Join-Path $env:USERPROFILE (".claude\projects\" + ($proj -replace '[^a-zA-Z0-9]', '-'))
 }
 
+function GetOwnKey {
+  foreach ($f in @((Join-Path $env:HERE 'rclone-client.txt'), (Join-Path $env:USERPROFILE '.cc-sync-client.txt'))) {
+    if (Test-Path $f) {
+      $l = @(Get-Content $f | Where-Object { $_.Trim() })
+      if ($l.Count -ge 2) { return @($l[0].Trim(), $l[1].Trim()) }
+    }
+  }
+  return $null
+}
+
+function CreateOwnKey {
+  Add-Type -AssemblyName Microsoft.VisualBasic
+  $steps = @(
+    @("https://console.cloud.google.com/projectcreate", "الخطوة 1 من 5: في المتصفح أنشئ مشروعا جديدا (أي اسم مثل claude-sync) واضغط Create. انتظر حتى ينتهي ثم اضغط (تم)."),
+    @("https://console.cloud.google.com/apis/library/drive.googleapis.com", "الخطوة 2 من 5: تأكد أن مشروعك الجديد هو المختار في الأعلى، ثم اضغط Enable لتفعيل Google Drive API."),
+    @("https://console.cloud.google.com/auth/overview", "الخطوة 3 من 5: اضغط Get started، اكتب اسم التطبيق وبريدك، واختر Audience = External، وأكمل حتى Create. (إن اختلفت الواجهة: APIs & Services ثم OAuth consent screen)"),
+    @("https://console.cloud.google.com/auth/audience", "الخطوة 4 من 5 (مهمة جدا): اضغط Publish app ثم Confirm. بدونها تنتهي صلاحية الربط كل 7 أيام."),
+    @("https://console.cloud.google.com/apis/credentials", "الخطوة 5 من 5: Create credentials ثم OAuth client ID ثم Application type = Desktop app ثم Create. انسخ Client ID و Client secret واضغط (تم).")
+  )
+  foreach ($st in $steps) {
+    Start-Process $st[0]
+    if ((Choose $st[1] @("تم، الخطوة التالية")) -ne 0) { return $null }
+  }
+  $id  = [Microsoft.VisualBasic.Interaction]::InputBox("الصق Client ID هنا", "Claude Sync")
+  $sec = [Microsoft.VisualBasic.Interaction]::InputBox("الصق Client secret هنا", "Claude Sync")
+  if (-not $id.Trim() -or -not $sec.Trim()) { return $null }
+  $txt = $id.Trim() + "`r`n" + $sec.Trim() + "`r`n"
+  [IO.File]::WriteAllText((Join-Path $env:USERPROFILE '.cc-sync-client.txt'), $txt, $utf8)
+  return @($id.Trim(), $sec.Trim())
+}
+
 try {
   # ---------- explain, then ask for approval ----------
   $intro = "هذا البرنامج يزامن محادثات Claude Code المحلية عبر Google Drive بين أجهزتك.`n`n" +
@@ -117,29 +148,28 @@ try {
   Step "rclone OK"
 
   # ---------- Google Drive ----------
+  $cur = $null
+  if ((rclone listremotes) -contains 'gdrive:') { $cur = (rclone config dump | ConvertFrom-Json).gdrive.client_id }
+  $key = GetOwnKey
+  if (-not $key -and -not $cur) {
+    $c = Choose ("لضمان استمرار المزامنة دائما، يُنصح بإنشاء مفتاح Google خاص بحسابك (مجاني، حوالي 10 دقائق، مرة واحدة).`n" +
+                 "بدونه تعتمد المزامنة على مفتاح مشترك قد يتوقف خلال 2026.") @(
+      "إنشاء مفتاحي الخاص الآن (موصى به)",
+      "تخطي (استخدام المفتاح المشترك)")
+    if ($c -eq 0) { $key = CreateOwnKey }
+  }
   if (-not ((rclone listremotes) -contains 'gdrive:')) {
     Step "Browser will open: sign in to Google and click Allow..."
     $extra = @()
-    $cf = Join-Path $env:HERE 'rclone-client.txt'
-    if (Test-Path $cf) {
-      $lines = @(Get-Content $cf | Where-Object { $_.Trim() })
-      if ($lines.Count -ge 2) { $extra = @("client_id=$($lines[0].Trim())", "client_secret=$($lines[1].Trim())"); Step "Using your own Google client_id" }
-    }
+    if ($key) { $extra = @("client_id=$($key[0])", "client_secret=$($key[1])"); Step "Using your own Google client_id" }
     rclone config create gdrive drive scope=drive @extra
   }
-  $cf = Join-Path $env:HERE 'rclone-client.txt'
-if (Test-Path $cf) {
-  $lines = @(Get-Content $cf | Where-Object { $_.Trim() })
-  if ($lines.Count -ge 2) {
-    $cur = (rclone config dump | ConvertFrom-Json).gdrive.client_id
-    if ($cur -ne $lines[0].Trim()) {
-      Step "Switching Google Drive link to your own client_id (browser will open)..."
-      rclone config update gdrive client_id $lines[0].Trim() client_secret $lines[1].Trim() | Out-Null
-      rclone config reconnect gdrive:
-    }
+  elseif ($key -and $cur -ne $key[0]) {
+    Step "Switching Google Drive link to your own client_id (browser will open)..."
+    rclone config update gdrive client_id $key[0] client_secret $key[1] | Out-Null
+    rclone config reconnect gdrive:
   }
-}
-rclone lsd gdrive: | Out-Null
+  rclone lsd gdrive: | Out-Null
   rclone mkdir gdrive:claude-sessions
   Step "Google Drive connected"
 
