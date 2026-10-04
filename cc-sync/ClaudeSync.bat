@@ -9,6 +9,7 @@ Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
 [System.Windows.Forms.Application]::EnableVisualStyles()
 $utf8 = New-Object System.Text.UTF8Encoding($false)
+$env:RCLONE_LOG_LEVEL = 'ERROR'
 $rtlOpt = [System.Windows.Forms.MessageBoxOptions]::RtlReading -bor [System.Windows.Forms.MessageBoxOptions]::RightAlign
 
 function Step($m) { Write-Host ">> $m" -ForegroundColor Cyan }
@@ -118,7 +119,13 @@ try {
   # ---------- Google Drive ----------
   if (-not ((rclone listremotes) -contains 'gdrive:')) {
     Step "Browser will open: sign in to Google and click Allow..."
-    rclone config create gdrive drive scope=drive
+    $extra = @()
+    $cf = Join-Path $env:HERE 'rclone-client.txt'
+    if (Test-Path $cf) {
+      $lines = @(Get-Content $cf | Where-Object { $_.Trim() })
+      if ($lines.Count -ge 2) { $extra = @("client_id=$($lines[0].Trim())", "client_secret=$($lines[1].Trim())"); Step "Using your own Google client_id" }
+    }
+    rclone config create gdrive drive scope=drive @extra
   }
   rclone lsd gdrive: | Out-Null
   rclone mkdir gdrive:claude-sessions
@@ -132,6 +139,7 @@ param(
   [Parameter(Mandatory=$true)][ValidateSet("push","pull")][string]$Action,
   [string]$Project = (Get-Location).Path
 )
+$env:RCLONE_LOG_LEVEL = "ERROR"
 $Remote = "gdrive:claude-sessions"
 $Proj   = (Resolve-Path -LiteralPath $Project).Path
 $Name   = Split-Path $Proj -Leaf
@@ -145,10 +153,10 @@ $Enc   = $Proj -replace '[^a-zA-Z0-9]', '-'
 $Local = Join-Path $env:USERPROFILE ".claude\projects\$Enc"
 
 if ($Action -eq "push") {
-  if (Test-Path $Local) { rclone copy $Local "$Remote/$Name" --update -v }
+  if (Test-Path $Local) { rclone copy $Local "$Remote/$Name" --update }
 } else {
   New-Item -ItemType Directory -Force -Path $Local | Out-Null
-  rclone copy "$Remote/$Name" $Local --update -v
+  rclone copy "$Remote/$Name" $Local --update
 }
 '@
   [IO.File]::WriteAllText('C:\Tools\cc-sync.ps1', $script, $utf8)
@@ -193,7 +201,7 @@ if ($Action -eq "push") {
     }
     SetMap $proj $rname
     $local = LocalDir $proj
-    if (Test-Path $local) { Step "Uploading existing conversations..."; rclone copy $local "gdrive:claude-sessions/$rname" --update -v }
+    if (Test-Path $local) { Step "Uploading existing conversations..."; rclone copy $local "gdrive:claude-sessions/$rname" --update }
     Msg ("تم الربط.`n`nافتح هذا المجلد في Claude Code المحلي وابدأ محادثة جديدة:`n$proj`n`n" +
          "ستُرفع المحادثة تلقائيا إلى Drive بعد كل رد.`n" +
          "على الجهاز الآخر: شغّل هذا الملف واختر (ربط بمحادثة موجودة).`n`n" +
@@ -215,7 +223,7 @@ if ($Action -eq "push") {
     $local = LocalDir $proj
     New-Item -ItemType Directory -Force -Path $local | Out-Null
     Step "Downloading conversation..."
-    rclone copy "gdrive:claude-sessions/$rname" $local --update -v
+    rclone copy "gdrive:claude-sessions/$rname" $local --update
     Msg ("تم تنزيل المحادثة.`n`nافتح هذا المجلد في Claude Code المحلي وأكمل المحادثة السابقة:`n$proj`n`n" +
          "ستُرفع تعديلاتك تلقائيا بعد كل رد.`n" +
          "ملاحظة: كود المشروع نفسه يجب أن يكون في المجلد (مثلا عبر git clone).") | Out-Null
