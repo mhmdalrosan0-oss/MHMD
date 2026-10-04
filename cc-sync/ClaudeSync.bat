@@ -127,7 +127,19 @@ try {
     }
     rclone config create gdrive drive scope=drive @extra
   }
-  rclone lsd gdrive: | Out-Null
+  $cf = Join-Path $env:HERE 'rclone-client.txt'
+if (Test-Path $cf) {
+  $lines = @(Get-Content $cf | Where-Object { $_.Trim() })
+  if ($lines.Count -ge 2) {
+    $cur = (rclone config dump | ConvertFrom-Json).gdrive.client_id
+    if ($cur -ne $lines[0].Trim()) {
+      Step "Switching Google Drive link to your own client_id (browser will open)..."
+      rclone config update gdrive client_id $lines[0].Trim() client_secret $lines[1].Trim() | Out-Null
+      rclone config reconnect gdrive:
+    }
+  }
+}
+rclone lsd gdrive: | Out-Null
   rclone mkdir gdrive:claude-sessions
   Step "Google Drive connected"
 
@@ -158,8 +170,13 @@ if ($Action -eq "push") {
   New-Item -ItemType Directory -Force -Path $Local | Out-Null
   rclone copy "$Remote/$Name" $Local --update
 }
+if ($LASTEXITCODE -ne 0) {
+  "$(Get-Date) $Action FAILED for $Proj" | Add-Content "$env:USERPROFILE\cc-sync.log"
+  Add-Type -AssemblyName System.Windows.Forms
+  [void][System.Windows.Forms.MessageBox]::Show("Claude Sync: $Action to Google Drive FAILED. Your conversation is NOT synced. Run ClaudeSync.bat again to reconnect Google Drive.", "Claude Sync", "OK", "Warning")
+}
 '@
-  [IO.File]::WriteAllText('C:\Tools\cc-sync.ps1', $script, $utf8)
+  [IO.File]::WriteAllText('C:\Tools\cc-sync.ps1', $script, (New-Object System.Text.UTF8Encoding($true)))
   if (-not (Test-Path $PROFILE)) { New-Item -Force -Path $PROFILE | Out-Null }
   if (-not (Select-String -Path $PROFILE -Pattern 'cc-sync' -Quiet)) {
     Add-Content $PROFILE 'Set-Alias cc-sync C:\Tools\cc-sync.ps1'
