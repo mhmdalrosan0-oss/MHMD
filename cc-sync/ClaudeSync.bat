@@ -94,6 +94,12 @@ function LocalDir($proj) {
   Join-Path $env:USERPROFILE (".claude\projects\" + ($proj -replace '[^a-zA-Z0-9]', '-'))
 }
 
+function DriveOK {
+  $ErrorActionPreference = 'Continue'
+  rclone lsd gdrive: *> $null
+  return ($LASTEXITCODE -eq 0)
+}
+
 function GetOwnKey {
   foreach ($f in @((Join-Path $env:HERE 'rclone-client.txt'), (Join-Path $env:USERPROFILE '.cc-sync-client.txt'))) {
     if (Test-Path $f) {
@@ -148,28 +154,32 @@ try {
   Step "rclone OK"
 
   # ---------- Google Drive ----------
-  $cur = $null
-  if ((rclone listremotes) -contains 'gdrive:') { $cur = (rclone config dump | ConvertFrom-Json).gdrive.client_id }
   $key = GetOwnKey
-  if (-not $key -and -not $cur) {
-    $c = Choose ("لضمان استمرار المزامنة دائما، يُنصح بإنشاء مفتاح Google خاص بحسابك (مجاني، حوالي 10 دقائق، مرة واحدة).`n" +
-                 "بدونه تعتمد المزامنة على مفتاح مشترك قد يتوقف خلال 2026.") @(
-      "إنشاء مفتاحي الخاص الآن (موصى به)",
-      "تخطي (استخدام المفتاح المشترك)")
-    if ($c -eq 0) { $key = CreateOwnKey }
-  }
-  if (-not ((rclone listremotes) -contains 'gdrive:')) {
-    Step "Browser will open: sign in to Google and click Allow..."
+  $has = (rclone listremotes) -contains 'gdrive:'
+  if (-not ($has -and (DriveOK))) {
+    if (-not $key) {
+      $c = Choose ("كيف تريد ربط Google Drive؟`n(المفتاح الخاص أضمن على المدى الطويل، لكنه يحتاج حوالي 10 دقائق من الخطوات)") @(
+        "ربط سريع الآن (مفتاح مشترك)",
+        "إنشاء مفتاح Google خاص بي (موصى به للاستمرار)")
+      if ($c -lt 0) { return }
+      if ($c -eq 1) { $key = CreateOwnKey }
+    }
+    if ($has) { rclone config delete gdrive }
     $extra = @()
     if ($key) { $extra = @("client_id=$($key[0])", "client_secret=$($key[1])"); Step "Using your own Google client_id" }
+    Step "Browser will open: sign in to Google and click Allow..."
     rclone config create gdrive drive scope=drive @extra
+    if (-not (DriveOK)) {
+      if ($key) {
+        $a = Msg "فشل الربط بالمفتاح الخاص.`nهل تريد المتابعة الآن بالمفتاح المشترك (يمكنك إعادة المحاولة بالمفتاح الخاص لاحقا)؟" 'YesNo' 'Warning'
+        if ($a -ne 'Yes') { return }
+        Remove-Item (Join-Path $env:USERPROFILE '.cc-sync-client.txt') -ErrorAction SilentlyContinue
+        rclone config delete gdrive
+        rclone config create gdrive drive scope=drive
+      }
+      if (-not (DriveOK)) { throw "تعذر الاتصال بـ Google Drive. أعد تشغيل الملف وتأكد من تسجيل الدخول والموافقة." }
+    }
   }
-  elseif ($key -and $cur -ne $key[0]) {
-    Step "Switching Google Drive link to your own client_id (browser will open)..."
-    rclone config update gdrive client_id $key[0] client_secret $key[1] | Out-Null
-    rclone config reconnect gdrive:
-  }
-  rclone lsd gdrive: | Out-Null
   rclone mkdir gdrive:claude-sessions
   Step "Google Drive connected"
 
