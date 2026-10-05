@@ -175,3 +175,6 @@ Object.assign(I18N.en, {
   'err_auth/operation-not-allowed': 'Phone sign-in is not enabled in Firebase or the country is not allowed', 'err_auth/billing-not-enabled': 'Blaze plan is not enabled',
   'err_auth/unauthorized-domain': 'This domain is not in Authorized domains', 'err_auth/internal-error': 'Service unavailable, try later', 'err_auth/network-request-failed': 'No internet connection',
 });
+
+Object.assign(I18N.ar, { session_expired: 'انتهت جلستك، سجّل الدخول مرة أخرى', err_session_expired: 'انتهت جلستك، سجّل الدخول مرة أخرى' });
+Object.assign(I18N.en, { session_expired: 'Your session expired, please sign in again', err_session_expired: 'Your session expired, please sign in again' });

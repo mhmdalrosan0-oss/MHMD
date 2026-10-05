@@ -14,6 +14,12 @@ setGlobalOptions({ region: process.env.FUNCTIONS_REGION || 'us-central1', maxIns
 
 const MAX_KWH = 300;
 const err = (code, msg, details) => new HttpsError(code, msg, details);
+const SESSION_SECONDS = 7 * 86400;
+/** sessions expire 7 days after sign-in (auth_time is preserved when tokens refresh) */
+function requireFreshSession(req) {
+  const at = req.auth && req.auth.token.auth_time;
+  if (!at || Date.now() / 1000 - at > SESSION_SECONDS) throw err('unauthenticated', 'session_expired');
+}
 
 // ---------------------------------------------------------------- helpers
 const DEFAULT_SETTINGS = {
@@ -176,6 +182,7 @@ async function pushAll(outbox) {
 exports.registerPush = onCall(async (req) => {
   const c = req.auth && req.auth.token;
   if (!c || c.role !== 'captain') throw err('unauthenticated', 'login_required');
+  requireFreshSession(req);
   const token = cleanStr(req.data && req.data.token, 4096);
   if (token.length < 20) throw err('invalid-argument', 'bad_input');
   await db.doc('fcmTokens/' + sha(token)).set({ token, captainId: c.captainId, groupId: c.groupId, isManager: !!c.isManager, lang: req.data.lang === 'en' ? 'en' : 'ar', ts: FV.serverTimestamp() });
@@ -264,6 +271,7 @@ async function actorOf(req, role) {
 exports.api = onCall(async (req) => {
   const role = req.auth && req.auth.token.role;
   if (role !== 'admin' && role !== 'staff') throw err('unauthenticated', 'login_required');
+  requireFreshSession(req);
   const { action, data } = req.data || {};
   const h = ACTIONS[action];
   if (!h || !h.roles.includes(role)) throw err('permission-denied', 'forbidden');
@@ -505,4 +513,4 @@ A('unmarkPayout', ['admin'], async (d, actor) => {
   return { ok: true };
 });
 
-exports._test = { pushText, tierInfo, priceAt, localParts, pricesCoverDay, normPhone };
+exports._test = { requireFreshSession, pushText, tierInfo, priceAt, localParts, pricesCoverDay, normPhone };

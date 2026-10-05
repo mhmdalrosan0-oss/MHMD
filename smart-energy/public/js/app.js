@@ -13,6 +13,7 @@
   const fmtDate = (ts) => new Date(tsOf(ts)).toLocaleString(lang === 'ar' ? 'ar-JO-u-nu-latn' : 'en-GB', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit', timeZone: Data.settings.timezone });
   const initials = (s) => (s || '?').trim().charAt(0);
   const errMsg = (e) => {
+    if (e && e.message === 'session_expired') { expiredNotice = true; FB.signOut(FB.auth); sess = null; setTimeout(render, 0); return t('session_expired'); }
     if (e && e.code && I18N.ar['err_' + e.code]) return t('err_' + e.code);
     if (e && e.message && I18N.ar['err_' + e.message]) return t('err_' + e.message);
     if (e && (e.code === 'unavailable' || /network|fetch/i.test(e.message || ''))) return t('err_network');
@@ -24,10 +25,14 @@
   let month = null;
   let installEvt = null;
 
+  const WEEK_MS = 7 * 86400000;
+  let expiredNotice = false;
   async function refreshSess() {
     const u = FB.auth.currentUser;
     if (!u) { sess = null; return; }
-    const c = (await u.getIdTokenResult()).claims;
+    const res = await u.getIdTokenResult(), c = res.claims;
+    // sessions last one week from sign-in; enforced by rules + functions as well
+    if (c.role && Date.now() - Date.parse(res.authTime) > WEEK_MS) { await FB.signOut(FB.auth); sess = null; expiredNotice = true; stopNotif(); return; }
     if (!c.role) { await FB.signOut(FB.auth); sess = null; return; }
     sess = { role: c.role, uid: u.uid, captainId: c.captainId, groupId: c.groupId, isManager: !!c.isManager, staffId: c.staffId, name: c.name || u.email };
   }
@@ -555,6 +560,7 @@
   async function render() {
     const my = ++renderToken;
     stopScan(); $('#modal-root').innerHTML = '';
+    if (sess) { await refreshSess(); if (!sess && expiredNotice) { expiredNotice = false; toast(t('session_expired'), true); } }
     if (!FB.configured) { app.innerHTML = shell(`<div class="card center"><h2>${t('setup_title')}</h2><p>${t('setup_body')}</p></div>`); return bindShell(); }
     const h = location.hash || '#/login', parts = h.replace(/^#\//, '').split('/'), r = parts[0];
     try {

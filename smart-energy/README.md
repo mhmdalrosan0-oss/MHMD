@@ -12,6 +12,7 @@
 - كل الكتابة تمر عبر Cloud Functions؛ قواعد Firestore تمنع أي كتابة من المتصفح وتحصر القراءة حسب الدور.
 - رموز الموظفين (مجزّأة) في مجموعة `secrets` بلا أي وصول من العميل.
 - الكابتن يدخل برقمه وكود SMS؛ لا يدخل إلا رقم مسجّل لدى مجموعة، وأي رقم غير مسجل يُرفض بعد التحقق.
+- الجلسة تدوم **7 أيام** من وقت تسجيل الدخول (لا يُطلب الدخول عند كل فتح للموقع)، ثم يُطلب الدخول مجددًا؛ تُفرض في قواعد Firestore والـ Functions وليس في المتصفح فقط.
 - قفل 15 دقيقة بعد محاولات فاشلة لرمز الموظف.
 - كل عملية للإدارة والموظفين تُسجَّل في `audit` (تظهر للإدارة فقط).
 
@@ -31,7 +32,7 @@
 
 ## تطوير واختبار محلي
     firebase emulators:start --only auth,functions,firestore,hosting --project demo-smart-energy
-    cd functions && node test/totp.test.js && node test/e2e.js   # e2e يحتاج playwright
+    cd functions && npm test && node test/rules.test.js && node test/e2e.js   # الاختبارات الأخيرة تحتاج المحاكيات (و e2e يحتاج playwright)
 
 ## إعادة بناء حزمة Firebase للواجهة
     cd tools && npm install && npm run build
