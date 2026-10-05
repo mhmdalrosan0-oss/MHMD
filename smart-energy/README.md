@@ -55,3 +55,5 @@
 3. Authentication ← Settings ← **SMS region policy**: اسمح بالأردن (`JO`) فقط لتقليل خطر الاستنزاف.
 4. (موصى به) حماية الرصيد: Authentication ← Settings ← **Upgrade to Identity Platform** (مجاني ما دامت الفوترة مفعّلة)، ثم ضع `ENABLE_SMS_GATE=true` في `functions/.env.smart-energy-41c4a`. بهذا لا تُرسل رسالة إلا لأرقام الكباتن المسجّلين، وبحد 5 رسائل/ساعة للرقم. بدون هذه الخطوة يستطيع أي شخص يضغط «إرسال الكود» على أي رقم أن يستهلك رصيد الرسائل.
 5. للتجربة المجانية: Sign-in method ← Phone ← **Phone numbers for testing** (رقم وكود ثابت بدون رسائل حقيقية).
+
+> الموقع يُنشر على `https://<اسم-الموقع>.web.app` (الاسم يظهر في ملخص تشغيل Deploy to Firebase في GitHub Actions).
