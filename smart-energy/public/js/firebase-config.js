@@ -8,4 +8,4 @@ window.FIREBASE_CONFIG = {
 };
 window.FUNCTIONS_REGION = 'europe-west1';
 // Firebase console → Project settings → Cloud Messaging → Web Push certificates → Generate key pair → paste the public key:
-window.FCM_VAPID_KEY = 'YOUR_VAPID_PUBLIC_KEY';
+window.FCM_VAPID_KEY = 'BK1Q4jElq0iElVzb7-vEHnhnPAhWF8XalWLUShPeNYeNAY3ObsxVxhlpAT6ZqOvRx1h3A449y7cxGr_XnYI4KaQ';
