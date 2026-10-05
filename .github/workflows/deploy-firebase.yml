@@ -26,9 +26,21 @@ jobs:
           echo "$FIREBASE_SERVICE_ACCOUNT" > "$RUNNER_TEMP/sa.json"
           export GOOGLE_APPLICATION_CREDENTIALS="$RUNNER_TEMP/sa.json"
           FB="npx -y firebase-tools@13 --project smart-energy-41c4a --non-interactive"
-          # make sure the hosting site "smart-energy" (smart-energy.web.app) exists; fail early (before any deploy) if the name is taken
-          if ! $FB hosting:sites:list | grep -qE "sites/smart-energy( |$|\s)|smart-energy\.web\.app"; then
-            $FB hosting:sites:create smart-energy || { echo "::error::Could not create hosting site 'smart-energy' (name taken?). Pick another name in firebase.json + this workflow."; exit 1; }
+          # Pick the hosting site name: reuse one of the candidates if it already belongs to this project, otherwise create the first free one.
+          CANDIDATES="smartenergy-jo smart-energy-jo smartenergy-ev smart-energy-ev smartenergy-charge smart-energy-charge"
+          SITES="$($FB hosting:sites:list || true)"
+          SITE=""
+          for n in $CANDIDATES; do
+            if echo "$SITES" | grep -Eq "(^|[^a-z0-9-])$n([^a-z0-9-]|$)"; then SITE="$n"; break; fi
+          done
+          if [ -z "$SITE" ]; then
+            for n in $CANDIDATES; do
+              if $FB hosting:sites:create "$n"; then SITE="$n"; break; fi
+            done
           fi
+          if [ -z "$SITE" ]; then echo "::error::No free hosting site name among: $CANDIDATES"; exit 1; fi
+          jq --arg s "$SITE" '.hosting.site = $s' firebase.json > firebase.json.tmp && mv firebase.json.tmp firebase.json
+          echo "Hosting site: https://$SITE.web.app"
+          echo "### Site: https://$SITE.web.app" >> "$GITHUB_STEP_SUMMARY"
           npx -y firebase-tools@13 deploy --project smart-energy-41c4a --non-interactive --force
           rm -f "$RUNNER_TEMP/sa.json"
