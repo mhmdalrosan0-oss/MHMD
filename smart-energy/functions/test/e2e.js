@@ -12,7 +12,7 @@ const adb = admin.firestore();
 const BASE = 'http://127.0.0.1:5000/?emu';
 let fails = 0;
 const ok = (c, m) => { console.log((c ? '  ✔ ' : '  ✘ ') + m); if (!c) fails++; };
-const FAKE_CFG = `window.FIREBASE_CONFIG={apiKey:'fake',authDomain:'x',projectId:'demo-smart-energy',appId:'x'};window.FUNCTIONS_REGION='europe-west1';`;
+const FAKE_CFG = `window.FIREBASE_CONFIG={apiKey:'fake',authDomain:'x',projectId:'demo-smart-energy',appId:'x'};window.FUNCTIONS_REGION='us-central1';`;
 
 (async () => {
   await fetch('http://127.0.0.1:8080/emulator/v1/projects/demo-smart-energy/databases/(default)/documents', { method: 'DELETE' });

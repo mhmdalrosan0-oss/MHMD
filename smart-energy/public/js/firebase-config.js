@@ -7,6 +7,6 @@ window.FIREBASE_CONFIG = {
   messagingSenderId: '1081563552972',
   appId: '1:1081563552972:web:57aaa3ad82e69c28717669',
 };
-window.FUNCTIONS_REGION = 'europe-west1';
+window.FUNCTIONS_REGION = 'us-central1';
 // Firebase console → Project settings → Cloud Messaging → Web Push certificates → Generate key pair → paste the public key:
 window.FCM_VAPID_KEY = 'BK1Q4jElq0iElVzb7-vEHnhnPAhWF8XalWLUShPeNYeNAY3ObsxVxhlpAT6ZqOvRx1h3A449y7cxGr_XnYI4KaQ';

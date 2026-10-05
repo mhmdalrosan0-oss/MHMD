@@ -10,7 +10,7 @@ const configured = cfg.apiKey && !String(cfg.apiKey).startsWith('YOUR_');
 const FB = { configured };
 if (configured) {
   const app = initializeApp(cfg);
-  const auth = getAuth(app), db = getFirestore(app), fns = getFunctions(app, window.FUNCTIONS_REGION || 'europe-west1');
+  const auth = getAuth(app), db = getFirestore(app), fns = getFunctions(app, window.FUNCTIONS_REGION || 'us-central1');
   const emu = ['localhost', '127.0.0.1'].includes(location.hostname) && location.search.includes('emu');
   if (emu) {
     connectAuthEmulator(auth, 'http://127.0.0.1:9099', { disableWarnings: true });

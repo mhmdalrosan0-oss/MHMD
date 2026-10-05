@@ -11,7 +11,7 @@ admin.initializeApp();
 const db = admin.firestore();
 const auth = admin.auth();
 const { FieldValue: FV } = require('firebase-admin/firestore');
-setGlobalOptions({ region: process.env.FUNCTIONS_REGION || 'europe-west1', maxInstances: 10 });
+setGlobalOptions({ region: process.env.FUNCTIONS_REGION || 'us-central1', maxInstances: 10 });
 
 const MAX_KWH = 300;
 const ACTIVATION_DAYS = 7;

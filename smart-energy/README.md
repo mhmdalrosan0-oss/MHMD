@@ -20,7 +20,7 @@
 2. أضف تطبيق ويب للمشروع وانسخ الإعدادات إلى `public/js/firebase-config.js`.
 3. للإشعارات الفعلية: في **Project settings → Cloud Messaging → Web Push certificates** اضغط *Generate key pair* وضع المفتاح العام في `FCM_VAPID_KEY` داخل نفس الملف.
 4. من **Authentication → Users** أضف مستخدم الإدارة (بريد + كلمة مرور).
-5. `cp functions/.env.example functions/.env` وضع بريد الإدارة في `ADMIN_EMAILS`. (المنطقة الافتراضية `europe-west1`؛ إن غيّرتها غيّر `FUNCTIONS_REGION` في الملفين.)
+5. `cp functions/.env.example functions/.env` وضع بريد الإدارة في `ADMIN_EMAILS`. (المنطقة الافتراضية `us-central1`؛ إن غيّرتها غيّر `FUNCTIONS_REGION` في الملفين.)
 6. ضع معرّف المشروع في `.firebaserc`، ثم:
 
        npm i -g firebase-tools && firebase login
