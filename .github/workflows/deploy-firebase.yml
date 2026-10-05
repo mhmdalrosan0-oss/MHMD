@@ -1,0 +1,29 @@
+name: Deploy to Firebase
+# Every push to these branches tests and deploys hosting + functions + rules to smart-energy-41c4a.
+on:
+  push:
+    branches: [main, claude/charming-lovelace-2lgbxg]
+    paths: ['smart-energy/**', '.github/workflows/deploy-firebase.yml']
+  workflow_dispatch:
+concurrency: { group: firebase-deploy, cancel-in-progress: false }
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    defaults: { run: { working-directory: smart-energy } }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - name: Install functions dependencies
+        run: npm --prefix functions ci
+      - name: Unit tests
+        run: npm --prefix functions test
+      - name: Deploy
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        run: |
+          if [ -z "$FIREBASE_SERVICE_ACCOUNT" ]; then echo "::error::Add the FIREBASE_SERVICE_ACCOUNT repository secret (see smart-energy/README.md)"; exit 1; fi
+          echo "$FIREBASE_SERVICE_ACCOUNT" > "$RUNNER_TEMP/sa.json"
+          export GOOGLE_APPLICATION_CREDENTIALS="$RUNNER_TEMP/sa.json"
+          npx -y firebase-tools@13 deploy --project smart-energy-41c4a --non-interactive --force
+          rm -f "$RUNNER_TEMP/sa.json"

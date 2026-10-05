@@ -40,3 +40,10 @@
 - الكابتن يضغط «تفعيل الإشعارات» مرة واحدة على جهازه فيصله التنبيه حتى لو كان التطبيق مغلقًا (اقتراب الشريحة، بلوغها، إيداع الاسترداد).
 - التنبيه يُرسل من Cloud Functions بعد حفظ العملية، بلغة الجهاز (عربي/إنجليزي)، وتُحذف الأجهزة غير الصالحة تلقائيًا. الفشل في الإرسال لا يعطّل أي عملية.
 - iPhone: الإشعارات تعمل فقط بعد «إضافة إلى الشاشة الرئيسية» (iOS 16.4+).
+
+## النشر التلقائي (GitHub Actions)
+كل دفع إلى `main` أو إلى فرع العمل ينشر الموقع والـ Functions والقواعد تلقائيًا (`.github/workflows/deploy-firebase.yml`).
+1. Firebase console ← Project settings ← **Service accounts** ← *Generate new private key* (ملف JSON).
+2. Google Cloud console ← IAM ← امنح حساب `firebase-adminsdk-...` الأدوار: **Editor** و**Service Account User** و**Firebase Admin**.
+3. GitHub ← المستودع ← Settings ← Secrets and variables ← Actions ← *New repository secret* باسم `FIREBASE_SERVICE_ACCOUNT` ومحتواه الصق ملف JSON كاملًا.
+4. Actions ← *Deploy to Firebase* ← *Run workflow*. الموقع بعدها على `https://smart-energy-41c4a.web.app`.
