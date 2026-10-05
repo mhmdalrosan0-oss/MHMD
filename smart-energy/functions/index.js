@@ -5,7 +5,6 @@ const { onCall, HttpsError } = require('firebase-functions/v2/https');
 const { setGlobalOptions } = require('firebase-functions/v2');
 const admin = require('firebase-admin');
 const crypto = require('crypto');
-const totp = require('./totp');
 
 admin.initializeApp();
 const db = admin.firestore();
@@ -14,7 +13,6 @@ const { FieldValue: FV } = require('firebase-admin/firestore');
 setGlobalOptions({ region: process.env.FUNCTIONS_REGION || 'us-central1', maxInstances: 10 });
 
 const MAX_KWH = 300;
-const ACTIVATION_DAYS = 7;
 const err = (code, msg, details) => new HttpsError(code, msg, details);
 
 // ---------------------------------------------------------------- helpers
@@ -121,10 +119,6 @@ async function deleteQuery(q) {
   }
 }
 const randDigits = (n) => String(crypto.randomInt(0, 10 ** n)).padStart(n, '0');
-async function newActivation() {
-  const code = randDigits(8);
-  return { code, data: { hash: await hmac(code), exp: Date.now() + ACTIVATION_DAYS * 86400000, tries: 0 } };
-}
 async function newStaffCode() {
   for (let i = 0; i < 20; i++) {
     const code = randDigits(6), h = await hmac(code);
@@ -210,55 +204,43 @@ exports.staffLogin = onCall(async (req) => {
   return { token };
 });
 
-async function checkActivation(phone, activation, ipKey) {
-  const capKey = 'cap_' + phone;
-  await lockCheck(capKey); await lockCheck(ipKey);
-  const ref = db.doc('secrets/cap_' + phone), s = await ref.get();
-  const a = s.exists && s.data().activation;
-  const ok = a && a.exp > Date.now() && /^\d{8}$/.test(activation) && safeEq(a.hash, await hmac(activation));
-  if (!ok) { await lockFail(capKey); await lockFail(ipKey, 20); throw err('permission-denied', 'bad_activation'); }
-  return { ref, data: s.data() };
-}
-const capToken = async (cap) => auth.createCustomToken('cap:' + cap.phone, { role: 'captain', captainId: cap.phone, groupId: cap.groupId, isManager: !!cap.isManager });
-
-exports.captainEnrollStart = onCall(async (req) => {
-  const phone = normPhone(req.data && req.data.phone), act = cleanStr(req.data && req.data.activation, 8);
-  const { ref } = await checkActivation(phone, act, 'ip_' + sha(clientIp(req)));
-  const secret = totp.newSecret();
-  await ref.update({ pending: secret });
-  return { secret, uri: totp.otpauth(phone, secret) };
+// Captain login = Firebase Phone Auth (SMS code sent by Firebase). After the SMS step the browser calls
+// captainClaim, which attaches the captain role/group claims if (and only if) the verified number is registered.
+exports.captainClaim = onCall(async (req) => {
+  const raw = req.auth && req.auth.token.phone_number;
+  if (!raw) throw err('unauthenticated', 'login_required');
+  const phone = normPhone(raw), ref = db.doc('captains/' + phone), c = await ref.get();
+  if (!c.exists) { await auth.deleteUser(req.auth.uid).catch(() => {}); throw err('permission-denied', 'phone_not_registered'); }
+  const cap = c.data();
+  // a number can only be tied to one auth user: drop sessions of an older uid for the same captain
+  if (cap.uid && cap.uid !== req.auth.uid) await auth.revokeRefreshTokens(cap.uid).catch(() => {});
+  await auth.setCustomUserClaims(req.auth.uid, { role: 'captain', captainId: phone, groupId: cap.groupId, isManager: !!cap.isManager });
+  if (!cap.enrolled || cap.uid !== req.auth.uid) {
+    await db.runTransaction(async (tx) => {
+      tx.update(ref, { enrolled: true, uid: req.auth.uid });
+      if (!cap.enrolled) audit(tx, { role: 'captain', id: phone, name: cap.name }, 'captainFirstLogin', { groupId: cap.groupId, name: '' }, { phone });
+    });
+  }
+  return { ok: true };
 });
 
-exports.captainEnrollFinish = onCall(async (req) => {
-  const phone = normPhone(req.data && req.data.phone), act = cleanStr(req.data && req.data.activation, 8), code = cleanStr(req.data && req.data.code, 6);
-  const ipKey = 'ip_' + sha(clientIp(req));
-  const { ref, data } = await checkActivation(phone, act, ipKey);
-  const step = data.pending ? totp.verify(data.pending, code, 0) : null;
-  if (!step) { await lockFail('cap_' + phone); throw err('permission-denied', 'bad_code'); }
-  const capRef = db.doc('captains/' + phone);
-  const cap = (await capRef.get()).data();
-  await db.runTransaction(async (tx) => {
-    tx.update(ref, { totp: { secret: data.pending, lastStep: step }, activation: FV.delete(), pending: FV.delete() });
-    tx.update(capRef, { enrolled: true });
-    audit(tx, { role: 'captain', id: phone, name: cap.name }, 'captainEnrolled', { phone, groupId: cap.groupId });
+// Blocks SMS to numbers that are not registered captains (stops SMS-pumping fraud) and limits sends per number.
+// Needs Authentication upgraded to Identity Platform, so it is only deployed when ENABLE_SMS_GATE=true.
+if (process.env.ENABLE_SMS_GATE === 'true') {
+  const { beforeSmsSent } = require('firebase-functions/v2/identity');
+  exports.smsGate = beforeSmsSent(async (event) => {
+    const raw = (event.additionalUserInfo && event.additionalUserInfo.phoneNumber) || (event.data && event.data.phoneNumber) || '';
+    const phone = normPhone(raw);
+    if (!phone || !(await db.doc('captains/' + phone).get()).exists) throw new (require('firebase-functions/v2/identity').HttpsError)('permission-denied', 'phone_not_registered');
+    const key = 'sms_' + phone, ref = db.doc('rl/' + key);
+    await db.runTransaction(async (tx) => {
+      const s = await tx.get(ref), d = s.exists ? s.data() : { n: 0, since: Date.now() };
+      const fresh = Date.now() - d.since > 3600000, n = fresh ? 1 : d.n + 1;
+      if (!fresh && n > 5) throw new (require('firebase-functions/v2/identity').HttpsError)('resource-exhausted', 'too_many_sms');
+      tx.set(ref, { n, since: fresh ? Date.now() : d.since, until: 0 });
+    });
   });
-  await lockClear('cap_' + phone);
-  return { token: await capToken(cap) };
-});
-
-exports.captainLogin = onCall(async (req) => {
-  const phone = normPhone(req.data && req.data.phone), code = cleanStr(req.data && req.data.code, 6);
-  const capKey = 'cap_' + phone, ipKey = 'ip_' + sha(clientIp(req));
-  await lockCheck(capKey); await lockCheck(ipKey);
-  const [sref, cref] = [db.doc('secrets/cap_' + phone), db.doc('captains/' + phone)];
-  const [s, c] = await Promise.all([sref.get(), cref.get()]);
-  const t = s.exists && s.data().totp;
-  const step = t ? totp.verify(t.secret, code, t.lastStep) : null;
-  if (!c.exists || !step) { await lockFail(capKey); await lockFail(ipKey, 20); throw err('permission-denied', 'bad_credentials'); }
-  await sref.update({ 'totp.lastStep': step }); // one-time use per step
-  await lockClear(capKey);
-  return { token: await capToken(c.data()) };
-});
+}
 
 exports.adminClaim = onCall(async (req) => {
   const email = req.auth && req.auth.token.email;
@@ -293,17 +275,15 @@ A('createGroup', ['admin'], async (d, actor) => {
   const name = cleanStr(d.name), managerName = cleanStr(d.managerName), phone = normPhone(d.managerPhone);
   const logo = typeof d.logo === 'string' && d.logo.startsWith('data:image/') && d.logo.length < 60000 ? d.logo : '';
   if (!name || !managerName || !validPhone(phone)) throw err('invalid-argument', 'bad_input');
-  const act = await newActivation();
   const gref = db.collection('groups').doc();
   await db.runTransaction(async (tx) => {
     const cap = await tx.get(db.doc('captains/' + phone));
     if (cap.exists) throw err('already-exists', 'dup_captain', { phone, name: cap.data().name, sameGroup: false });
     tx.set(gref, { name, managerName, managerPhone: phone, logo, tiers: null, createdAt: FV.serverTimestamp() });
     tx.set(db.doc('captains/' + phone), { phone, name: managerName, groupId: gref.id, isManager: true, enrolled: false, createdAt: FV.serverTimestamp() });
-    tx.set(db.doc('secrets/cap_' + phone), { type: 'captain', totp: null, activation: act.data });
     audit(tx, actor, 'createGroup', { groupId: gref.id, name }, { managerName, managerPhone: phone });
   });
-  return { groupId: gref.id, activation: act.code };
+  return { groupId: gref.id };
 });
 
 A('updateGroup', ['admin'], async (d, actor) => {
@@ -327,7 +307,7 @@ A('deleteGroup', ['admin'], async (d, actor) => {
   if (!g.exists) throw err('not-found', 'no_group');
   const caps = await db.collection('captains').where('groupId', '==', id).get();
   const n = { captains: caps.size, charges: (await db.collection('charges').where('groupId', '==', id).count().get()).data().count };
-  for (const c of caps.docs) { await db.doc('secrets/cap_' + c.id).delete(); await auth.revokeRefreshTokens('cap:' + c.id).catch(() => {}); await c.ref.delete(); }
+  for (const c of caps.docs) { if (c.data().uid) await auth.deleteUser(c.data().uid).catch(() => {}); await c.ref.delete(); }
   for (const col of ['charges', 'stats', 'payouts', 'notifications', 'fcmTokens']) await deleteQuery(db.collection(col).where('groupId', '==', id));
   await db.runTransaction(async (tx) => { tx.delete(gref); audit(tx, actor, 'deleteGroup', { groupId: id, name: g.data().name }, n); });
   return { ok: true };
@@ -337,7 +317,6 @@ A('deleteGroup', ['admin'], async (d, actor) => {
 A('addCaptain', ['admin', 'staff'], async (d, actor) => {
   const groupId = cleanStr(d.groupId, 40), name = cleanStr(d.name), phone = normPhone(d.phone);
   if (!name || !validPhone(phone)) throw err('invalid-argument', 'bad_input');
-  const act = await newActivation();
   await db.runTransaction(async (tx) => {
     const [g, ex] = await Promise.all([tx.get(db.doc('groups/' + groupId)), tx.get(db.doc('captains/' + phone))]);
     if (!g.exists) throw err('not-found', 'no_group');
@@ -348,34 +327,22 @@ A('addCaptain', ['admin', 'staff'], async (d, actor) => {
       throw err('already-exists', 'dup_captain', { phone, name: ex.data().name, sameGroup: same, groupName });
     }
     tx.set(db.doc('captains/' + phone), { phone, name, groupId, isManager: false, enrolled: false, createdAt: FV.serverTimestamp() });
-    tx.set(db.doc('secrets/cap_' + phone), { type: 'captain', totp: null, activation: act.data });
     audit(tx, actor, 'addCaptain', { groupId, name: g.data().name }, { captain: name, phone });
   });
-  return { phone, activation: act.code };
-});
-
-A('resetCaptain', ['admin'], async (d, actor) => {
-  const phone = normPhone(d.phone), act = await newActivation();
-  await db.runTransaction(async (tx) => {
-    const c = await tx.get(db.doc('captains/' + phone)); if (!c.exists) throw err('not-found', 'no_captain');
-    tx.set(db.doc('secrets/cap_' + phone), { type: 'captain', totp: null, activation: act.data });
-    tx.update(c.ref, { enrolled: false });
-    audit(tx, actor, 'resetCaptain', { groupId: c.data().groupId, name: c.data().name }, { phone });
-  });
-  await auth.revokeRefreshTokens('cap:' + phone).catch(() => {});
-  await deleteQuery(db.collection('fcmTokens').where('captainId', '==', phone));
-  return { activation: act.code };
+  return { phone };
 });
 
 A('deleteCaptain', ['admin'], async (d, actor) => {
   const phone = normPhone(d.phone);
+  let uid = null;
   await db.runTransaction(async (tx) => {
     const c = await tx.get(db.doc('captains/' + phone)); if (!c.exists) throw err('not-found', 'no_captain');
     if (c.data().isManager) throw err('failed-precondition', 'is_manager');
-    tx.delete(c.ref); tx.delete(db.doc('secrets/cap_' + phone));
+    uid = c.data().uid;
+    tx.delete(c.ref);
     audit(tx, actor, 'deleteCaptain', { groupId: c.data().groupId, name: c.data().name }, { phone });
   });
-  await auth.revokeRefreshTokens('cap:' + phone).catch(() => {});
+  if (uid) { await auth.deleteUser(uid).catch(() => {}); }
   await deleteQuery(db.collection('fcmTokens').where('captainId', '==', phone));
   return { ok: true };
 });

@@ -1,5 +1,5 @@
 /* App-shell cache so the installed app opens instantly. Data always comes from the network. */
-const V = 'se-shell-v2';
+const V = 'se-shell-v3';
 const SHELL = ['./', 'index.html', 'css/style.css', 'js/firebase-config.js', 'js/i18n.js', 'js/data.js', 'js/app.js',
   'vendor/firebase.bundle.js', 'vendor/qrcode.js', 'vendor/jsQR.js', 'img/logo-full.png', 'img/icon-192.png', 'manifest.webmanifest'];
 self.addEventListener('install', (e) => { e.waitUntil(caches.open(V).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting())); });

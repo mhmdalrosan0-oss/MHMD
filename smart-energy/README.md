@@ -6,13 +6,13 @@
 |---|---|---|
 | **الإدارة** | بريد + كلمة مرور (Firebase Auth) | كل شيء، تأكيد الإيداع، السجل |
 | **الموظف** | رمز سري من 6 أرقام تولّده الإدارة | فحص QR، إضافة كابتن، تسجيل شحنة |
-| **الكابتن** | رقم الهاتف + رمز Google Authenticator | ملفه، إحصاءات مجموعته، التنبيهات |
+| **الكابتن** | رقم الهاتف + كود يصله برسالة SMS (Firebase Phone Auth) | ملفه، إحصاءات مجموعته، التنبيهات |
 
 ## الأمان
 - كل الكتابة تمر عبر Cloud Functions؛ قواعد Firestore تمنع أي كتابة من المتصفح وتحصر القراءة حسب الدور.
-- أسرار TOTP ورموز الموظفين (مجزّأة) في مجموعة `secrets` بلا أي وصول من العميل.
-- الكابتن يفعّل حسابه أول مرة برمز تفعيل (8 أرقام، مرة واحدة، 7 أيام) يسلّمه له الموظف/الإدارة — حتى لا يستطيع أحد يعرف رقمه ربط حسابه قبله.
-- قفل 15 دقيقة بعد محاولات فاشلة، ومنع إعادة استخدام نفس رمز TOTP.
+- رموز الموظفين (مجزّأة) في مجموعة `secrets` بلا أي وصول من العميل.
+- الكابتن يدخل برقمه وكود SMS؛ لا يدخل إلا رقم مسجّل لدى مجموعة، وأي رقم غير مسجل يُرفض بعد التحقق.
+- قفل 15 دقيقة بعد محاولات فاشلة لرمز الموظف.
 - كل عملية للإدارة والموظفين تُسجَّل في `audit` (تظهر للإدارة فقط).
 
 ## التشغيل على حسابك (مرة واحدة)
@@ -47,3 +47,10 @@
 2. Google Cloud console ← IAM ← امنح حساب `firebase-adminsdk-...` الأدوار: **Editor** و**Service Account User** و**Firebase Admin**.
 3. GitHub ← المستودع ← Settings ← Secrets and variables ← Actions ← *New repository secret* باسم `FIREBASE_SERVICE_ACCOUNT` ومحتواه الصق ملف JSON كاملًا.
 4. Actions ← *Deploy to Firebase* ← *Run workflow*. الموقع بعدها على `https://smart-energy-41c4a.web.app`.
+
+## دخول الكابتن برسالة SMS
+1. Firebase ← Authentication ← Sign-in method ← فعّل **Phone**.
+2. Authentication ← Settings ← **Authorized domains**: تأكد من وجود `smart-energy.web.app` (أضفه إن لم يكن).
+3. Authentication ← Settings ← **SMS region policy**: اسمح بالأردن (`JO`) فقط لتقليل خطر الاستنزاف.
+4. (موصى به) حماية الرصيد: Authentication ← Settings ← **Upgrade to Identity Platform** (مجاني ما دامت الفوترة مفعّلة)، ثم ضع `ENABLE_SMS_GATE=true` في `functions/.env.smart-energy-41c4a`. بهذا لا تُرسل رسالة إلا لأرقام الكباتن المسجّلين، وبحد 5 رسائل/ساعة للرقم. بدون هذه الخطوة يستطيع أي شخص يضغط «إرسال الكود» على أي رقم أن يستهلك رصيد الرسائل.
+5. للتجربة المجانية: Sign-in method ← Phone ← **Phone numbers for testing** (رقم وكود ثابت بدون رسائل حقيقية).

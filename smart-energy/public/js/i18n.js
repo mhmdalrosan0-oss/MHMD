@@ -151,3 +151,27 @@ Object.assign(I18N.en, {
 
 Object.assign(I18N.ar, { push_enable: 'تفعيل الإشعارات', push_hint: 'فعّل الإشعارات لتصلك التنبيهات (الاسترداد، اقتراب الشريحة) حتى لو كان التطبيق مغلقًا.', push_on: 'تم تفعيل الإشعارات على هذا الجهاز', push_denied: 'الإشعارات محظورة من إعدادات المتصفح' });
 Object.assign(I18N.en, { push_enable: 'Enable notifications', push_hint: 'Enable notifications to get alerts (cashback, nearing a tier) even when the app is closed.', push_on: 'Notifications enabled on this device', push_denied: 'Notifications are blocked in the browser settings' });
+
+/* ---- v3: captain login by SMS code ---- */
+Object.assign(I18N.ar, {
+  login_hint_captain: 'أدخل رقم هاتفك المسجّل وسنرسل لك كود دخول برسالة SMS',
+  send_code: 'إرسال الكود', resend_code: 'إعادة إرسال الكود', change_number: 'تغيير الرقم', code_sent: 'تم إرسال الكود برسالة SMS',
+  code_sent_to: 'أرسلنا كودًا إلى', sms_code: 'كود الرسالة (6 أرقام)',
+  enrolled: 'دخل مسبقًا', not_enrolled: 'لم يدخل بعد', a_captainFirstLogin: 'أول دخول لكابتن',
+  err_phone_not_registered: 'هذا الرقم غير مسجل لدى أي مجموعة. اطلب من موظف الشحن تسجيله.', err_too_many_sms: 'تم إرسال رسائل كثيرة لهذا الرقم، حاول بعد ساعة',
+  'err_auth/invalid-phone-number': 'رقم الهاتف غير صحيح', 'err_auth/invalid-verification-code': 'الكود غير صحيح', 'err_auth/code-expired': 'انتهت صلاحية الكود، أعد إرسال كود جديد',
+  'err_auth/too-many-requests': 'محاولات كثيرة، حاول لاحقًا', 'err_auth/captcha-check-failed': 'فشل التحقق الأمني، أعد المحاولة', 'err_auth/quota-exceeded': 'تجاوز حد الرسائل اليومي',
+  'err_auth/operation-not-allowed': 'تسجيل الدخول بالهاتف غير مفعّل في Firebase أو الدولة غير مسموحة', 'err_auth/billing-not-enabled': 'خطة Blaze غير مفعّلة',
+  'err_auth/unauthorized-domain': 'هذا الدومين غير مضاف في Authorized domains', 'err_auth/internal-error': 'الخدمة غير متاحة حاليًا، حاول لاحقًا', 'err_auth/network-request-failed': 'تعذر الاتصال بالإنترنت',
+});
+Object.assign(I18N.en, {
+  login_hint_captain: 'Enter your registered phone number and we will text you a login code',
+  send_code: 'Send code', resend_code: 'Resend code', change_number: 'Change number', code_sent: 'Code sent by SMS',
+  code_sent_to: 'We sent a code to', sms_code: 'SMS code (6 digits)',
+  enrolled: 'Has logged in', not_enrolled: 'Not logged in yet', a_captainFirstLogin: 'Captain first login',
+  err_phone_not_registered: 'This number is not registered in any group. Ask the charging staff to register it.', err_too_many_sms: 'Too many messages sent to this number, try again in an hour',
+  'err_auth/invalid-phone-number': 'Invalid phone number', 'err_auth/invalid-verification-code': 'Wrong code', 'err_auth/code-expired': 'Code expired, request a new one',
+  'err_auth/too-many-requests': 'Too many attempts, try later', 'err_auth/captcha-check-failed': 'Security check failed, try again', 'err_auth/quota-exceeded': 'Daily SMS quota exceeded',
+  'err_auth/operation-not-allowed': 'Phone sign-in is not enabled in Firebase or the country is not allowed', 'err_auth/billing-not-enabled': 'Blaze plan is not enabled',
+  'err_auth/unauthorized-domain': 'This domain is not in Authorized domains', 'err_auth/internal-error': 'Service unavailable, try later', 'err_auth/network-request-failed': 'No internet connection',
+});

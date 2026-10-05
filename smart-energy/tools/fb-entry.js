@@ -1,6 +1,6 @@
 // Bundled into public/vendor/firebase.bundle.js  (npm run build in /tools)
 import { initializeApp } from 'firebase/app';
-import { getAuth, signInWithCustomToken, signInWithEmailAndPassword, signOut, onAuthStateChanged, connectAuthEmulator } from 'firebase/auth';
+import { getAuth, signInWithCustomToken, signInWithEmailAndPassword, RecaptchaVerifier, signInWithPhoneNumber, signOut, onAuthStateChanged, connectAuthEmulator } from 'firebase/auth';
 import { getFirestore, doc, getDoc, collection, query, where, getDocs, onSnapshot, orderBy, limit, connectFirestoreEmulator } from 'firebase/firestore';
 import { getMessaging, getToken, deleteToken, isSupported } from 'firebase/messaging';
 import { getFunctions, httpsCallable, connectFunctionsEmulator } from 'firebase/functions';
@@ -22,6 +22,20 @@ if (configured) {
     auth, db, doc, getDoc, collection, query, where, getDocs, onSnapshot, orderBy, limit,
     signInWithCustomToken, signInWithEmailAndPassword, signOut,
     call: (name) => httpsCallable(fns, name),
+    phone: (() => {
+      let verifier = null, confirmation = null;
+      return {
+        // sends the SMS code (Firebase Phone Auth, invisible reCAPTCHA bound to #recaptcha)
+        start: async (e164) => {
+          if (emu) auth.settings.appVerificationDisabledForTesting = true;
+          if (verifier) { try { verifier.clear(); } catch { /* ignore */ } }
+          document.getElementById('recaptcha').innerHTML = '';
+          verifier = new RecaptchaVerifier(auth, document.getElementById('recaptcha'), { size: 'invisible' });
+          confirmation = await signInWithPhoneNumber(auth, e164, verifier);
+        },
+        confirm: async (code) => { if (!confirmation) throw Object.assign(new Error('no session'), { code: 'auth/code-expired' }); return confirmation.confirm(code); },
+      };
+    })(),
     push: {
       supported: () => isSupported().catch(() => false),
       // returns an FCM token for this device (needs notification permission + the app's service worker)

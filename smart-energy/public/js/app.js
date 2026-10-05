@@ -13,6 +13,7 @@
   const fmtDate = (ts) => new Date(tsOf(ts)).toLocaleString(lang === 'ar' ? 'ar-JO-u-nu-latn' : 'en-GB', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit', timeZone: Data.settings.timezone });
   const initials = (s) => (s || '?').trim().charAt(0);
   const errMsg = (e) => {
+    if (e && e.code && I18N.ar['err_' + e.code]) return t('err_' + e.code);
     if (e && e.message && I18N.ar['err_' + e.message]) return t('err_' + e.message);
     if (e && (e.code === 'unavailable' || /network|fetch/i.test(e.message || ''))) return t('err_network');
     return t('err_generic');
@@ -148,8 +149,18 @@
   const groupURL = (id) => location.href.split('#')[0].replace(/\?.*$/, '') + '#/g/' + id;
 
   // ---------- login ----------
+  function toE164(p) {
+    let d = String(p || '').replace(/\D/g, '');
+    if (String(p || '').trim().startsWith('+')) return '+' + d;
+    if (d.startsWith('00')) return '+' + d.slice(2);
+    if (d.startsWith('962')) return '+' + d;
+    if (d.startsWith('0')) return '+962' + d.slice(1);
+    if (d.length === 9 && d.startsWith('7')) return '+962' + d;
+    return '+' + d;
+  }
   function viewLogin() {
     let role = pending && pending.startsWith('#/g/') ? 'staff' : 'captain';
+    let stage = 'phone', e164 = '';
     const draw = () => {
       app.innerHTML = shell(`<div class="login">
         <img class="logo" src="img/logo-full.png" alt="Smart Energy">
@@ -158,22 +169,25 @@
         <div class="card">
           ${pending && role === 'staff' ? `<div class="warn">${t('login_staff_first')}</div>` : ''}
           <form id="lf">
-            ${role === 'captain' ? `<p class="muted" style="margin-top:0">${t('login_hint_captain')}</p><label>${t('phone')}</label><input type="tel" id="f1" inputmode="tel" autocomplete="tel" placeholder="07XXXXXXXX" class="ltr">
-              <label>${t('auth_code')}</label><input type="text" id="f2" inputmode="numeric" maxlength="6" class="codeinput" autocomplete="one-time-code">` : ''}
+            ${role === 'captain' && stage === 'phone' ? `<p class="muted" style="margin-top:0">${t('login_hint_captain')}</p><label>${t('phone')}</label><input type="tel" id="f1" inputmode="tel" autocomplete="tel" placeholder="07XXXXXXXX" class="ltr">` : ''}
+            ${role === 'captain' && stage === 'code' ? `<p class="muted" style="margin-top:0">${t('code_sent_to')} <b class="ltr">${esc(e164)}</b></p><label>${t('sms_code')}</label><input type="text" id="f2" inputmode="numeric" maxlength="6" class="codeinput" autocomplete="one-time-code">` : ''}
             ${role === 'staff' ? `<label>${t('code6')}</label><input type="password" id="f1" inputmode="numeric" maxlength="6" class="codeinput" autocomplete="off">` : ''}
             ${role === 'admin' ? `<label>${t('email')}</label><input type="text" id="f1" inputmode="email" autocomplete="username" class="ltr"><label>${t('password')}</label><input type="password" id="f2" autocomplete="current-password">` : ''}
             <div class="err" id="err"></div>
-            <button class="btn primary block big" style="margin-top:1rem">${t('enter')}</button>
+            <button class="btn primary block big" style="margin-top:1rem">${role === 'captain' && stage === 'phone' ? t('send_code') : t('enter')}</button>
           </form>
-          ${role === 'captain' ? `<button class="btn block" id="actBtn" style="margin-top:.75rem">${t('activate_first')}</button>` : ''}
+          ${role === 'captain' && stage === 'code' ? `<div class="row" style="margin-top:.75rem"><button class="btn sm" id="resendBtn">${t('resend_code')}</button><button class="btn sm" id="changeBtn">${t('change_number')}</button></div>` : ''}
         </div></div>`);
       bindShell();
       app.querySelectorAll('.tabs button').forEach((b) => b.onclick = () => { role = b.dataset.r; draw(); });
-      const ab = $('#actBtn'); if (ab) ab.onclick = activationFlow;
+      const sendSms = async () => { e164 = toE164($('#f1') ? $('#f1').value : e164); if (!Data.validPhone(e164)) throw Object.assign(new Error('x'), { code: 'auth/invalid-phone-number' }); await FB.phone.start(e164); stage = 'code'; draw(); toast(t('code_sent')); };
+      const rb = $('#resendBtn'); if (rb) rb.onclick = safe(rb, async () => { try { await FB.phone.start(e164); toast(t('code_sent')); } catch (e) { $('#err').textContent = errMsg(e); } });
+      const cb = $('#changeBtn'); if (cb) cb.onclick = () => { stage = 'phone'; draw(); };
       const form = $('#lf'), sub = form.querySelector('button.primary');
       form.onsubmit = (e) => { e.preventDefault(); safe(sub, async () => {
-        const v1 = $('#f1').value.trim(), v2 = $('#f2') ? $('#f2').value.trim() : '', err = $('#err'); err.textContent = '';
+        const v1 = $('#f1') ? $('#f1').value.trim() : '', v2 = $('#f2') ? $('#f2').value.trim() : '', err = $('#err'); err.textContent = '';
         try {
+          if (role === 'captain' && stage === 'phone') { await sendSms(); return; }
           if (role === 'admin') {
             await FB.signInWithEmailAndPassword(FB.auth, v1, v2);
             try { await Data.fn('adminClaim'); await FB.auth.currentUser.getIdToken(true); }
@@ -181,9 +195,11 @@
           } else if (role === 'staff') {
             await FB.signInWithCustomToken(FB.auth, (await Data.fn('staffLogin', { code: v1 })).token);
           } else {
-            await FB.signInWithCustomToken(FB.auth, (await Data.fn('captainLogin', { phone: v1, code: v2 })).token);
+            await FB.phone.confirm(v2);
+            try { await Data.fn('captainClaim'); await FB.auth.currentUser.getIdToken(true); }
+            catch (e2) { await FB.signOut(FB.auth); stage = 'phone'; throw e2; }
           }
-        } catch (e) { err.textContent = e.code && e.code.startsWith('auth/') ? t('err_bad_credentials') : errMsg(e); return; }
+        } catch (e) { err.textContent = role === 'admin' && e.code && e.code.startsWith('auth/') ? t('err_bad_credentials') : errMsg(e); return; }
         await afterLogin();
       })(); };
     };
@@ -192,39 +208,6 @@
   async function afterLogin() {
     await refreshSess(); if (!sess) return; await Data.loadSettings(); month = Data.nowMonth(); startNotif();
     const p = pending; pending = null; go(p || homeOf());
-  }
-
-  function activationFlow() {
-    modal(`<h3>${t('activation_title')}</h3><div id="step"></div>`, (m, close) => {
-      const step = $('#step', m);
-      const s1 = () => {
-        step.innerHTML = `<label>${t('phone')}</label><input type="tel" id="p" inputmode="tel" class="ltr" placeholder="07XXXXXXXX">
-          <label>${t('activation_code')}</label><input type="text" id="a" inputmode="numeric" maxlength="8" class="codeinput" style="letter-spacing:.3em">
-          <div class="err" id="e"></div><div class="row" style="margin-top:1rem"><button class="btn primary" id="ok" style="flex:1">${t('next')}</button><button class="btn" data-close>${t('cancel')}</button></div>`;
-        step.querySelector('[data-close]').onclick = close;
-        const ok = $('#ok', step);
-        ok.onclick = safe(ok, async () => {
-          const phone = $('#p', step).value, act = $('#a', step).value.trim();
-          try { const r = await Data.fn('captainEnrollStart', { phone, activation: act }); s2(phone, act, r); }
-          catch (e) { $('#e', step).textContent = errMsg(e); }
-        });
-      };
-      const s2 = (phone, act, r) => {
-        step.innerHTML = `<p class="muted">${t('activate_scan')}</p><div class="qrbox"><canvas id="aq" style="width:220px"></canvas></div>
-          <div class="muted center">${t('activate_secret')}:<br><b class="ltr" style="word-break:break-all;user-select:all">${r.secret}</b></div>
-          <label>${t('activate_confirm')}</label><input type="text" id="c" inputmode="numeric" maxlength="6" class="codeinput" autocomplete="one-time-code">
-          <div class="err" id="e"></div><div class="row" style="margin-top:1rem"><button class="btn primary" id="ok" style="flex:1">${t('confirm')}</button><button class="btn" data-close>${t('cancel')}</button></div>`;
-        drawQR($('#aq', step), r.uri); step.querySelector('[data-close]').onclick = close;
-        const ok = $('#ok', step);
-        ok.onclick = safe(ok, async () => {
-          try {
-            const res = await Data.fn('captainEnrollFinish', { phone, activation: act, code: $('#c', step).value.trim() });
-            await FB.signInWithCustomToken(FB.auth, res.token); close(); toast(t('activated')); await afterLogin();
-          } catch (e) { $('#e', step).textContent = errMsg(e); }
-        });
-      };
-      s1();
-    });
   }
 
   // ---------- captain ----------
@@ -302,10 +285,6 @@
     };
   }
 
-  const activationModal = (name, code, next) => modal(`<div class="center"><h3>${t('act_title')}</h3><div class="muted">${t('act_for')}: <b>${esc(name)}</b></div>
-    <div style="font-size:2.4rem;font-weight:800;letter-spacing:.25em;color:var(--green-d);margin:.6rem 0" class="ltr">${code}</div><p class="muted">${t('act_hint')}</p>
-    <button class="btn primary block" id="go">${next ? t('next') : t('close')}</button></div>`, (m, close) => { $('#go', m).onclick = () => { close(); if (next) next(); }; });
-
   async function viewStaffGroup(groupId) {
     loading();
     const m = Data.nowMonth(), group = await Data.group(groupId).catch(() => null);
@@ -357,8 +336,7 @@
         if (!Data.validPhone(p)) return (e.textContent = t('invalid_phone'));
         try {
           const r = await Data.write('addCaptain', { groupId, name: n, phone: p });
-          close(); toast(t('captain_added')); const c = { phone: r.phone, name: n };
-          activationModal(n, r.activation, () => chargeForm(c));
+          close(); toast(t('captain_added')); chargeForm({ phone: r.phone, name: n });
         } catch (er) {
           if (er.code === 'already-exists' && er.details) {
             const d = er.details;
@@ -439,8 +417,7 @@
         if (!Data.validPhone(mp)) return ($('#e', mm).textContent = t('invalid_phone'));
         const logo = await new Promise((res) => readLogo($('#lg', mm).files[0], res));
         try {
-          const r = await Data.write('createGroup', { name: gn, managerName: mn, managerPhone: mp, logo }); close(); toast(t('group_saved'));
-          activationModal(mn, r.activation, () => go('#/admin/groups/' + r.groupId));
+          const r = await Data.write('createGroup', { name: gn, managerName: mn, managerPhone: mp, logo }); close(); toast(t('group_saved')); go('#/admin/groups/' + r.groupId);
         } catch (e) { $('#e', mm).textContent = errMsg(e); }
       });
     });
@@ -468,7 +445,7 @@
           : ended ? `<p>${payBadge(null)} · ${money(gs.cashback)}</p><button class="btn primary" id="markPay">💰 ${t('mark_paid')}</button>` : `<p class="muted">${t('month_not_ended_hint')}</p>`}</div>
       <div class="card"><h3>${t('members')} (${caps.length})</h3><div class="tablewrap"><table><tr><th>${t('name')}</th><th>${t('phone')}</th><th></th><th>${t('kwh')}</th><th>${t('share')}</th><th></th></tr>
         ${members.map(({ c, s }) => `<tr><td>${esc(c.name)}${c.isManager ? ' ⭐' : ''}</td><td class="ltr">${esc(c.phone)}</td><td><span class="badge ${c.enrolled ? '' : 'off'}">${c.enrolled ? t('enrolled') : t('not_enrolled')}</span></td><td>${num(s.kwh, 1)}</td><td>${money(s.cashback)}</td>
-          <td style="white-space:nowrap"><button class="btn sm" data-rs="${c.phone}" title="${t('reset_captain')}">🔑</button> ${c.isManager ? '' : `<button class="btn danger sm" data-dc="${c.phone}">✕</button>`}</td></tr>`).join('')}</table></div></div>
+          <td style="white-space:nowrap">${c.isManager ? '' : `<button class="btn danger sm" data-dc="${c.phone}">✕</button>`}</td></tr>`).join('')}</table></div></div>
       <div class="card"><h3>${t('history')}</h3>${charges.length ? `<div class="tablewrap"><table><tr><th>${t('date')}</th><th>${t('name')}</th><th>${t('kwh')}</th><th>${t('amount')}</th><th>${t('staff')}</th><th></th></tr>
         ${charges.slice(0, 60).map((c) => `<tr><td>${fmtDate(c.tsMs)}</td><td>${esc(c.captainName)}</td><td>${num(c.kwh, 1)}</td><td>${money(c.amount)}</td><td>${esc(c.staffName || '-')}</td><td><button class="btn danger sm" data-dch="${c.id}">✕</button></td></tr>`).join('')}</table></div>` : `<div class="muted">${t('no_data')}</div>`}</div>
       <div class="card"><h3>${t('group_tiers')}</h3><label style="margin:0"><input type="checkbox" id="custT" ${group.tiers ? 'checked' : ''}> ${t('custom_tiers')}</label>
@@ -490,7 +467,6 @@
     });
     const up = $('#undoPay'); if (up) up.onclick = () => confirmBox(t('undo_q'), mutate('unmarkPayout', { groupId: id, month }));
     app.querySelectorAll('[data-dc]').forEach((b) => b.onclick = () => confirmBox(t('delete_captain_q'), mutate('deleteCaptain', { phone: b.dataset.dc })));
-    app.querySelectorAll('[data-rs]').forEach((b) => b.onclick = () => confirmBox(t('reset_q'), mutate('resetCaptain', { phone: b.dataset.rs }, (r) => { const c = caps.find((x) => x.phone === b.dataset.rs); activationModal(c.name, r.activation, null); render(); })));
     app.querySelectorAll('[data-dch]').forEach((b) => b.onclick = () => confirmBox(t('delete_charge_q'), mutate('deleteCharge', { chargeId: b.dataset.dch })));
     $('#dg').onclick = () => confirmBox(t('delete_group_q'), mutate('deleteGroup', { groupId: id }, () => go('#/admin/groups')));
     $('#eg').onclick = () => modal(`<h3>${t('edit')}</h3><label>${t('group_name')}</label><input type="text" id="gn" value="${esc(group.name)}"><label>${t('manager_name')}</label><input type="text" id="mn" value="${esc(group.managerName)}">
