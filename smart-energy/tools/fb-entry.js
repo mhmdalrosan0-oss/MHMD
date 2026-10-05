@@ -2,6 +2,7 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, signInWithCustomToken, signInWithEmailAndPassword, signOut, onAuthStateChanged, connectAuthEmulator } from 'firebase/auth';
 import { getFirestore, doc, getDoc, collection, query, where, getDocs, onSnapshot, orderBy, limit, connectFirestoreEmulator } from 'firebase/firestore';
+import { getMessaging, getToken, deleteToken, isSupported } from 'firebase/messaging';
 import { getFunctions, httpsCallable, connectFunctionsEmulator } from 'firebase/functions';
 
 const cfg = window.FIREBASE_CONFIG || {};
@@ -21,6 +22,12 @@ if (configured) {
     auth, db, doc, getDoc, collection, query, where, getDocs, onSnapshot, orderBy, limit,
     signInWithCustomToken, signInWithEmailAndPassword, signOut,
     call: (name) => httpsCallable(fns, name),
+    push: {
+      supported: () => isSupported().catch(() => false),
+      // returns an FCM token for this device (needs notification permission + the app's service worker)
+      getToken: async (reg) => getToken(getMessaging(app), { vapidKey: window.FCM_VAPID_KEY, serviceWorkerRegistration: reg }),
+      deleteToken: () => deleteToken(getMessaging(app)).catch(() => {}),
+    },
     ready: new Promise((res) => { const un = onAuthStateChanged(auth, (u) => { un(); res(u); }); }),
   });
 }

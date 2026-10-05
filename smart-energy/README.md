@@ -18,15 +18,16 @@
 ## التشغيل على حسابك (مرة واحدة)
 1. أنشئ مشروعًا في [Firebase console](https://console.firebase.google.com). فعّل **Authentication → Email/Password** و**Firestore** (اختر موقعًا قريبًا). Cloud Functions تتطلب خطة **Blaze** (الدفع حسب الاستهلاك، ولها حصة مجانية كبيرة).
 2. أضف تطبيق ويب للمشروع وانسخ الإعدادات إلى `public/js/firebase-config.js`.
-3. من **Authentication → Users** أضف مستخدم الإدارة (بريد + كلمة مرور).
-4. `cp functions/.env.example functions/.env` وضع بريد الإدارة في `ADMIN_EMAILS`. (المنطقة الافتراضية `europe-west1`؛ إن غيّرتها غيّر `FUNCTIONS_REGION` في الملفين.)
-5. ضع معرّف المشروع في `.firebaserc`، ثم:
+3. للإشعارات الفعلية: في **Project settings → Cloud Messaging → Web Push certificates** اضغط *Generate key pair* وضع المفتاح العام في `FCM_VAPID_KEY` داخل نفس الملف.
+4. من **Authentication → Users** أضف مستخدم الإدارة (بريد + كلمة مرور).
+5. `cp functions/.env.example functions/.env` وضع بريد الإدارة في `ADMIN_EMAILS`. (المنطقة الافتراضية `europe-west1`؛ إن غيّرتها غيّر `FUNCTIONS_REGION` في الملفين.)
+6. ضع معرّف المشروع في `.firebaserc`، ثم:
 
        npm i -g firebase-tools && firebase login
        (cd functions && npm install)
        firebase deploy
 
-6. افتح رابط Hosting وسجّل دخول الإدارة. من الجوال: «إضافة إلى الشاشة الرئيسية» (أو زر «تثبيت التطبيق») لاستخدامه كتطبيق.
+7. افتح رابط Hosting وسجّل دخول الإدارة. من الجوال: «إضافة إلى الشاشة الرئيسية» (أو زر «تثبيت التطبيق») لاستخدامه كتطبيق.
 
 ## تطوير واختبار محلي
     firebase emulators:start --only auth,functions,firestore,hosting --project demo-smart-energy
@@ -34,3 +35,8 @@
 
 ## إعادة بناء حزمة Firebase للواجهة
     cd tools && npm install && npm run build
+
+## الإشعارات (FCM)
+- الكابتن يضغط «تفعيل الإشعارات» مرة واحدة على جهازه فيصله التنبيه حتى لو كان التطبيق مغلقًا (اقتراب الشريحة، بلوغها، إيداع الاسترداد).
+- التنبيه يُرسل من Cloud Functions بعد حفظ العملية، بلغة الجهاز (عربي/إنجليزي)، وتُحذف الأجهزة غير الصالحة تلقائيًا. الفشل في الإرسال لا يعطّل أي عملية.
+- iPhone: الإشعارات تعمل فقط بعد «إضافة إلى الشاشة الرئيسية» (iOS 16.4+).

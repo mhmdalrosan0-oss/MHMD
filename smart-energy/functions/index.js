@@ -109,7 +109,8 @@ function validateTiers(t) {
 function audit(tx, actor, action, target, details = {}) {
   tx.set(db.collection('audit').doc(), { ts: FV.serverTimestamp(), actorRole: actor.role, actorId: actor.id, actorName: actor.name, action, target, details });
 }
-function notify(tx, groupId, type, params, { forCaptains }) {
+function notify(tx, groupId, type, params, { forCaptains }, outbox) {
+  if (outbox) outbox.push({ groupId, type, params, forCaptains: !!forCaptains });
   tx.set(db.collection('notifications').doc(), { groupId, type, params, forManager: true, forCaptains: !!forCaptains, ts: FV.serverTimestamp(), tsMs: Date.now() });
 }
 async function deleteQuery(q) {
@@ -132,6 +133,67 @@ async function newStaffCode() {
   }
   throw err('internal', 'code_gen_failed');
 }
+
+// ------------------------------------------------------------------ push (FCM)
+const PUSH_TEXT = {
+  ar: {
+    near: ['اقتراب من الشريحة التالية', (p) => `باقي ${p.remaining} ك.و للوصول إلى ${p.pct}%`],
+    reached: ['شريحة جديدة', (p) => `وصلت مجموعتكم إلى شريحة استرداد ${p.pct}% 🎉`],
+    payout: ['تم إيداع الاسترداد النقدي', (p) => `تم إيداع الاسترداد النقدي لشهر ${p.month} بقيمة ${p.amount} ${p.currency} لمدير المجموعة` + (p.note ? `\nملاحظة: ${p.note}` : '')],
+    payout_undo: ['تحديث على الاسترداد', (p) => `تم إلغاء تأكيد إيداع الاسترداد لشهر ${p.month}`],
+  },
+  en: {
+    near: ['Close to the next tier', (p) => `${p.remaining} kWh left to reach ${p.pct}%`],
+    reached: ['New tier', (p) => `Your group reached the ${p.pct}% cashback tier 🎉`],
+    payout: ['Cashback deposited', (p) => `Cashback for ${p.month} (${p.amount} ${p.currency}) has been deposited to the group manager` + (p.note ? `\nNote: ${p.note}` : '')],
+    payout_undo: ['Cashback update', (p) => `Deposit confirmation for ${p.month} was cancelled`],
+  },
+};
+function pushText(n, lang) {
+  const d = (PUSH_TEXT[lang] || PUSH_TEXT.ar)[n.type];
+  return d ? { title: d[0], body: d[1](n.params || {}) } : null;
+}
+/** Sends each notification to the registered devices of its audience. Never throws (push is best effort). */
+async function pushAll(outbox) {
+  for (const n of outbox) {
+    try {
+      let q = db.collection('fcmTokens').where('groupId', '==', n.groupId);
+      if (!n.forCaptains) q = q.where('isManager', '==', true);
+      const docs = (await q.get()).docs;
+      for (const lang of ['ar', 'en']) {
+        const mine = docs.filter((d) => (d.data().lang === 'en' ? 'en' : 'ar') === lang), text = pushText(n, lang);
+        if (!mine.length || !text) continue;
+        for (let i = 0; i < mine.length; i += 500) {
+          const chunk = mine.slice(i, i + 500);
+          const res = await admin.messaging().sendEachForMulticast({
+            tokens: chunk.map((d) => d.data().token),
+            data: { title: text.title, body: text.body, url: './#/notifications', tag: n.type },
+            webpush: { headers: { Urgency: 'high', TTL: '86400' } },
+          });
+          const dead = [];
+          res.responses.forEach((r, k) => { if (!r.success && /registration-token-not-registered|invalid-registration-token|invalid-argument/.test(r.error && r.error.code)) dead.push(chunk[k].ref.delete()); });
+          await Promise.all(dead);
+        }
+      }
+    } catch (e) { console.warn('push failed', e.message); }
+  }
+}
+
+exports.registerPush = onCall(async (req) => {
+  const c = req.auth && req.auth.token;
+  if (!c || c.role !== 'captain') throw err('unauthenticated', 'login_required');
+  const token = cleanStr(req.data && req.data.token, 4096);
+  if (token.length < 20) throw err('invalid-argument', 'bad_input');
+  await db.doc('fcmTokens/' + sha(token)).set({ token, captainId: c.captainId, groupId: c.groupId, isManager: !!c.isManager, lang: req.data.lang === 'en' ? 'en' : 'ar', ts: FV.serverTimestamp() });
+  return { ok: true };
+});
+exports.unregisterPush = onCall(async (req) => {
+  const c = req.auth && req.auth.token, token = cleanStr(req.data && req.data.token, 4096);
+  if (!c || !token) return { ok: true };
+  const ref = db.doc('fcmTokens/' + sha(token)), s = await ref.get();
+  if (s.exists && s.data().captainId === c.captainId) await ref.delete();
+  return { ok: true };
+});
 
 // ------------------------------------------------------- public: logins
 exports.staffLogin = onCall(async (req) => {
@@ -266,7 +328,7 @@ A('deleteGroup', ['admin'], async (d, actor) => {
   const caps = await db.collection('captains').where('groupId', '==', id).get();
   const n = { captains: caps.size, charges: (await db.collection('charges').where('groupId', '==', id).count().get()).data().count };
   for (const c of caps.docs) { await db.doc('secrets/cap_' + c.id).delete(); await auth.revokeRefreshTokens('cap:' + c.id).catch(() => {}); await c.ref.delete(); }
-  for (const col of ['charges', 'stats', 'payouts', 'notifications']) await deleteQuery(db.collection(col).where('groupId', '==', id));
+  for (const col of ['charges', 'stats', 'payouts', 'notifications', 'fcmTokens']) await deleteQuery(db.collection(col).where('groupId', '==', id));
   await db.runTransaction(async (tx) => { tx.delete(gref); audit(tx, actor, 'deleteGroup', { groupId: id, name: g.data().name }, n); });
   return { ok: true };
 });
@@ -301,6 +363,7 @@ A('resetCaptain', ['admin'], async (d, actor) => {
     audit(tx, actor, 'resetCaptain', { groupId: c.data().groupId, name: c.data().name }, { phone });
   });
   await auth.revokeRefreshTokens('cap:' + phone).catch(() => {});
+  await deleteQuery(db.collection('fcmTokens').where('captainId', '==', phone));
   return { activation: act.code };
 });
 
@@ -313,6 +376,7 @@ A('deleteCaptain', ['admin'], async (d, actor) => {
     audit(tx, actor, 'deleteCaptain', { groupId: c.data().groupId, name: c.data().name }, { phone });
   });
   await auth.revokeRefreshTokens('cap:' + phone).catch(() => {});
+  await deleteQuery(db.collection('fcmTokens').where('captainId', '==', phone));
   return { ok: true };
 });
 
@@ -320,8 +384,9 @@ A('deleteCaptain', ['admin'], async (d, actor) => {
 A('addCharge', ['admin', 'staff'], async (d, actor) => {
   const phone = normPhone(d.captainPhone), kwh = round3(Number(d.kwh));
   if (!(kwh > 0 && kwh <= MAX_KWH)) throw err('invalid-argument', 'bad_kwh');
-  const ts = Date.now();
-  return db.runTransaction(async (tx) => {
+  const ts = Date.now(), outbox = [];
+  const result = await db.runTransaction(async (tx) => {
+    outbox.length = 0;
     const capSnap = await tx.get(db.doc('captains/' + phone)); if (!capSnap.exists) throw err('not-found', 'no_captain');
     const cap = capSnap.data();
     const [gSnap, settings] = await Promise.all([tx.get(db.doc('groups/' + cap.groupId)), getSettings(tx)]);
@@ -337,11 +402,11 @@ A('addCharge', ['admin', 'staff'], async (d, actor) => {
       nearNotified: st.nearNotified || 0,
     };
     const after = tierInfo(groupTiers(group, settings), next.kwh);
-    if (after.idx > before.idx) notify(tx, cap.groupId, 'reached', { pct: after.pct, month }, { forCaptains: true });
+    if (after.idx > before.idx) notify(tx, cap.groupId, 'reached', { pct: after.pct, month }, { forCaptains: true }, outbox);
     if (after.next) {
       const remaining = round3(after.next.kwh - next.kwh);
       if (remaining > 0 && remaining <= settings.nearTierKwh && next.nearNotified !== after.next.kwh) {
-        notify(tx, cap.groupId, 'near', { remaining, pct: after.next.pct, month }, { forCaptains: false });
+        notify(tx, cap.groupId, 'near', { remaining, pct: after.next.pct, month }, { forCaptains: false }, outbox);
         next.nearNotified = after.next.kwh;
       }
     }
@@ -351,6 +416,8 @@ A('addCharge', ['admin', 'staff'], async (d, actor) => {
     audit(tx, actor, 'addCharge', { groupId: cap.groupId, name: group.name }, { captain: cap.name, phone, kwh, amount });
     return { chargeId: cref.id, price, amount };
   });
+  await pushAll(outbox);
+  return result;
 });
 
 A('deleteCharge', ['admin'], async (d, actor) => {
@@ -439,7 +506,9 @@ A('saveSettings', ['admin'], async (d, actor) => {
 A('markPayout', ['admin'], async (d, actor) => {
   const groupId = cleanStr(d.groupId, 40), month = cleanStr(d.month, 7), note = cleanStr(d.note, 500);
   if (!/^\d{4}-\d{2}$/.test(month)) throw err('invalid-argument', 'bad_input');
-  return db.runTransaction(async (tx) => {
+  const outbox = [];
+  const result = await db.runTransaction(async (tx) => {
+    outbox.length = 0;
     const settings = await getSettings(tx);
     if (month >= localParts(Date.now(), settings.timezone).month) throw err('failed-precondition', 'month_not_ended');
     const pref = db.doc('payouts/' + statsId(groupId, month));
@@ -449,20 +518,24 @@ A('markPayout', ['admin'], async (d, actor) => {
     const st = s.exists ? s.data() : { kwh: 0, sales: 0 };
     const pct = tierInfo(groupTiers(g.data(), settings), st.kwh).pct, amount = round3(st.sales * pct / 100);
     tx.set(pref, { groupId, month, groupName: g.data().name, kwh: st.kwh, sales: st.sales, pct, amount, note, paid: true, paidAt: FV.serverTimestamp(), paidBy: actor.name });
-    notify(tx, groupId, 'payout', { month, amount, currency: settings.currency, note }, { forCaptains: true });
+    notify(tx, groupId, 'payout', { month, amount, currency: settings.currency, note }, { forCaptains: true }, outbox);
     audit(tx, actor, 'markPayout', { groupId, name: g.data().name }, { month, amount, pct, note });
     return { amount, pct };
   });
+  await pushAll(outbox);
+  return result;
 });
 A('unmarkPayout', ['admin'], async (d, actor) => {
-  const groupId = cleanStr(d.groupId, 40), month = cleanStr(d.month, 7), pref = db.doc('payouts/' + statsId(groupId, month));
+  const groupId = cleanStr(d.groupId, 40), month = cleanStr(d.month, 7), pref = db.doc('payouts/' + statsId(groupId, month)), outbox = [];
   await db.runTransaction(async (tx) => {
+    outbox.length = 0;
     const p = await tx.get(pref); if (!p.exists) throw err('not-found', 'no_payout');
     tx.delete(pref);
-    notify(tx, groupId, 'payout_undo', { month }, { forCaptains: true });
+    notify(tx, groupId, 'payout_undo', { month }, { forCaptains: true }, outbox);
     audit(tx, actor, 'unmarkPayout', { groupId, name: p.data().groupName }, { month, amount: p.data().amount });
   });
+  await pushAll(outbox);
   return { ok: true };
 });
 
-exports._test = { tierInfo, priceAt, localParts, pricesCoverDay, normPhone };
+exports._test = { pushText, tierInfo, priceAt, localParts, pricesCoverDay, normPhone };

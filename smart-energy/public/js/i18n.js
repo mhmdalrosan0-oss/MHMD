@@ -148,3 +148,6 @@ Object.assign(I18N.en, {
   err_bad_tiers: 'Invalid tiers', err_bad_prices: 'Invalid prices', err_forbidden: 'Not allowed', err_staff_disabled: 'Staff account is disabled', err_login_required: 'Please sign in',
   err_not_admin: 'This email is not authorised as admin', err_generic: 'Something went wrong, try again', err_network: 'Cannot reach the server',
 });
+
+Object.assign(I18N.ar, { push_enable: 'تفعيل الإشعارات', push_hint: 'فعّل الإشعارات لتصلك التنبيهات (الاسترداد، اقتراب الشريحة) حتى لو كان التطبيق مغلقًا.', push_on: 'تم تفعيل الإشعارات على هذا الجهاز', push_denied: 'الإشعارات محظورة من إعدادات المتصفح' });
+Object.assign(I18N.en, { push_enable: 'Enable notifications', push_hint: 'Enable notifications to get alerts (cashback, nearing a tier) even when the app is closed.', push_on: 'Notifications enabled on this device', push_denied: 'Notifications are blocked in the browser settings' });

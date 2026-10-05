@@ -79,6 +79,26 @@
   }
   function stopNotif() { if (unsubNotif) unsubNotif(); unsubNotif = null; notifs = []; }
 
+  // ---------- push notifications (FCM) ----------
+  const pushAvailable = () => !FB.emu && 'Notification' in window && 'serviceWorker' in navigator && FB.push && window.FCM_VAPID_KEY && !String(window.FCM_VAPID_KEY).startsWith('YOUR_');
+  async function registerDevice() {
+    if (!pushAvailable() || !sess || sess.role !== 'captain' || Notification.permission !== 'granted' || !(await FB.push.supported())) return false;
+    const token = await FB.push.getToken(await navigator.serviceWorker.ready);
+    if (!token) return false;
+    localStorage.setItem('se-push-token', token);
+    await Data.fn('registerPush', { token, lang });
+    return true;
+  }
+  async function enablePush() {
+    if (await Notification.requestPermission() !== 'granted') return toast(t('push_denied'), true);
+    try { if (await registerDevice()) toast(t('push_on')); else toast(t('err_generic'), true); } catch (e) { console.error(e); toast(t('err_generic'), true); }
+    render();
+  }
+  async function unregisterDevice() {
+    const token = localStorage.getItem('se-push-token'); localStorage.removeItem('se-push-token');
+    try { if (token) await Data.fn('unregisterPush', { token }); if (pushAvailable()) await FB.push.deleteToken(); } catch { /* best effort */ }
+  }
+
   // ---------- layout ----------
   const homeOf = () => (sess ? { admin: '#/admin/dash', staff: '#/staff', captain: '#/captain' }[sess.role] : '#/login');
   function shell(inner, { nav } = {}) {
@@ -91,8 +111,8 @@
     </header>${nav || ''}<main class="wrap">${inner}</main>`;
   }
   function bindShell() {
-    const lb = $('#langBtn'); if (lb) lb.onclick = () => { lang = lang === 'ar' ? 'en' : 'ar'; localStorage.setItem('se-lang', lang); applyLang(); render(); };
-    const ob = $('#logoutBtn'); if (ob) ob.onclick = async () => { stopNotif(); await FB.signOut(FB.auth); sess = null; go('#/login'); };
+    const lb = $('#langBtn'); if (lb) lb.onclick = () => { lang = lang === 'ar' ? 'en' : 'ar'; localStorage.setItem('se-lang', lang); applyLang(); registerDevice().catch(() => {}); render(); };
+    const ob = $('#logoutBtn'); if (ob) ob.onclick = async () => { stopNotif(); await unregisterDevice(); await FB.signOut(FB.auth); sess = null; go('#/login'); };
     const ib = $('#installBtn'); if (ib) ib.onclick = async () => { installEvt.prompt(); await installEvt.userChoice; installEvt = null; ib.remove(); };
     updateBell();
   }
@@ -216,6 +236,7 @@
     const gs = Data.groupStats(group, stDoc), me = Data.captainShare(stDoc, cap.phone, gs.pct);
     app.innerHTML = shell(`
       <div class="row between"><div class="row">${groupAvatar(group)}<div><h2 style="margin:0">${t('welcome')} ${esc(cap.name)}${cap.isManager ? ' ⭐' : ''}</h2><div class="muted">${esc(group.name)}</div></div></div>${monthSelect()}</div>
+      ${pushAvailable() && Notification.permission === 'default' ? `<div class="card" style="margin-top:1rem"><div class="muted">${t('push_hint')}</div><button class="btn yellow block" id="pushBtn" style="margin-top:.5rem">🔔 ${t('push_enable')}</button></div>` : ''}
       ${payout ? `<div class="card" style="margin-top:1rem;border:2px solid var(--green)"><div class="row between"><b>✅ ${t('payout_paid')} — ${money(payout.amount)}</b><span class="muted">${fmtDate(payout.paidAt)}</span></div>${payout.note ? `<div class="muted">${t('note')}: ${esc(payout.note)}</div>` : ''}</div>` : ''}
       <div class="grid g2" style="margin:1rem 0">
         <div class="stat hl"><div class="v">${num(me.kwh, 1)}</div><div class="l">${t('my_kwh')} (${t('kwh')})</div></div>
@@ -229,6 +250,8 @@
       <div class="card"><h3>${t('history')}</h3>${hist.length ? `<div class="tablewrap"><table><tr><th>${t('date')}</th><th>${t('kwh')}</th><th>${t('amount')}</th></tr>
         ${hist.map((c) => `<tr><td>${fmtDate(c.tsMs)}</td><td>${num(c.kwh, 1)}</td><td>${money(c.amount)}</td></tr>`).join('')}</table></div>` : `<div class="muted">${t('no_data')}</div>`}</div>`);
     bindShell(); bindMonth();
+    const pb = $('#pushBtn'); if (pb) pb.onclick = enablePush;
+    registerDevice().catch(() => {});
   }
 
   function viewNotifications() {

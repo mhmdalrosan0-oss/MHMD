@@ -102,6 +102,8 @@ const FAKE_CFG = `window.FIREBASE_CONFIG={apiKey:'fake',authDomain:'x',projectId
   await p.waitForSelector('.stat');
   await p.waitForFunction(() => +document.querySelector('#bellDot').textContent >= 1, null, { timeout: 8000 }); ok(true, 'bell shows unread alerts');
   await shot('03-captain');
+  const reg = await p.evaluate(() => Data.fn('registerPush', { token: 'tok_' + 'x'.repeat(60), lang: 'ar' }).then(() => 'ok', (e) => e.message));
+  ok(reg === 'ok' && (await adb.collection('fcmTokens').get()).docs.some((d) => d.data().isManager && d.data().groupId === gid), 'device token registered for manager');
   await p.click('.bellbtn'); await p.waitForSelector('.list');
   const txt = await p.textContent('.list'); ok(/باقي 75 ك.و للوصول إلى 21%/.test(txt), "alert text: remaining 75 kWh to 21%: " + txt.split("\n")[0]);
   await shot('04-notifications');
@@ -136,6 +138,9 @@ const FAKE_CFG = `window.FIREBASE_CONFIG={apiKey:'fake',authDomain:'x',projectId
   ok(rows.some((x) => /تسجيل شحنة/.test(x)) && rows.some((x) => /موظف 1/.test(x)), 'audit shows staff charges with staff name');
   ok(rows.some((x) => /تأكيد إيداع/.test(x)), 'audit shows payout confirmation by admin');
   ok(rows.some((x) => /إضافة مجموعة/.test(x)), 'audit shows admin group creation');
+
+  const okc = await call('addCharge', { captainPhone: '0795550123', kwh: 10 }); ok(!!okc.ok, 'charge still succeeds when push delivery fails (best effort)');
+  const noPush = await p.evaluate(() => Data.fn('registerPush', { token: 'tok_' + 'y'.repeat(60) }).then(() => 'ok', (e) => e.message)); ok(noPush === 'login_required', 'only captains can register devices');
 
   console.log('Admin delete charge keeps aggregates consistent');
   const ch = (await adb.collection('charges').where('groupId', '==', gid).limit(1).get()).docs[0];
