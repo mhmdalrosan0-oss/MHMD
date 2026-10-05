@@ -117,3 +117,9 @@ th { color: var(--muted); font-weight: 600; font-size: .8rem; }
   .topbar, .nav, .no-print, #toasts { display: none !important; }
   .overlay { position: static; background: none; } .modal { box-shadow: none; max-height: none; }
 }
+
+/* v2 */
+.bellbtn { position: relative; text-decoration: none; display: inline-flex; align-items: center; }
+.dot { position: absolute; top: -4px; inset-inline-end: -4px; background: var(--yellow); color: #3a2f00; border-radius: 99px; font-size: .7rem; font-weight: 800; min-width: 18px; height: 18px; display: grid; place-items: center; padding: 0 4px; }
+.topbar { flex-wrap: nowrap; } .topbar .btn { white-space: nowrap; }
+@media (max-width: 420px) { .brand span { font-size: .8rem; } .topbar { gap: .4rem; padding: .5rem .6rem; } .topbar .btn { padding: .3rem .55rem; } }

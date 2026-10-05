@@ -77,3 +77,74 @@ const I18N = {
     lang: 'العربية', all_groups: 'All groups', copy_link: 'Copy link', copied: 'Copied', details: 'Details', members: 'Members', share: 'Share', pending_payout: 'Payout due',
   }
 };
+
+/* ---- v2 additions (Firebase, Authenticator, payouts, audit, notifications) ---- */
+Object.assign(I18N.ar, {
+  loading: 'جارٍ التحميل…', email: 'البريد الإلكتروني', auth_code: 'رمز Google Authenticator (6 أرقام)', install_app: 'تثبيت التطبيق',
+  activate_first: 'أول مرة؟ فعّل حسابك', activation_title: 'تفعيل حساب الكابتن', activation_code: 'رمز التفعيل (8 أرقام) من موظف الشحن', next: 'التالي',
+  activate_scan: 'افتح تطبيق Google Authenticator واختر «+» ثم «مسح رمز QR»، ووجّه الكاميرا لهذا الرمز.', activate_secret: 'أو أدخل المفتاح يدويًا',
+  activate_confirm: 'أدخل الرمز الظاهر الآن في التطبيق لتأكيد الربط', activated: 'تم تفعيل حسابك، ولن تحتاج رمز التفعيل مرة أخرى',
+  login_hint_captain: 'أدخل رقم هاتفك والرمز الحالي من تطبيق Google Authenticator',
+  setup_title: 'الموقع غير مربوط بـ Firebase بعد', setup_body: 'ضع إعدادات مشروعك في الملف public/js/firebase-config.js ثم أعد تحميل الصفحة.',
+  // activation shown to staff/admin
+  act_title: 'رمز تفعيل الكابتن', act_hint: 'سلّم هذا الرمز للكابتن شخصيًا. يستخدمه مرة واحدة لربط حسابه بـ Google Authenticator (صالح 7 أيام). لن يظهر مرة أخرى.', act_for: 'الكابتن',
+  captain_other_group: 'هذا الرقم مسجل في مجموعة أخرى ({g}). لا يمكن للكابتن أن يكون في أكثر من مجموعة.',
+  enrolled: 'مفعّل', not_enrolled: 'بانتظار التفعيل', reset_captain: 'إعادة تفعيل (رمز جديد)', reset_q: 'سيتم إلغاء ربط Google Authenticator الحالي وإنشاء رمز تفعيل جديد. متابعة؟',
+  delete_captain_q: 'حذف الكابتن؟ تبقى شحناته السابقة محسوبة في إحصاءات المجموعة.',
+  // nav
+  nav_audit: 'السجل', nav_notifications: 'التنبيهات', notifications: 'التنبيهات', no_notifications: 'لا توجد تنبيهات',
+  // notifications
+  n_near: 'باقي {remaining} ك.و للوصول إلى {pct}%', n_near_t: 'اقتراب من الشريحة التالية',
+  n_reached: 'وصلت مجموعتكم إلى شريحة استرداد {pct}% 🎉', n_reached_t: 'شريحة جديدة',
+  n_payout: 'تم إيداع الاسترداد النقدي لشهر {month} بقيمة {amount} {currency} لمدير المجموعة', n_payout_t: 'تم إيداع الاسترداد النقدي',
+  n_payout_undo: 'تم إلغاء تأكيد إيداع الاسترداد لشهر {month}', n_payout_undo_t: 'تحديث على الاسترداد', note: 'ملاحظة',
+  // payout
+  payout_title: 'الاسترداد النقدي الشهري', payout_paid: 'تم الإيداع', payout_pending: 'غير مودع', mark_paid: 'تم إيداع الاسترداد النقدي',
+  payout_note: 'ملاحظات (اختياري)', payout_note_hint: 'تظهر لمدير المجموعة والكباتن في التنبيه', payout_to_manager: 'يُودع الاسترداد في حساب مدير المجموعة',
+  undo_payout: 'إلغاء تأكيد الإيداع', undo_q: 'إلغاء تأكيد الإيداع؟ سيصل تنبيه للمجموعة.', paid_by: 'بواسطة', deposited_amount: 'المبلغ المودع',
+  month_not_ended_hint: 'يمكن تأكيد الإيداع بعد انتهاء الشهر', manager_cashback: 'استرداد مجموعتك المتوقع (يُودع لك كمدير المجموعة)', payout_status: 'حالة الإيداع',
+  // audit
+  audit_title: 'سجل العمليات', actor: 'المنفذ', action: 'العملية', target: 'الهدف', details: 'التفاصيل', f_all: 'الكل', f_admin: 'الإدارة', f_staff: 'الموظفون', f_captain: 'الكباتن',
+  a_createGroup: 'إضافة مجموعة', a_updateGroup: 'تعديل مجموعة', a_deleteGroup: 'حذف مجموعة', a_addCaptain: 'إضافة كابتن', a_resetCaptain: 'إعادة تفعيل كابتن', a_deleteCaptain: 'حذف كابتن',
+  a_addCharge: 'تسجيل شحنة', a_deleteCharge: 'حذف شحنة', a_createStaff: 'إضافة موظف', a_regenStaff: 'توليد رمز موظف', a_toggleStaff: 'تفعيل/تعطيل موظف', a_deleteStaff: 'حذف موظف',
+  a_saveSettings: 'تعديل الإعدادات', a_markPayout: 'تأكيد إيداع الاسترداد', a_unmarkPayout: 'إلغاء تأكيد الإيداع', a_captainEnrolled: 'تفعيل حساب كابتن',
+  // settings
+  timezone: 'المنطقة الزمنية', near_tier: 'تنبيه مدير المجموعة عندما يتبقى (ك.و) للشريحة التالية',
+  // errors
+  err_bad_credentials: 'بيانات الدخول غير صحيحة', err_bad_activation: 'رمز التفعيل غير صحيح أو منتهٍ', err_bad_code: 'الرمز غير صحيح، حاول مجددًا', err_locked: 'محاولات كثيرة، حاول بعد 15 دقيقة',
+  err_bad_input: 'بيانات غير صالحة', err_bad_kwh: 'قيمة الكيلوواط غير صالحة (الحد الأقصى 300 للشحنة)', err_dup_captain: 'الرقم مسجل مسبقًا', err_month_not_ended: 'لا يمكن تأكيد الإيداع قبل انتهاء الشهر',
+  err_already_paid: 'تم تأكيد الإيداع مسبقًا', err_is_manager: 'لا يمكن حذف مدير المجموعة. عدّل المجموعة أو احذفها.', err_prices_overlap: 'الفترات الزمنية يجب أن تغطي اليوم كاملًا بدون تداخل',
+  err_bad_tiers: 'الشرائح غير صالحة', err_bad_prices: 'الأسعار غير صالحة', err_forbidden: 'غير مسموح', err_staff_disabled: 'حساب الموظف معطّل', err_login_required: 'سجّل الدخول أولًا',
+  err_not_admin: 'هذا البريد غير مصرّح له كإدارة', err_generic: 'حدث خطأ، حاول مرة أخرى', err_network: 'تعذر الاتصال بالخادم',
+});
+Object.assign(I18N.en, {
+  loading: 'Loading…', email: 'Email', auth_code: 'Google Authenticator code (6 digits)', install_app: 'Install app',
+  activate_first: 'First time? Activate your account', activation_title: 'Activate captain account', activation_code: 'Activation code (8 digits) from the charging staff', next: 'Next',
+  activate_scan: 'Open Google Authenticator, tap “+” then “Scan a QR code”, and point the camera at this code.', activate_secret: 'Or enter the key manually',
+  activate_confirm: 'Enter the code currently shown in the app to confirm', activated: 'Your account is active. You will not need the activation code again',
+  login_hint_captain: 'Enter your phone number and the current Google Authenticator code',
+  setup_title: 'Firebase is not connected yet', setup_body: 'Put your project settings in public/js/firebase-config.js and reload.',
+  act_title: 'Captain activation code', act_hint: 'Give this code to the captain in person. It is single-use, links the account to Google Authenticator (valid 7 days) and will not be shown again.', act_for: 'Captain',
+  captain_other_group: 'This number is registered in another group ({g}). A captain cannot be in more than one group.',
+  enrolled: 'Active', not_enrolled: 'Awaiting activation', reset_captain: 'Re-activate (new code)', reset_q: 'The current Google Authenticator link will be removed and a new activation code created. Continue?',
+  delete_captain_q: 'Delete the captain? Their past charges stay counted in the group statistics.',
+  nav_audit: 'Audit log', nav_notifications: 'Notifications', notifications: 'Notifications', no_notifications: 'No notifications',
+  n_near: '{remaining} kWh left to reach {pct}%', n_near_t: 'Close to the next tier',
+  n_reached: 'Your group reached the {pct}% cashback tier 🎉', n_reached_t: 'New tier',
+  n_payout: 'Cashback for {month} ({amount} {currency}) has been deposited to the group manager', n_payout_t: 'Cashback deposited',
+  n_payout_undo: 'Deposit confirmation for {month} was cancelled', n_payout_undo_t: 'Cashback update', note: 'Note',
+  payout_title: 'Monthly cashback', payout_paid: 'Deposited', payout_pending: 'Not deposited', mark_paid: 'Cashback deposited',
+  payout_note: 'Notes (optional)', payout_note_hint: 'Shown to the group manager and captains in the notification', payout_to_manager: "Cashback is deposited to the group manager's account",
+  undo_payout: 'Cancel deposit confirmation', undo_q: 'Cancel the deposit confirmation? The group will be notified.', paid_by: 'By', deposited_amount: 'Deposited amount',
+  month_not_ended_hint: 'Deposit can be confirmed after the month ends', manager_cashback: "Your group's expected cashback (deposited to you as manager)", payout_status: 'Deposit status',
+  audit_title: 'Audit log', actor: 'By', action: 'Action', target: 'Target', details: 'Details', f_all: 'All', f_admin: 'Admin', f_staff: 'Staff', f_captain: 'Captains',
+  a_createGroup: 'Group created', a_updateGroup: 'Group edited', a_deleteGroup: 'Group deleted', a_addCaptain: 'Captain added', a_resetCaptain: 'Captain re-activated', a_deleteCaptain: 'Captain deleted',
+  a_addCharge: 'Charge recorded', a_deleteCharge: 'Charge deleted', a_createStaff: 'Staff added', a_regenStaff: 'Staff code regenerated', a_toggleStaff: 'Staff enabled/disabled', a_deleteStaff: 'Staff deleted',
+  a_saveSettings: 'Settings changed', a_markPayout: 'Cashback deposit confirmed', a_unmarkPayout: 'Deposit confirmation cancelled', a_captainEnrolled: 'Captain account activated',
+  timezone: 'Time zone', near_tier: 'Alert the group manager when this many kWh remain to the next tier',
+  err_bad_credentials: 'Invalid credentials', err_bad_activation: 'Activation code is wrong or expired', err_bad_code: 'Wrong code, try again', err_locked: 'Too many attempts, try again in 15 minutes',
+  err_bad_input: 'Invalid input', err_bad_kwh: 'Invalid kWh value (max 300 per charge)', err_dup_captain: 'Number already registered', err_month_not_ended: 'Cannot confirm a deposit before the month ends',
+  err_already_paid: 'Deposit already confirmed', err_is_manager: 'Cannot delete the group manager. Edit or delete the group.', err_prices_overlap: 'Time periods must cover the full day without overlap',
+  err_bad_tiers: 'Invalid tiers', err_bad_prices: 'Invalid prices', err_forbidden: 'Not allowed', err_staff_disabled: 'Staff account is disabled', err_login_required: 'Please sign in',
+  err_not_admin: 'This email is not authorised as admin', err_generic: 'Something went wrong, try again', err_network: 'Cannot reach the server',
+});

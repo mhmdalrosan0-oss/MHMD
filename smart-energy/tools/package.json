@@ -1,0 +1,2 @@
+{ "name": "se-build", "private": true, "scripts": { "build": "esbuild fb-entry.js --bundle --minify --format=iife --outfile=../public/vendor/firebase.bundle.js" },
+  "dependencies": { "firebase": "^10.14.0" }, "devDependencies": { "esbuild": "^0.24.0" } }
