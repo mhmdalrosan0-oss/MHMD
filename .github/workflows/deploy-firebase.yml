@@ -25,5 +25,10 @@ jobs:
           if [ -z "$FIREBASE_SERVICE_ACCOUNT" ]; then echo "::error::Add the FIREBASE_SERVICE_ACCOUNT repository secret (see smart-energy/README.md)"; exit 1; fi
           echo "$FIREBASE_SERVICE_ACCOUNT" > "$RUNNER_TEMP/sa.json"
           export GOOGLE_APPLICATION_CREDENTIALS="$RUNNER_TEMP/sa.json"
+          FB="npx -y firebase-tools@13 --project smart-energy-41c4a --non-interactive"
+          # make sure the hosting site "smart-energy" (smart-energy.web.app) exists; fail early (before any deploy) if the name is taken
+          if ! $FB hosting:sites:list | grep -qE "sites/smart-energy( |$|\s)|smart-energy\.web\.app"; then
+            $FB hosting:sites:create smart-energy || { echo "::error::Could not create hosting site 'smart-energy' (name taken?). Pick another name in firebase.json + this workflow."; exit 1; }
+          fi
           npx -y firebase-tools@13 deploy --project smart-energy-41c4a --non-interactive --force
           rm -f "$RUNNER_TEMP/sa.json"
