@@ -1,7 +1,6 @@
 /* Translations. Keys are used by t('key'). */
 const I18N = {
   ar: {
-    app: 'سمارت إنرجي', tagline: 'اشحن أكثر… استرد أكثر',
     login: 'تسجيل الدخول', logout: 'خروج', back: 'رجوع', save: 'حفظ', cancel: 'إلغاء', delete: 'حذف', edit: 'تعديل', add: 'إضافة', close: 'إغلاق', search: 'بحث', confirm: 'تأكيد',
     role_captain: 'كابتن', role_staff: 'موظف', role_admin: 'الإدارة',
     phone: 'رقم الهاتف', phone_hint: 'رقم الهاتف المرتبط بخدمة كليك / المحفظة', name: 'الاسم', password: 'كلمة المرور', code6: 'الرمز السري (6 أرقام)',
@@ -41,7 +40,6 @@ const I18N = {
     lang: 'English', all_groups: 'كل المجموعات', copy_link: 'نسخ الرابط', copied: 'تم النسخ', details: 'التفاصيل', members: 'الأعضاء', share: 'حصة', pending_payout: 'مستحق الدفع',
   },
   en: {
-    app: 'Smart Energy', tagline: 'Charge more… earn more back',
     login: 'Sign in', logout: 'Logout', back: 'Back', save: 'Save', cancel: 'Cancel', delete: 'Delete', edit: 'Edit', add: 'Add', close: 'Close', search: 'Search', confirm: 'Confirm',
     role_captain: 'Captain', role_staff: 'Staff', role_admin: 'Admin',
     phone: 'Phone number', phone_hint: 'Number linked to Click / e-wallet', name: 'Name', password: 'Password', code6: 'Secret code (6 digits)',

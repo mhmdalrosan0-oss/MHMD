@@ -123,3 +123,8 @@ th { color: var(--muted); font-weight: 600; font-size: .8rem; }
 .dot { position: absolute; top: -4px; inset-inline-end: -4px; background: var(--yellow); color: #3a2f00; border-radius: 99px; font-size: .7rem; font-weight: 800; min-width: 18px; height: 18px; display: grid; place-items: center; padding: 0 4px; }
 .topbar { flex-wrap: nowrap; } .topbar .btn { white-space: nowrap; }
 @media (max-width: 420px) { .brand span { font-size: .8rem; } .topbar { gap: .4rem; padding: .5rem .6rem; } .topbar .btn { padding: .3rem .55rem; } }
+
+/* plain pre-login page */
+.minibar { display: flex; justify-content: flex-end; padding: .6rem .8rem; }
+.minibar .btn { background: transparent; color: var(--muted); font-size: .85rem; padding: .3rem .6rem; }
+.login { padding-top: 2.5rem; }

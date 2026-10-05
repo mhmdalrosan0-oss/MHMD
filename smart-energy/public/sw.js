@@ -1,7 +1,7 @@
 /* App-shell cache so the installed app opens instantly. Data always comes from the network. */
 const V = 'se-shell-v3';
 const SHELL = ['./', 'index.html', 'css/style.css', 'js/firebase-config.js', 'js/i18n.js', 'js/data.js', 'js/app.js',
-  'vendor/firebase.bundle.js', 'vendor/qrcode.js', 'vendor/jsQR.js', 'img/logo-full.png', 'img/icon-192.png', 'manifest.webmanifest'];
+  'vendor/firebase.bundle.js', 'vendor/qrcode.js', 'vendor/jsQR.js', 'img/icon-192.png', 'manifest.webmanifest'];
 self.addEventListener('install', (e) => { e.waitUntil(caches.open(V).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting())); });
 self.addEventListener('activate', (e) => { e.waitUntil(caches.keys().then((ks) => Promise.all(ks.filter((k) => k !== V).map((k) => caches.delete(k)))).then(() => self.clients.claim())); });
 self.addEventListener('fetch', (e) => {
@@ -20,7 +20,7 @@ self.addEventListener('push', (e) => {
   let p = {}; try { p = e.data ? e.data.json() : {}; } catch { /* ignore */ }
   const d = p.data || p.notification || p;
   if (!d.title && !d.body) return;
-  e.waitUntil(self.registration.showNotification(d.title || 'Smart Energy', {
+  e.waitUntil(self.registration.showNotification(d.title || 'sesesa', {
     body: d.body || '', icon: 'img/icon-192.png', badge: 'img/icon-192.png', tag: d.tag || 'se', renotify: true, dir: 'auto', data: { url: d.url || './#/notifications' },
   }));
 });

@@ -1,5 +1,4 @@
-/* Smart Energy – UI (Firebase edition).
-   Hash router: #/login, #/captain, #/notifications, #/staff, #/g/:id (QR target), #/admin/:tab[/:groupId] */
+/* App UI. Hash router: #/login, #/captain, #/notifications, #/staff, #/g/:id (QR target), #/admin/:tab[/:groupId] */
 (() => {
   const $ = (s, r = document) => r.querySelector(s);
   const app = $('#app');
@@ -108,8 +107,9 @@
   // ---------- layout ----------
   const homeOf = () => (sess ? { admin: '#/admin/dash', staff: '#/staff', captain: '#/captain' }[sess.role] : '#/login');
   function shell(inner, { nav } = {}) {
+    if (!sess) return `<div class="minibar no-print"><button class="btn" id="langBtn">${t('lang')}</button></div><main class="wrap">${inner}</main>`;
     return `<header class="topbar no-print">
-      <a class="brand" href="${homeOf()}">${BOLT}<span>SMART <b>ENERGY</b></span></a><div class="spacer"></div>
+      <a class="brand" href="${homeOf()}" aria-label="home">${BOLT}</a><div class="spacer"></div>
       ${installEvt ? `<button class="btn" id="installBtn">⬇ ${t('install_app')}</button>` : ''}
       ${sess && sess.role === 'captain' ? `<a class="btn bellbtn" href="#/notifications" aria-label="${t('notifications')}">🔔<span class="dot hide" id="bellDot"></span></a>` : ''}
       <button class="btn" id="langBtn">${t('lang')}</button>
@@ -168,8 +168,6 @@
     let stage = 'phone', e164 = '';
     const draw = () => {
       app.innerHTML = shell(`<div class="login">
-        <img class="logo" src="img/logo-full.png" alt="Smart Energy">
-        <p class="center muted">${t('tagline')}</p>
         <div class="tabs">${['captain', 'staff', 'admin'].map((r) => `<button data-r="${r}" class="${r === role ? 'on' : ''}">${t('role_' + r)}</button>`).join('')}</div>
         <div class="card">
           ${pending && role === 'staff' ? `<div class="warn">${t('login_staff_first')}</div>` : ''}

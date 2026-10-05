@@ -1,8 +1,6 @@
-// Paste your Firebase web-app config here (Firebase console → Project settings → Your apps → Web).
-// These values are public identifiers, not secrets.
 window.FIREBASE_CONFIG = {
   apiKey: 'AIzaSyB3X9RM6iCMex3DVu8wJXNHgHksKFplTYI',
-  authDomain: 'smart-energy-41c4a.firebaseapp.com',
+  authDomain: 'sesesa.web.app',
   projectId: 'smart-energy-41c4a',
   messagingSenderId: '1081563552972',
   appId: '1:1081563552972:web:57aaa3ad82e69c28717669',

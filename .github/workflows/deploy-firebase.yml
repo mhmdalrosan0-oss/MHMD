@@ -27,7 +27,7 @@ jobs:
           export GOOGLE_APPLICATION_CREDENTIALS="$RUNNER_TEMP/sa.json"
           FB="npx -y firebase-tools@13 --project smart-energy-41c4a --non-interactive"
           # Pick the hosting site name: reuse one of the candidates if it already belongs to this project, otherwise create the first free one.
-          CANDIDATES="smartenergy-jo smart-energy-jo smartenergy-ev smart-energy-ev smartenergy-charge smart-energy-charge"
+          CANDIDATES="sesesa"
           SITES="$($FB hosting:sites:list || true)"
           SITE=""
           for n in $CANDIDATES; do
@@ -43,4 +43,6 @@ jobs:
           echo "Hosting site: https://$SITE.web.app"
           echo "### Site: https://$SITE.web.app" >> "$GITHUB_STEP_SUMMARY"
           npx -y firebase-tools@13 deploy --project smart-energy-41c4a --non-interactive --force
+          # stop serving the old default site so the project name is not exposed through it
+          $FB hosting:disable --site smart-energy-41c4a --force || echo "::warning::Could not disable the default hosting site"
           rm -f "$RUNNER_TEMP/sa.json"
