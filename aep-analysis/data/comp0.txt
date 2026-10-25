@@ -1,0 +1,2266 @@
+[0] id=1958 "في الكابشــــن" type=text par=- 25.500→27.700s src=- blend=2 matte=2 
+  ▸ 
+    MARKER t=26.520 ['IN', 'chapter', 'https://aniom.net', '_PRESET_MANAGER', 'ATOMX_EXTENSION_BY_ANIOM']
+    ▸ ADBE Text Properties
+      TEXT t=None 'في الكابشــــن\r' font=thmanyahserifdisplay-Bold size=200.0 fill=[1, 1, 1, 1] stroke=[1, 1, 1, 1] sw=3.0 trk=54.02563
+      ▸ ADBE Text Animators
+        ▸ ADBE Text Animator
+          ▸ ADBE Text Selectors
+            ▸ ADBE Text Expressible Selector
+              · ADBE Text Range Type2 = [3, 0, 0, 0]
+              · ADBE Text Expressible Amount = [0, 0, 0, 0]
+                EXPR[ADBE Text Expressible Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar _waopo01=["Pseudo/zodostudio/IWAOPo01","marker","numKeys","comment","key","time","active","IN","name","","undefined","effect","Delay","Style","Random Start","Animation Type","length","abs","floor"];var nam'
+          ▸ ADBE Text Animator Properties
+            · ADBE Text Position 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Position 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Scale 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Scale 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Rotation = [0, 0, 0, 0]
+              EXPR[ADBE Text Rotation]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Opacity = [0, 0, 0, 0]
+              EXPR[ADBE Text Opacity]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Tracking Amount = [0, 0, 0, 0]
+              EXPR[ADBE Text Tracking Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+    ▸ ADBE Mask Parade
+      ▸ ADBE Mask Atom
+        · ADBE Mask Feather = [102, 102, 0, 0]
+        · ADBE Mask Offset = [57, 0, 0, 0]
+    ▸ ADBE Effect Parade
+      ▸ ADBE Ramp
+        · Start of Ramp = [0.5, 0.6533, 0, 0]
+          EXPR[Start of Ramp]: '// جلب حدود طبقة النص\r\nbox = sourceRectAtTime(time, true);\r\n\r\n// حساب نقطة المكرز بالطبقة للوصول إلى المنتصف أفقياً والأعلى رأسياً\r\nx = box.left + (box.width / 2);\r\ny = box.top;\r\n\r\n// تحويل الإحداثيات المحلية لطبقة النص إلى إحداثيات المشهد '
+        · Start Color = [255, 9, 85, 225]
+        · End of Ramp = [0.5, 0.60075, 0, 0]
+          EXPR[End of Ramp]: '// جلب حدود طبقة النص\r\nbox = sourceRectAtTime(time, true);\r\n\r\n// حساب نقطة المركز أفقياً مع تحديد الحد الأسفل رأسياً\r\nx = box.left + (box.width / 2);\r\ny = box.top + box.height;\r\n\r\n// تحويل الإحداثيات المحلية إلى إحداثيات المشهد (Comp)\r\ntoCo'
+        · End Color = [255, 9, 85, 225]
+      ▸ Pseudo/zodostudio/IWAOPo01
+        · Position = [0, 0.078125, 0, 0]
+        · Scale = [0.046296, 0.026042, 0, 0]
+    ▸ ADBE Transform Group
+      · Position = [1068.2, 2657.1, 0, 0]
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[1] id=1957 "بعلوم الأرض؟ 10" type=text par=1958 25.500→27.700s src=- blend=2 matte=2 
+  ▸ 
+    MARKER t=26.520 ['IN', 'chapter', 'https://aniom.net', '_PRESET_MANAGER', 'ATOMX_EXTENSION_BY_ANIOM']
+    ▸ ADBE Text Properties
+      TEXT t=None 'بعلوم الأرض؟\r' font=thmanyahserifdisplay-Bold size=200.0 fill=[1, 0.03529, 0.33333, 0.88235] stroke=[1, 1, 1, 1] sw=3.0 trk=54.02563
+      ▸ ADBE Text Animators
+        ▸ ADBE Text Animator
+          ▸ ADBE Text Selectors
+            ▸ ADBE Text Expressible Selector
+              · ADBE Text Range Type2 = [3, 0, 0, 0]
+              · ADBE Text Expressible Amount = [0, 0, 0, 0]
+                EXPR[ADBE Text Expressible Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar _waopo01=["Pseudo/zodostudio/IWAOPo01","marker","numKeys","comment","key","time","active","IN","name","","undefined","effect","Delay","Style","Random Start","Animation Type","length","abs","floor"];var nam'
+          ▸ ADBE Text Animator Properties
+            · ADBE Text Position 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Position 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Scale 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Scale 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Rotation = [0, 0, 0, 0]
+              EXPR[ADBE Text Rotation]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Opacity = [0, 0, 0, 0]
+              EXPR[ADBE Text Opacity]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Tracking Amount = [0, 0, 0, 0]
+              EXPR[ADBE Text Tracking Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+    ▸ ADBE Effect Parade
+      ▸ PEDG2
+        · Radius = [500, 0, 0, 0]
+        · Iris Sampling Quality = [3, 0, 0, 0]
+        · Iris Iterations = [10, 0, 0, 0]
+        · Radii Easing = [90, 0, 0, 0]
+        · Color Inner = [255, 255, 0, 0]
+        · Quality Preset Iris = [3, 0, 0, 0]
+        · Resolution = [75, 0, 0, 0]
+        · Steps Multiplier = [0.5, 0, 0, 0]
+        · Glow Iterations = [8, 0, 0, 0]
+        · View = [1, 0, 0, 0]
+        · Iris Sample Quality = [50, 0, 0, 0]
+        · Debug View = [3, 0, 0, 0]
+        · Edge Behaviour (Deprecated) = [2, 0, 0, 0]
+        · Renderer (Deprecated) = [1, 0, 0, 0]
+        · Simplified Exposure = [1, 0, 0, 0]
+        · Iris Cull Small Values = [1, 0, 0, 0]
+        · Render Quality (Quantization) = [6, 0, 0, 0]
+      ▸ Pseudo/zodostudio/IWAOPo01
+        · Position = [0, 0.078125, 0, 0]
+        · Scale = [0.046296, 0.026042, 0, 0]
+    ▸ ADBE Transform Group
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[2] id=1956 "url.svg" type=shape par=- 25.500→27.700s src=- blend=2 matte=2 
+  ▸ 
+    MARKER t=25.807 ['TR In', '', '', '', '', 'DO NOT MODIFY', 'THESE PARAMS', 'THEY ARE USED', 'BY', 'ANIMATION', 'COMPOSER', 'zzzzzzzzzzzzzzz_ACMarkerType', '1', 'zzzzzzzzzzzzzzz_ACMarkerAppPresetType', '1', 'zzzzzzzzzzzzzzz_ACMarkerPresetCode', 'GLA#1#1', 'zzzzzzzzzzzzzzz_ACMarkerEnabled', '1']
+    ▸ ADBE Root Vectors Group
+      ▸ ADBE Vector Group
+        ▸ ADBE Vectors Group
+          ▸ ADBE Vector Graphic - Fill
+            · ADBE Vector Fill Color = [255, 255, 255, 255]
+        ▸ ADBE Vector Transform Group
+          · ADBE Vector Position = [175.45, 347.83, 0, 0]
+      ▸ ADBE Vector Group
+        ▸ ADBE Vectors Group
+          ▸ ADBE Vector Graphic - Fill
+            · ADBE Vector Fill Color = [255, 255, 255, 255]
+        ▸ ADBE Vector Transform Group
+          · ADBE Vector Position = [327.4, 164.52, 0, 0]
+    ▸ ADBE Effect Parade
+      ▸ ADBE Fill
+        · Color = [255, 9, 85, 225]
+      ▸ PEDG2
+        · Exposure = [0.5, 0, 0, 0]
+        · Iris Sampling Quality = [3, 0, 0, 0]
+        · Iris Iterations = [10, 0, 0, 0]
+        · Radii Easing = [90, 0, 0, 0]
+        · Gamma Correction = [100, 0, 0, 0]
+        · Color Inner = [255, 255, 0, 0]
+        · Quality Preset Iris = [3, 0, 0, 0]
+        · Resolution = [75, 0, 0, 0]
+        · Steps Multiplier = [0.5, 0, 0, 0]
+        · Glow Iterations = [8, 0, 0, 0]
+        · View = [1, 0, 0, 0]
+        · Iris Sample Quality = [50, 0, 0, 0]
+        · Debug View = [3, 0, 0, 0]
+        · Edge Behaviour (Deprecated) = [2, 0, 0, 0]
+        · Renderer (Deprecated) = [1, 0, 0, 0]
+        · Simplified Exposure = [1, 0, 0, 0]
+        · Iris Cull Small Values = [1, 0, 0, 0]
+        · Render Quality (Quantization) = [6, 0, 0, 0]
+      ▸ Pseudo/MHAC PrCtrl GLA 7
+        · Position = [0, 0.10417, 0, 0]
+    ▸ ADBE Transform Group
+      · Anchor = [256, 256, 0, 0]
+      · Position = [966, 2418.2, 0, 0]
+        EXPR[Position]: 'result = getAnimationComposerPresetValue();\r\n\r\n\r\n// THIS EXPRESSION WAS GENERATED BY ANIMATION COMPOSER\n// ---------------------------------------------------\n// ac41c59987c6ada2216282702a4cc61e66f2f594da9ddfadc76902e3d9f298db215aae2c2f6491'
+      · Scale = [100, 100, 212.77, 0]
+        EXPR[Scale]: 'result = getAnimationComposerPresetValue();\r\n\r\n\r\n// THIS EXPRESSION WAS GENERATED BY ANIMATION COMPOSER\n// ---------------------------------------------------\n// ac41c59987c6ada2216282702a4cc61e66f2f594da9ddfadc76902e3d9f298db215aae2c2f6491'
+      · Rotation = [9, 0, 0, 0]
+        EXPR[Rotation]: 'result = getAnimationComposerPresetValue();\r\n\r\n\r\n// THIS EXPRESSION WAS GENERATED BY ANIMATION COMPOSER\n// ---------------------------------------------------\n// ac41c59987c6ada2216282702a4cc61e66f2f594da9ddfadc76902e3d9f298db215aae2c2f6491'
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[3] id=1955 "Shape Layer 7" type=shape par=- 24.880→25.740s src=- blend=2 matte=0 
+  ▸ 
+    ▸ ADBE Root Vectors Group
+      ▸ ADBE Vector Group
+        ▸ ADBE Vectors Group
+          ▸ ADBE Vector Shape - Ellipse
+            · ADBE Vector Ellipse Size = [4478.1, 4478.1, 0, 0]
+          ▸ ADBE Vector Graphic - Stroke
+            · ADBE Vector Stroke Color = [255, 255, 0, 0]
+          ▸ ADBE Vector Graphic - Fill
+            · ADBE Vector Fill Color = [255, 9, 85, 225]
+        ▸ ADBE Vector Transform Group
+          · ADBE Vector Position = [-4391.9, -433.26, 0, 0]
+      ▸ ADBE Vector Group
+        ▸ ADBE Vectors Group
+          ▸ ADBE Vector Shape - Ellipse
+            · ADBE Vector Ellipse Size = [4478.1, 4478.1, 0, 0]
+          ▸ ADBE Vector Graphic - Stroke
+            · ADBE Vector Stroke Color = [255, 255, 0, 0]
+          ▸ ADBE Vector Graphic - Fill
+            · ADBE Vector Fill Color = [255, 255, 255, 255]
+        ▸ ADBE Vector Transform Group
+          · ADBE Vector Position = [-4986.2, -433.26, 0, 0]
+      ▸ ADBE Vector Group
+        ▸ ADBE Vectors Group
+          ▸ ADBE Vector Shape - Ellipse
+            · ADBE Vector Ellipse Size = [4478.1, 4478.1, 0, 0]
+          ▸ ADBE Vector Graphic - Stroke
+            · ADBE Vector Stroke Color = [255, 255, 0, 0]
+          ▸ ADBE Vector Graphic - Fill
+            · ADBE Vector Fill Color = [255, 255, 255, 255]
+        ▸ ADBE Vector Transform Group
+          · ADBE Vector Position = [-3772.9, -433.26, 0, 0]
+      ▸ ADBE Vector Group
+        ▸ ADBE Vectors Group
+          ▸ ADBE Vector Shape - Ellipse
+            · ADBE Vector Ellipse Size = [4478.1, 4478.1, 0, 0]
+          ▸ ADBE Vector Graphic - Stroke
+            · ADBE Vector Stroke Color = [255, 255, 0, 0]
+          ▸ ADBE Vector Graphic - Fill
+            · ADBE Vector Fill Color = [255, 9, 85, 225]
+        ▸ ADBE Vector Transform Group
+          · ADBE Vector Position = [-3092.2, -433.26, 0, 0]
+    ▸ ADBE Transform Group
+      · Anchor = [-3092.2, -433.26, 0, 0]
+      • Position kf×2
+          t= 24.880  [-2182.2, 2222, 0]           bez/bez in(spd=[0],inf=[16.667]%) out(spd=[0],inf=[70]%)
+            ↳ 0.80s  bezier(0.70,0.00,0.30,1.00)  startVel=0.00 endVel=0.00  => EASE IN-OUT (S)
+          t= 25.680  [6513.8, 2222, 0]            bez/bez in(spd=[0],inf=[70]%) out(spd=[0],inf=[16.667]%)
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[4] id=1712 "لا تستعجلوا! 2" type=text par=- 16.220→18.700s src=- blend=2 matte=2 
+  ▸ 
+    MARKER t=16.820 ['IN', 'chapter', 'https://aniom.net', '_PRESET_MANAGER', 'ATOMX_EXTENSION_BY_ANIOM']
+    ▸ ADBE Text Properties
+      TEXT t=None 'لا تستعجلوا!\r' font=thmanyahserifdisplay-Bold size=200.0 fill=[1, 1, 1, 1] stroke=[1, 1, 1, 1] sw=3.0 trk=54.02563
+      ▸ ADBE Text Animators
+        ▸ ADBE Text Animator
+          ▸ ADBE Text Selectors
+            ▸ ADBE Text Expressible Selector
+              · ADBE Text Range Type2 = [3, 0, 0, 0]
+              · ADBE Text Expressible Amount = [0, 0, 0, 0]
+                EXPR[ADBE Text Expressible Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar _waopo01=["Pseudo/zodostudio/IWAOPo01","marker","numKeys","comment","key","time","active","IN","name","","undefined","effect","Delay","Style","Random Start","Animation Type","length","abs","floor"];var nam'
+          ▸ ADBE Text Animator Properties
+            · ADBE Text Position 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Position 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Scale 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Scale 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Rotation = [0, 0, 0, 0]
+              EXPR[ADBE Text Rotation]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Opacity = [0, 0, 0, 0]
+              EXPR[ADBE Text Opacity]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Tracking Amount = [0, 0, 0, 0]
+              EXPR[ADBE Text Tracking Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+    ▸ ADBE Mask Parade
+      ▸ ADBE Mask Atom
+        · ADBE Mask Feather = [102, 102, 0, 0]
+        · ADBE Mask Offset = [57, 0, 0, 0]
+    ▸ ADBE Effect Parade
+      ▸ ADBE Ramp
+        · Start of Ramp = [0.5, 0.6533, 0, 0]
+          EXPR[Start of Ramp]: '// جلب حدود طبقة النص\r\nbox = sourceRectAtTime(time, true);\r\n\r\n// حساب نقطة المكرز بالطبقة للوصول إلى المنتصف أفقياً والأعلى رأسياً\r\nx = box.left + (box.width / 2);\r\ny = box.top;\r\n\r\n// تحويل الإحداثيات المحلية لطبقة النص إلى إحداثيات المشهد '
+        · Start Color = [255, 255, 255, 255]
+        · End of Ramp = [0.5, 0.60075, 0, 0]
+          EXPR[End of Ramp]: '// جلب حدود طبقة النص\r\nbox = sourceRectAtTime(time, true);\r\n\r\n// حساب نقطة المركز أفقياً مع تحديد الحد الأسفل رأسياً\r\nx = box.left + (box.width / 2);\r\ny = box.top + box.height;\r\n\r\n// تحويل الإحداثيات المحلية إلى إحداثيات المشهد (Comp)\r\ntoCo'
+        • End Color kf×2
+            t= 17.380  [9, 85, 225, 255]            lin/lin
+              ↳ LINEAR 0.04s
+            t= 17.420  [39.629, 194.33, 0, 255]     lin/lin
+      ▸ Pseudo/zodostudio/IWAOPo01
+        · Position = [0, 0.078125, 0, 0]
+        · Scale = [0.046296, 0.026042, 0, 0]
+      ▸ ADBE Gaussian Blur 2
+        • Blurriness kf×2
+            t= 16.720  [0]                          lin/lin
+              ↳ LINEAR 0.60s
+            t= 17.320  [100]                        lin/lin
+      ▸ ADBE Slider Control
+        • Slider kf×2
+            t= 16.220  [0]                          lin/lin
+              ↳ LINEAR 1.20s
+            t= 17.420  [175]                        lin/lin
+      ▸ Pseudo/MDS Elastic Controller
+        · Amplitude = [100, 0, 0, 0]
+        · Frequency = [100, 0, 0, 0]
+        · Decay = [100, 0, 0, 0]
+    ▸ ADBE Transform Group
+      • Position kf×2
+          t= 17.900  [1069.2, 2022.8, 0]          bez/bez in(spd=[0],inf=[16.667]%) out(spd=[0],inf=[100]%)
+            ↳ 0.80s  bezier(1.00,0.00,0.67,0.67)  startVel=0.00 endVel=1.00  => ACCELERATE (slow start, fast end)
+          t= 18.700  [1069.2, -435.2, 0]          lin/lin
+      • Scale kf×31
+          t= 16.220  [142, 142, 100.71]           lin/lin
+            ↳ LINEAR 0.04s
+          t= 16.260  [145, 145, 102.11]           lin/lin
+            ↳ LINEAR 0.04s
+          t= 16.300  [142, 142, 100]              lin/lin
+            ↳ LINEAR 0.04s
+          t= 16.340  [145, 145, 100]              lin/lin
+            ↳ LINEAR 0.04s
+          t= 16.380  [142, 142, 100]              lin/lin
+            ↳ LINEAR 0.04s
+          t= 16.420  [145, 145, 100]              lin/lin
+            ↳ LINEAR 0.04s
+          t= 16.460  [142, 142, 100]              lin/lin
+            ↳ LINEAR 0.04s
+          t= 16.500  [145, 145, 100]              lin/lin
+            ↳ LINEAR 0.04s
+          t= 16.540  [142, 142, 100]              lin/lin
+            ↳ LINEAR 0.04s
+          t= 16.580  [145, 145, 100]              lin/lin
+            ↳ LINEAR 0.04s
+          t= 16.620  [142, 142, 100]              lin/lin
+            ↳ LINEAR 0.04s
+          t= 16.660  [145, 145, 100]              lin/lin
+            ↳ LINEAR 0.04s
+          t= 16.700  [142, 142, 100]              lin/lin
+            ↳ LINEAR 0.04s
+          t= 16.740  [145, 145, 100]              lin/lin
+            ↳ LINEAR 0.04s
+          t= 16.780  [142, 142, 100]              lin/lin
+            ↳ LINEAR 0.04s
+          t= 16.820  [145, 145, 100]              lin/lin
+            ↳ LINEAR 0.04s
+          t= 16.860  [142, 142, 100]              lin/lin
+            ↳ LINEAR 0.04s
+          t= 16.900  [145, 145, 100]              lin/lin
+            ↳ LINEAR 0.04s
+          t= 16.940  [142, 142, 100]              lin/lin
+            ↳ LINEAR 0.04s
+          t= 16.980  [145, 145, 100]              lin/lin
+            ↳ LINEAR 0.04s
+          t= 17.020  [142, 142, 100]              lin/lin
+            ↳ LINEAR 0.04s
+          t= 17.060  [145, 145, 100]              lin/lin
+            ↳ LINEAR 0.04s
+          t= 17.100  [142, 142, 100]              lin/lin
+            ↳ LINEAR 0.04s
+          t= 17.140  [145, 145, 100]              lin/lin
+            ↳ LINEAR 0.04s
+          t= 17.180  [142, 142, 100]              lin/lin
+            ↳ LINEAR 0.04s
+          t= 17.220  [145, 145, 100]              lin/lin
+            ↳ LINEAR 0.04s
+          t= 17.260  [142, 142, 100]              lin/lin
+            ↳ LINEAR 0.04s
+          t= 17.300  [145, 145, 100]              lin/lin
+            ↳ LINEAR 0.08s
+          t= 17.380  [142, 142, 100.71]           lin/lin
+            ↳ LINEAR 0.04s
+          t= 17.420  [170, 170, 106.25]           lin/lin
+            ↳ LINEAR 0.40s
+          t= 17.820  [170, 170, 100]              lin/lin
+        EXPR[Scale]: 'try {\n  eff = effect("Elastic Controller");\n   amp = eff(1)/ 10 / 100; \n   freq = eff(2) / 100; \n   decay = eff(3) / 100; \n   function elastic(amp, freq, decay) { \n       function calc(n) { \n         var t = time - key(n).time; \n         va'
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[5] id=1711 "بعلوم الأرض؟ 24" type=text par=1712 16.220→18.700s src=- blend=2 matte=2 
+  ▸ 
+    MARKER t=16.820 ['IN', 'chapter', 'https://aniom.net', '_PRESET_MANAGER', 'ATOMX_EXTENSION_BY_ANIOM']
+    ▸ ADBE Text Properties
+      TEXT t=None 'بعلوم الأرض؟\r' font=thmanyahserifdisplay-Bold size=200.0 fill=[1, 0.03529, 0.33333, 0.88627] stroke=[1, 1, 1, 1] sw=3.0 trk=54.02563
+      ▸ ADBE Text Animators
+        ▸ ADBE Text Animator
+          ▸ ADBE Text Selectors
+            ▸ ADBE Text Expressible Selector
+              · ADBE Text Range Type2 = [3, 0, 0, 0]
+              · ADBE Text Expressible Amount = [0, 0, 0, 0]
+                EXPR[ADBE Text Expressible Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar _waopo01=["Pseudo/zodostudio/IWAOPo01","marker","numKeys","comment","key","time","active","IN","name","","undefined","effect","Delay","Style","Random Start","Animation Type","length","abs","floor"];var nam'
+          ▸ ADBE Text Animator Properties
+            · ADBE Text Position 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Position 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Scale 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Scale 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Rotation = [0, 0, 0, 0]
+              EXPR[ADBE Text Rotation]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Opacity = [0, 0, 0, 0]
+              EXPR[ADBE Text Opacity]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Tracking Amount = [0, 0, 0, 0]
+              EXPR[ADBE Text Tracking Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+        ▸ ADBE Text Animator
+          ▸ ADBE Text Animator Properties
+            • ADBE Text Fill Color kf×2
+                t= 17.380  [8.9989, 84.999, 226, 255]   lin/lin
+                  ↳ LINEAR 0.04s
+                t= 17.420  [39.629, 194.33, 0, 255]     lin/lin
+    ▸ ADBE Effect Parade
+      ▸ PEDG2
+        · Radius = [500, 0, 0, 0]
+        · Iris Sampling Quality = [3, 0, 0, 0]
+        · Iris Iterations = [10, 0, 0, 0]
+        · Radii Easing = [90, 0, 0, 0]
+        · Gamma Correction = [100, 0, 0, 0]
+        · Color Inner = [255, 255, 0, 0]
+        · Quality Preset Iris = [3, 0, 0, 0]
+        · Resolution = [75, 0, 0, 0]
+        · Steps Multiplier = [0.5, 0, 0, 0]
+        · Glow Iterations = [8, 0, 0, 0]
+        · View = [1, 0, 0, 0]
+        · Iris Sample Quality = [50, 0, 0, 0]
+        · Debug View = [3, 0, 0, 0]
+        · Edge Behaviour (Deprecated) = [2, 0, 0, 0]
+        · Renderer (Deprecated) = [1, 0, 0, 0]
+        · Simplified Exposure = [1, 0, 0, 0]
+        · Iris Cull Small Values = [1, 0, 0, 0]
+        · Render Quality (Quantization) = [6, 0, 0, 0]
+      ▸ Pseudo/zodostudio/IWAOPo01
+        · Position = [0, 0.078125, 0, 0]
+        · Scale = [0.046296, 0.026042, 0, 0]
+      ▸ ADBE Gaussian Blur 2
+        • Blurriness kf×2
+            t= 16.720  [0]                          lin/lin
+              ↳ LINEAR 0.60s
+            t= 17.320  [100]                        lin/lin
+    ▸ ADBE Transform Group
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[6] id=1710 "" type=AV par=- 15.700→18.640s src=198 blend=2 matte=0 ADJ 
+  ▸ 
+    ▸ ADBE Effect Parade
+      ▸ ADBE Camera Lens Blur
+        • Blur Radius kf×3
+            t= 16.020  [0]                          bez/bez in(spd=[0],inf=[16.667]%) out(spd=[0],inf=[50]%)
+              ↳ 0.88s  bezier(0.50,0.00,0.50,1.00)  startVel=0.00 endVel=0.00  => EASE IN-OUT (S)
+            t= 16.900  [70]                         bez/bez in(spd=[0],inf=[50]%) out(spd=[0],inf=[50]%)
+              ↳ 1.36s  bezier(0.50,-0.00,0.67,0.67)  startVel=-0.00 endVel=1.00  => ACCELERATE (slow start, fast end)
+            t= 18.260  [0]                          lin/lin
+        • Gain kf×3
+            t= 16.020  [0]                          bez/bez in(spd=[0],inf=[16.667]%) out(spd=[0],inf=[50]%)
+              ↳ 0.88s  bezier(0.50,0.00,0.50,1.00)  startVel=0.00 endVel=0.00  => EASE IN-OUT (S)
+            t= 16.900  [100]                        bez/bez in(spd=[0],inf=[50]%) out(spd=[0],inf=[50]%)
+              ↳ 1.36s  bezier(0.50,-0.00,0.67,0.67)  startVel=-0.00 endVel=1.00  => ACCELERATE (slow start, fast end)
+            t= 18.260  [0]                          lin/lin
+    ▸ ADBE Transform Group
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[7] id=1473 "Shape Layer 6" type=shape par=1467 14.120→18.260s src=- blend=2 matte=0 OFF 
+  ▸ 
+    ▸ ADBE Root Vectors Group
+      ▸ ADBE Vector Group
+        ▸ ADBE Vectors Group
+          ▸ ADBE Vector Graphic - G-Stroke
+            · ADBE Vector Stroke Width = [20, 0, 0, 0]
+          ▸ ADBE Vector Graphic - Fill
+            · ADBE Vector Fill Color = [255, 237, 0, 0]
+    ▸ ADBE Transform Group
+      · Position = [-11.421, -14.045, 0, 0]
+      · Scale = [59.524, 59.524, 100, 0]
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[8] id=1467 "باختصــــــار" type=text par=- 13.460→15.320s src=- blend=2 matte=2 
+  ▸ 
+    ▸ ADBE Text Properties
+      TEXT t=None 'باختصــــــار\r' font=thmanyahserifdisplay-Bold size=170.0 fill=[1, 1, 1, 1] stroke=[1, 1, 1, 1] sw=3.0 trk=54.02563
+      ▸ ADBE Text Animators
+        ▸ ADBE Text Animator
+          ▸ ADBE Text Selectors
+            ▸ ADBE Text Expressible Selector
+              · ADBE Text Range Type2 = [3, 0, 0, 0]
+              · ADBE Text Expressible Amount = [0, 0, 0, 0]
+                EXPR[ADBE Text Expressible Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar _waopo01=["Pseudo/zodostudio/IWAOPo01","marker","numKeys","comment","key","time","active","IN","name","","undefined","effect","Delay","Style","Random Start","Animation Type","length","abs","floor"];var nam'
+          ▸ ADBE Text Animator Properties
+            · ADBE Text Position 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Position 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Scale 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Scale 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Rotation = [0, 0, 0, 0]
+              EXPR[ADBE Text Rotation]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Opacity = [0, 0, 0, 0]
+              EXPR[ADBE Text Opacity]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Tracking Amount = [0, 0, 0, 0]
+              EXPR[ADBE Text Tracking Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+        ▸ ADBE Text Animator
+          ▸ ADBE Text Selectors
+            ▸ ADBE Text Expressible Selector
+              · ADBE Text Range Type2 = [3, 0, 0, 0]
+              · ADBE Text Expressible Amount = [0, 0, 0, 0]
+                EXPR[ADBE Text Expressible Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar _wabop08=["Pseudo/zodostudio/OWABOp08","marker","numKeys","comment","key","time","active","OUT","name","","undefined","effect","Delay","Style","Random Start","Animation Type","length","abs","floor"];var na'
+          ▸ ADBE Text Animator Properties
+            · ADBE Text Position 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Position 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWABOp08";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Scale 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Scale 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWABOp08";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Rotation = [0, 0, 0, 0]
+              EXPR[ADBE Text Rotation]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWABOp08";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Opacity = [0, 0, 0, 0]
+              EXPR[ADBE Text Opacity]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWABOp08";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Tracking Amount = [0, 0, 0, 0]
+              EXPR[ADBE Text Tracking Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWABOp08";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Blur = [0, 0, 0, 0]
+              EXPR[ADBE Text Blur]: '//////EXPRESSION BY ZODOSTUDIO\nvar namFx="Pseudo/zodostudio/OWABOp08";var Profx="Blur X";var Profy="Blur Y";try{impfx=[blxx]}catch(e){impfx=0};try{impfy=[blxy]}catch(e){impfy=0}\rvar _wabop08=["effect","active"];var ml=thisLayer;function pro'
+    ▸ ADBE Mask Parade
+      ▸ ADBE Mask Atom
+        · ADBE Mask Feather = [102, 102, 0, 0]
+        · ADBE Mask Offset = [57, 0, 0, 0]
+    ▸ ADBE Effect Parade
+      ▸ ADBE Ramp
+        · Start of Ramp = [0.5, 0.6533, 0, 0]
+          EXPR[Start of Ramp]: '// جلب حدود طبقة النص\r\nbox = sourceRectAtTime(time, true);\r\n\r\n// حساب نقطة المكرز بالطبقة للوصول إلى المنتصف أفقياً والأعلى رأسياً\r\nx = box.left + (box.width / 2);\r\ny = box.top;\r\n\r\n// تحويل الإحداثيات المحلية لطبقة النص إلى إحداثيات المشهد '
+        · Start Color = [255, 255, 255, 255]
+        · End of Ramp = [0.5, 0.60075, 0, 0]
+          EXPR[End of Ramp]: '// جلب حدود طبقة النص\r\nbox = sourceRectAtTime(time, true);\r\n\r\n// حساب نقطة المركز أفقياً مع تحديد الحد الأسفل رأسياً\r\nx = box.left + (box.width / 2);\r\ny = box.top + box.height;\r\n\r\n// تحويل الإحداثيات المحلية إلى إحداثيات المشهد (Comp)\r\ntoCo'
+        · End Color = [255, 9, 85, 225]
+      ▸ Pseudo/zodostudio/IWAOPo01
+        · Position = [0, 0.078125, 0, 0]
+        · Scale = [0.046296, 0.026042, 0, 0]
+      ▸ Pseudo/zodostudio/OWABOp08
+        · Scale = [0.046296, 0.026042, 0, 0]
+    ▸ ADBE Transform Group
+      · Anchor = [55.026, -39.153, 0, 0]
+      • Position kf×3
+          t= 13.480  [2029.2, 1882.6, 0]          lin/lin
+            ↳ 0.64s  bezier(0.33,0.33,0.00,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t= 14.120  [1191.6, 1877.8, 0]          bez/bez in(spd=[0],inf=[100]%) out(spd=[0],inf=[100]%)
+            ↳ 1.20s  bezier(1.00,0.00,0.67,0.67)  startVel=0.00 endVel=1.00  => ACCELERATE (slow start, fast end)
+          t= 15.320  [983.92, 1434.8, 0]          lin/lin
+      • Scale kf×2
+          t= 14.120  [168, 168, 100.6]            bez/bez in(spd=[0, 0, 0],inf=[100, 100, 100]%) out(spd=[0, 0, 0],inf=[100, 100, 100]%)
+            ↳ 1.20s  bezier(1.00,0.00,0.67,0.67)  startVel=0.00 endVel=1.00  => ACCELERATE (slow start, fast end)
+          t= 15.320  [14000, 14000, 116.67]       lin/lin
+      • Rotation kf×2
+          t= 14.120  [0]                          bez/bez in(spd=[0],inf=[100]%) out(spd=[0],inf=[100]%)
+            ↳ 1.20s  bezier(1.00,0.00,0.67,0.67)  startVel=0.00 endVel=1.00  => ACCELERATE (slow start, fast end)
+          t= 15.320  [90]                         lin/lin
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[9] id=1466 "بعلوم الأرض؟ 21" type=text par=1467 13.520→15.320s src=- blend=2 matte=2 
+  ▸ 
+    ▸ ADBE Text Properties
+      TEXT t=None 'بعلوم الأرض؟\r' font=thmanyahserifdisplay-Bold size=170.0 fill=[1, 0.03529, 0.33333, 0.88627] stroke=[1, 1, 1, 1] sw=3.0 trk=54.02563
+      ▸ ADBE Text Animators
+        ▸ ADBE Text Animator
+          ▸ ADBE Text Selectors
+            ▸ ADBE Text Expressible Selector
+              · ADBE Text Range Type2 = [3, 0, 0, 0]
+              · ADBE Text Expressible Amount = [0, 0, 0, 0]
+                EXPR[ADBE Text Expressible Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar _waopo01=["Pseudo/zodostudio/IWAOPo01","marker","numKeys","comment","key","time","active","IN","name","","undefined","effect","Delay","Style","Random Start","Animation Type","length","abs","floor"];var nam'
+          ▸ ADBE Text Animator Properties
+            · ADBE Text Position 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Position 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Scale 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Scale 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Rotation = [0, 0, 0, 0]
+              EXPR[ADBE Text Rotation]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Opacity = [0, 0, 0, 0]
+              EXPR[ADBE Text Opacity]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Tracking Amount = [0, 0, 0, 0]
+              EXPR[ADBE Text Tracking Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+        ▸ ADBE Text Animator
+          ▸ ADBE Text Selectors
+            ▸ ADBE Text Expressible Selector
+              · ADBE Text Range Type2 = [3, 0, 0, 0]
+              · ADBE Text Expressible Amount = [0, 0, 0, 0]
+                EXPR[ADBE Text Expressible Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar _wabop08=["Pseudo/zodostudio/OWABOp08","marker","numKeys","comment","key","time","active","OUT","name","","undefined","effect","Delay","Style","Random Start","Animation Type","length","abs","floor"];var na'
+          ▸ ADBE Text Animator Properties
+            · ADBE Text Position 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Position 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWABOp08";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Scale 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Scale 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWABOp08";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Rotation = [0, 0, 0, 0]
+              EXPR[ADBE Text Rotation]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWABOp08";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Opacity = [0, 0, 0, 0]
+              EXPR[ADBE Text Opacity]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWABOp08";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Tracking Amount = [0, 0, 0, 0]
+              EXPR[ADBE Text Tracking Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWABOp08";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Blur = [0, 0, 0, 0]
+              EXPR[ADBE Text Blur]: '//////EXPRESSION BY ZODOSTUDIO\nvar namFx="Pseudo/zodostudio/OWABOp08";var Profx="Blur X";var Profy="Blur Y";try{impfx=[blxx]}catch(e){impfx=0};try{impfy=[blxy]}catch(e){impfy=0}\rvar _wabop08=["effect","active"];var ml=thisLayer;function pro'
+    ▸ ADBE Effect Parade
+      ▸ PEDG2
+        · Radius = [500, 0, 0, 0]
+        · Exposure = [0.5, 0, 0, 0]
+        · Iris Sampling Quality = [3, 0, 0, 0]
+        · Iris Iterations = [10, 0, 0, 0]
+        · Radii Easing = [90, 0, 0, 0]
+        · Gamma Correction = [100, 0, 0, 0]
+        · Color Inner = [255, 255, 0, 0]
+        · Quality Preset Iris = [3, 0, 0, 0]
+        · Resolution = [75, 0, 0, 0]
+        · Steps Multiplier = [0.5, 0, 0, 0]
+        · Glow Iterations = [8, 0, 0, 0]
+        · View = [1, 0, 0, 0]
+        · Iris Sample Quality = [50, 0, 0, 0]
+        · Debug View = [3, 0, 0, 0]
+        · Edge Behaviour (Deprecated) = [2, 0, 0, 0]
+        · Renderer (Deprecated) = [1, 0, 0, 0]
+        · Simplified Exposure = [1, 0, 0, 0]
+        · Iris Cull Small Values = [1, 0, 0, 0]
+        · Render Quality (Quantization) = [6, 0, 0, 0]
+      ▸ Pseudo/zodostudio/IWAOPo01
+        · Position = [0, 0.078125, 0, 0]
+        · Scale = [0.046296, 0.026042, 0, 0]
+      ▸ Pseudo/zodostudio/OWABOp08
+        · Scale = [0.046296, 0.026042, 0, 0]
+    ▸ ADBE Transform Group
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[10] id=1471 "ورح" type=text par=- 13.520→15.320s src=- blend=2 matte=2 
+  ▸ 
+    ▸ ADBE Text Properties
+      TEXT t=None 'ورح\r' font=thmanyahserifdisplay-Bold size=170.0 fill=[1, 1, 1, 1] stroke=[1, 1, 1, 1] sw=3.0 trk=54.02563
+      ▸ ADBE Text Animators
+        ▸ ADBE Text Animator
+          ▸ ADBE Text Selectors
+            ▸ ADBE Text Expressible Selector
+              · ADBE Text Range Type2 = [3, 0, 0, 0]
+              · ADBE Text Expressible Amount = [0, 0, 0, 0]
+                EXPR[ADBE Text Expressible Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar _waopo01=["Pseudo/zodostudio/IWAOPo01","marker","numKeys","comment","key","time","active","IN","name","","undefined","effect","Delay","Style","Random Start","Animation Type","length","abs","floor"];var nam'
+          ▸ ADBE Text Animator Properties
+            · ADBE Text Position 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Position 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Scale 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Scale 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Rotation = [0, 0, 0, 0]
+              EXPR[ADBE Text Rotation]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Opacity = [0, 0, 0, 0]
+              EXPR[ADBE Text Opacity]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Tracking Amount = [0, 0, 0, 0]
+              EXPR[ADBE Text Tracking Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+        ▸ ADBE Text Animator
+          ▸ ADBE Text Selectors
+            ▸ ADBE Text Expressible Selector
+              · ADBE Text Range Type2 = [3, 0, 0, 0]
+              · ADBE Text Expressible Amount = [0, 0, 0, 0]
+                EXPR[ADBE Text Expressible Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar _wabop08=["Pseudo/zodostudio/OWABOp08","marker","numKeys","comment","key","time","active","OUT","name","","undefined","effect","Delay","Style","Random Start","Animation Type","length","abs","floor"];var na'
+          ▸ ADBE Text Animator Properties
+            · ADBE Text Position 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Position 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWABOp08";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Scale 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Scale 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWABOp08";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Rotation = [0, 0, 0, 0]
+              EXPR[ADBE Text Rotation]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWABOp08";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Opacity = [0, 0, 0, 0]
+              EXPR[ADBE Text Opacity]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWABOp08";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Tracking Amount = [0, 0, 0, 0]
+              EXPR[ADBE Text Tracking Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWABOp08";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Blur = [0, 0, 0, 0]
+              EXPR[ADBE Text Blur]: '//////EXPRESSION BY ZODOSTUDIO\nvar namFx="Pseudo/zodostudio/OWABOp08";var Profx="Blur X";var Profy="Blur Y";try{impfx=[blxx]}catch(e){impfx=0};try{impfy=[blxy]}catch(e){impfy=0}\rvar _wabop08=["effect","active"];var ml=thisLayer;function pro'
+    ▸ ADBE Mask Parade
+      ▸ ADBE Mask Atom
+        · ADBE Mask Feather = [102, 102, 0, 0]
+        · ADBE Mask Offset = [57, 0, 0, 0]
+    ▸ ADBE Effect Parade
+      ▸ ADBE Ramp
+        · Start of Ramp = [0.5, 0.6533, 0, 0]
+          EXPR[Start of Ramp]: '// جلب حدود طبقة النص\r\nbox = sourceRectAtTime(time, true);\r\n\r\n// حساب نقطة المكرز بالطبقة للوصول إلى المنتصف أفقياً والأعلى رأسياً\r\nx = box.left + (box.width / 2);\r\ny = box.top;\r\n\r\n// تحويل الإحداثيات المحلية لطبقة النص إلى إحداثيات المشهد '
+        · Start Color = [255, 255, 255, 255]
+        · End of Ramp = [0.5, 0.60075, 0, 0]
+          EXPR[End of Ramp]: '// جلب حدود طبقة النص\r\nbox = sourceRectAtTime(time, true);\r\n\r\n// حساب نقطة المركز أفقياً مع تحديد الحد الأسفل رأسياً\r\nx = box.left + (box.width / 2);\r\ny = box.top + box.height;\r\n\r\n// تحويل الإحداثيات المحلية إلى إحداثيات المشهد (Comp)\r\ntoCo'
+        · End Color = [255, 9, 85, 225]
+      ▸ Pseudo/zodostudio/IWAOPo01
+        · Position = [0, 0.078125, 0, 0]
+        · Scale = [0.046296, 0.026042, 0, 0]
+      ▸ Pseudo/zodostudio/OWABOp08
+        · Scale = [0.046296, 0.026042, 0, 0]
+    ▸ ADBE Transform Group
+      • Position kf×2
+          t= 13.480  [2029.2, 1040.2, 0]          lin/lin
+            ↳ 0.76s  bezier(0.33,0.33,0.00,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t= 14.240  [1099.2, 1040.2, 0]          bez/bez in(spd=[0],inf=[100]%) out(spd=[0],inf=[16.667]%)
+      · Scale = [168, 168, 100.6, 0]
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[11] id=1470 "بعلوم الأرض؟ 23" type=text par=1471 13.520→15.320s src=- blend=2 matte=2 
+  ▸ 
+    ▸ ADBE Text Properties
+      TEXT t=None 'بعلوم الأرض؟\r' font=thmanyahserifdisplay-Bold size=170.0 fill=[1, 0.03529, 0.33333, 0.88235] stroke=[1, 1, 1, 1] sw=3.0 trk=54.02563
+      ▸ ADBE Text Animators
+        ▸ ADBE Text Animator
+          ▸ ADBE Text Selectors
+            ▸ ADBE Text Expressible Selector
+              · ADBE Text Range Type2 = [3, 0, 0, 0]
+              · ADBE Text Expressible Amount = [0, 0, 0, 0]
+                EXPR[ADBE Text Expressible Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar _waopo01=["Pseudo/zodostudio/IWAOPo01","marker","numKeys","comment","key","time","active","IN","name","","undefined","effect","Delay","Style","Random Start","Animation Type","length","abs","floor"];var nam'
+          ▸ ADBE Text Animator Properties
+            · ADBE Text Position 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Position 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Scale 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Scale 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Rotation = [0, 0, 0, 0]
+              EXPR[ADBE Text Rotation]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Opacity = [0, 0, 0, 0]
+              EXPR[ADBE Text Opacity]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Tracking Amount = [0, 0, 0, 0]
+              EXPR[ADBE Text Tracking Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+        ▸ ADBE Text Animator
+          ▸ ADBE Text Selectors
+            ▸ ADBE Text Expressible Selector
+              · ADBE Text Range Type2 = [3, 0, 0, 0]
+              · ADBE Text Expressible Amount = [0, 0, 0, 0]
+                EXPR[ADBE Text Expressible Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar _wabop08=["Pseudo/zodostudio/OWABOp08","marker","numKeys","comment","key","time","active","OUT","name","","undefined","effect","Delay","Style","Random Start","Animation Type","length","abs","floor"];var na'
+          ▸ ADBE Text Animator Properties
+            · ADBE Text Position 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Position 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWABOp08";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Scale 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Scale 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWABOp08";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Rotation = [0, 0, 0, 0]
+              EXPR[ADBE Text Rotation]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWABOp08";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Opacity = [0, 0, 0, 0]
+              EXPR[ADBE Text Opacity]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWABOp08";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Tracking Amount = [0, 0, 0, 0]
+              EXPR[ADBE Text Tracking Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWABOp08";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Blur = [0, 0, 0, 0]
+              EXPR[ADBE Text Blur]: '//////EXPRESSION BY ZODOSTUDIO\nvar namFx="Pseudo/zodostudio/OWABOp08";var Profx="Blur X";var Profy="Blur Y";try{impfx=[blxx]}catch(e){impfx=0};try{impfy=[blxy]}catch(e){impfy=0}\rvar _wabop08=["effect","active"];var ml=thisLayer;function pro'
+    ▸ ADBE Effect Parade
+      ▸ PEDG2
+        · Radius = [500, 0, 0, 0]
+        · Iris Sampling Quality = [3, 0, 0, 0]
+        · Iris Iterations = [10, 0, 0, 0]
+        · Radii Easing = [90, 0, 0, 0]
+        · Color Inner = [255, 255, 0, 0]
+        · Quality Preset Iris = [3, 0, 0, 0]
+        · Resolution = [75, 0, 0, 0]
+        · Steps Multiplier = [0.5, 0, 0, 0]
+        · Glow Iterations = [8, 0, 0, 0]
+        · View = [1, 0, 0, 0]
+        · Iris Sample Quality = [50, 0, 0, 0]
+        · Debug View = [3, 0, 0, 0]
+        · Edge Behaviour (Deprecated) = [2, 0, 0, 0]
+        · Renderer (Deprecated) = [1, 0, 0, 0]
+        · Simplified Exposure = [1, 0, 0, 0]
+        · Iris Cull Small Values = [1, 0, 0, 0]
+        · Render Quality (Quantization) = [6, 0, 0, 0]
+      ▸ Pseudo/zodostudio/IWAOPo01
+        · Position = [0, 0.078125, 0, 0]
+        · Scale = [0.046296, 0.026042, 0, 0]
+      ▸ Pseudo/zodostudio/OWABOp08
+        · Scale = [0.046296, 0.026042, 0, 0]
+    ▸ ADBE Transform Group
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[12] id=1469 "أحكيلـــــــك" type=text par=- 13.520→15.320s src=- blend=2 matte=2 
+  ▸ 
+    ▸ ADBE Text Properties
+      TEXT t=None 'أحكيلـــــــك\r' font=thmanyahserifdisplay-Bold size=170.0 fill=[1, 1, 1, 1] stroke=[1, 1, 1, 1] sw=3.0 trk=54.02563
+      ▸ ADBE Text Animators
+        ▸ ADBE Text Animator
+          ▸ ADBE Text Selectors
+            ▸ ADBE Text Expressible Selector
+              · ADBE Text Range Type2 = [3, 0, 0, 0]
+              · ADBE Text Expressible Amount = [0, 0, 0, 0]
+                EXPR[ADBE Text Expressible Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar _waopo01=["Pseudo/zodostudio/IWAOPo01","marker","numKeys","comment","key","time","active","IN","name","","undefined","effect","Delay","Style","Random Start","Animation Type","length","abs","floor"];var nam'
+          ▸ ADBE Text Animator Properties
+            · ADBE Text Position 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Position 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Scale 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Scale 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Rotation = [0, 0, 0, 0]
+              EXPR[ADBE Text Rotation]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Opacity = [0, 0, 0, 0]
+              EXPR[ADBE Text Opacity]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Tracking Amount = [0, 0, 0, 0]
+              EXPR[ADBE Text Tracking Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+        ▸ ADBE Text Animator
+          ▸ ADBE Text Selectors
+            ▸ ADBE Text Expressible Selector
+              · ADBE Text Range Type2 = [3, 0, 0, 0]
+              · ADBE Text Expressible Amount = [0, 0, 0, 0]
+                EXPR[ADBE Text Expressible Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar _wabop08=["Pseudo/zodostudio/OWABOp08","marker","numKeys","comment","key","time","active","OUT","name","","undefined","effect","Delay","Style","Random Start","Animation Type","length","abs","floor"];var na'
+          ▸ ADBE Text Animator Properties
+            · ADBE Text Position 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Position 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWABOp08";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Scale 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Scale 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWABOp08";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Rotation = [0, 0, 0, 0]
+              EXPR[ADBE Text Rotation]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWABOp08";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Opacity = [0, 0, 0, 0]
+              EXPR[ADBE Text Opacity]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWABOp08";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Tracking Amount = [0, 0, 0, 0]
+              EXPR[ADBE Text Tracking Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWABOp08";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Blur = [0, 0, 0, 0]
+              EXPR[ADBE Text Blur]: '//////EXPRESSION BY ZODOSTUDIO\nvar namFx="Pseudo/zodostudio/OWABOp08";var Profx="Blur X";var Profy="Blur Y";try{impfx=[blxx]}catch(e){impfx=0};try{impfy=[blxy]}catch(e){impfy=0}\rvar _wabop08=["effect","active"];var ml=thisLayer;function pro'
+    ▸ ADBE Mask Parade
+      ▸ ADBE Mask Atom
+        · ADBE Mask Feather = [102, 102, 0, 0]
+        · ADBE Mask Offset = [57, 0, 0, 0]
+    ▸ ADBE Effect Parade
+      ▸ ADBE Ramp
+        · Start of Ramp = [0.5, 0.6533, 0, 0]
+          EXPR[Start of Ramp]: '// جلب حدود طبقة النص\r\nbox = sourceRectAtTime(time, true);\r\n\r\n// حساب نقطة المكرز بالطبقة للوصول إلى المنتصف أفقياً والأعلى رأسياً\r\nx = box.left + (box.width / 2);\r\ny = box.top;\r\n\r\n// تحويل الإحداثيات المحلية لطبقة النص إلى إحداثيات المشهد '
+        · Start Color = [255, 255, 255, 255]
+        · End of Ramp = [0.5, 0.60075, 0, 0]
+          EXPR[End of Ramp]: '// جلب حدود طبقة النص\r\nbox = sourceRectAtTime(time, true);\r\n\r\n// حساب نقطة المركز أفقياً مع تحديد الحد الأسفل رأسياً\r\nx = box.left + (box.width / 2);\r\ny = box.top + box.height;\r\n\r\n// تحويل الإحداثيات المحلية إلى إحداثيات المشهد (Comp)\r\ntoCo'
+        · End Color = [255, 9, 85, 225]
+      ▸ Pseudo/zodostudio/IWAOPo01
+        · Position = [0, 0.078125, 0, 0]
+        · Scale = [0.046296, 0.026042, 0, 0]
+      ▸ Pseudo/zodostudio/OWABOp08
+        · Scale = [0.046296, 0.026042, 0, 0]
+    ▸ ADBE Transform Group
+      • Position kf×2
+          t= 13.480  [2029.2, 1490.2, 0]          lin/lin
+            ↳ 0.70s  bezier(0.33,0.33,0.00,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t= 14.180  [1099.2, 1490.2, 0]          bez/bez in(spd=[0],inf=[100]%) out(spd=[0],inf=[16.667]%)
+      · Scale = [168, 168, 100.6, 0]
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[13] id=1468 "بعلوم الأرض؟ 22" type=text par=1469 13.520→15.320s src=- blend=2 matte=2 
+  ▸ 
+    ▸ ADBE Text Properties
+      TEXT t=None 'بعلوم الأرض؟\r' font=thmanyahserifdisplay-Bold size=170.0 fill=[1, 0.03529, 0.33333, 0.88235] stroke=[1, 1, 1, 1] sw=3.0 trk=54.02563
+      ▸ ADBE Text Animators
+        ▸ ADBE Text Animator
+          ▸ ADBE Text Selectors
+            ▸ ADBE Text Expressible Selector
+              · ADBE Text Range Type2 = [3, 0, 0, 0]
+              · ADBE Text Expressible Amount = [0, 0, 0, 0]
+                EXPR[ADBE Text Expressible Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar _waopo01=["Pseudo/zodostudio/IWAOPo01","marker","numKeys","comment","key","time","active","IN","name","","undefined","effect","Delay","Style","Random Start","Animation Type","length","abs","floor"];var nam'
+          ▸ ADBE Text Animator Properties
+            · ADBE Text Position 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Position 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Scale 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Scale 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Rotation = [0, 0, 0, 0]
+              EXPR[ADBE Text Rotation]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Opacity = [0, 0, 0, 0]
+              EXPR[ADBE Text Opacity]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Tracking Amount = [0, 0, 0, 0]
+              EXPR[ADBE Text Tracking Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+        ▸ ADBE Text Animator
+          ▸ ADBE Text Selectors
+            ▸ ADBE Text Expressible Selector
+              · ADBE Text Range Type2 = [3, 0, 0, 0]
+              · ADBE Text Expressible Amount = [0, 0, 0, 0]
+                EXPR[ADBE Text Expressible Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar _wabop08=["Pseudo/zodostudio/OWABOp08","marker","numKeys","comment","key","time","active","OUT","name","","undefined","effect","Delay","Style","Random Start","Animation Type","length","abs","floor"];var na'
+          ▸ ADBE Text Animator Properties
+            · ADBE Text Position 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Position 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWABOp08";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Scale 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Scale 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWABOp08";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Rotation = [0, 0, 0, 0]
+              EXPR[ADBE Text Rotation]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWABOp08";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Opacity = [0, 0, 0, 0]
+              EXPR[ADBE Text Opacity]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWABOp08";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Tracking Amount = [0, 0, 0, 0]
+              EXPR[ADBE Text Tracking Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWABOp08";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Blur = [0, 0, 0, 0]
+              EXPR[ADBE Text Blur]: '//////EXPRESSION BY ZODOSTUDIO\nvar namFx="Pseudo/zodostudio/OWABOp08";var Profx="Blur X";var Profy="Blur Y";try{impfx=[blxx]}catch(e){impfx=0};try{impfy=[blxy]}catch(e){impfy=0}\rvar _wabop08=["effect","active"];var ml=thisLayer;function pro'
+    ▸ ADBE Effect Parade
+      ▸ PEDG2
+        · Radius = [500, 0, 0, 0]
+        · Iris Sampling Quality = [3, 0, 0, 0]
+        · Iris Iterations = [10, 0, 0, 0]
+        · Radii Easing = [90, 0, 0, 0]
+        · Color Inner = [255, 255, 0, 0]
+        · Quality Preset Iris = [3, 0, 0, 0]
+        · Resolution = [75, 0, 0, 0]
+        · Steps Multiplier = [0.5, 0, 0, 0]
+        · Glow Iterations = [8, 0, 0, 0]
+        · View = [1, 0, 0, 0]
+        · Iris Sample Quality = [50, 0, 0, 0]
+        · Debug View = [3, 0, 0, 0]
+        · Edge Behaviour (Deprecated) = [2, 0, 0, 0]
+        · Renderer (Deprecated) = [1, 0, 0, 0]
+        · Simplified Exposure = [1, 0, 0, 0]
+        · Iris Cull Small Values = [1, 0, 0, 0]
+        · Render Quality (Quantization) = [6, 0, 0, 0]
+      ▸ Pseudo/zodostudio/IWAOPo01
+        · Position = [0, 0.078125, 0, 0]
+        · Scale = [0.046296, 0.026042, 0, 0]
+      ▸ Pseudo/zodostudio/OWABOp08
+        · Scale = [0.046296, 0.026042, 0, 0]
+    ▸ ADBE Transform Group
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[14] id=1720 "" type=AV par=- 20.420→22.840s src=1719 blend=2 matte=0 ADJ 
+  ▸ 
+    ▸ ADBE Effect Parade
+      ▸ ADBE Geometry2
+        • Position kf×3
+            t= 20.420  [0.5, 0.5]                   lin/lin
+              ↳ 1.20s  bezier(0.33,0.33,0.40,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+            t= 21.620  [0.51435, 0.57083]           bez/bez in(spd=[0],inf=[60]%) out(spd=[0],inf=[60]%)
+              ↳ 1.20s  bezier(0.60,0.00,0.67,0.67)  startVel=0.00 endVel=1.00  => ACCELERATE (slow start, fast end)
+            t= 22.820  [0.5, 0.5]                   lin/lin
+        • Scale kf×3
+            t= 20.420  [100]                        lin/lin
+              ↳ 1.20s  bezier(0.33,0.33,0.40,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+            t= 21.620  [130]                        bez/bez in(spd=[0],inf=[60]%) out(spd=[0],inf=[60]%)
+              ↳ 1.20s  bezier(0.60,-0.00,0.67,0.67)  startVel=-0.00 endVel=1.00  => ACCELERATE (slow start, fast end)
+            t= 22.820  [100]                        lin/lin
+        ·   = [100, 0, 0, 0]
+    ▸ ADBE Transform Group
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[15] id=1713 "" type=AV par=- 21.400→22.420s src=209 blend=7 matte=1 
+  ▸ 
+    ▸ ADBE Effect Parade
+      ▸ ADBE OFMotionBlur
+        · Vector Detail = [50, 0, 0, 0]
+      ▸ ADBE Camera Lens Blur
+        • Blur Radius kf×4
+            t=  6.320  [0]                          bez/bez in(spd=[0],inf=[33.333]%) out(spd=[0],inf=[80]%)
+              ↳ same value 0.76s
+            t=  7.080  [0]                          lin/lin
+              ↳ 1.40s  bezier(0.33,0.33,0.20,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+            t=  8.480  [30]                         bez/bez in(spd=[0],inf=[80]%) out(spd=[0],inf=[80]%)
+              ↳ 1.44s  bezier(0.80,-0.00,0.20,1.00)  startVel=-0.00 endVel=0.00  => EASE IN-OUT (S)
+            t=  9.920  [0]                          bez/bez in(spd=[0],inf=[80]%) out(spd=[0],inf=[16.667]%)
+      ▸ ADBE Fill
+        · Color = [255, 36, 255, 0]
+    ▸ ADBE Transform Group
+      · Anchor = [0.47454, 1, 0, 0]
+      • Position kf×15
+          t=  4.120  [1125, 3840, 0]              lin/lin
+            ↳ 0.80s  bezier(0.33,0.33,0.10,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t=  4.920  [1062, 3840, 0]              bez/bez in(spd=[0],inf=[90]%) out(spd=[0],inf=[90]%)
+            ↳ 0.60s
+          t=  5.520  [1062, 3840, 0]              lin/lin
+            ↳ 0.80s  bezier(0.33,0.33,0.10,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t=  6.320  [1125, 3840, 0]              bez/bez in(spd=[0],inf=[90]%) out(spd=[0],inf=[80]%)
+            ↳ 0.76s
+          t=  7.080  [1125, 3840, 0]              lin/lin
+            ↳ 1.00s  bezier(0.33,0.33,0.20,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t=  8.080  [1435, 4590, 0]              bez/bez in(spd=[0],inf=[80]%) out(spd=[0],inf=[80]%)
+            ↳ 1.84s  bezier(0.80,0.00,0.20,1.00)  startVel=0.00 endVel=0.00  => EASE IN-OUT (S)
+          t=  9.920  [1125, 3840, 0]              bez/bez in(spd=[0],inf=[80]%) out(spd=[0],inf=[16.667]%)
+            ↳ 1.18s
+          t= 11.100  [1125, 3840, 0]              lin/lin
+            ↳ 0.60s  bezier(0.33,0.33,0.20,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t= 11.700  [1125, 4160, 0]              bez/bez in(spd=[0],inf=[80]%) out(spd=[0],inf=[80]%)
+            ↳ 0.14s
+          t= 11.840  [1125, 4160, 0]              lin/lin
+            ↳ 0.40s  bezier(0.33,0.33,0.20,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t= 12.240  [1125, 4710, 0]              bez/bez in(spd=[0],inf=[80]%) out(spd=[0],inf=[80]%)
+            ↳ 0.08s
+          t= 12.320  [1125, 4710, 0]              lin/lin
+            ↳ 0.60s  bezier(0.33,0.33,0.20,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t= 12.920  [1125, 5010, 0]              bez/bez in(spd=[0],inf=[80]%) out(spd=[0],inf=[100]%)
+            ↳ 0.40s  bezier(1.00,0.00,0.67,0.67)  startVel=0.00 endVel=1.00  => ACCELERATE (slow start, fast end)
+          t= 13.320  [365, 5010, 0]               lin/lin
+            ↳ LINEAR 0.60s
+          t= 13.920  [1016.2, 3840, 0]            lin/lin
+      • Scale kf×7
+          t=  4.120  [116, 116, 100]              lin/lin
+            ↳ 0.80s  bezier(0.33,0.33,0.10,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t=  4.920  [96, 96, 100]                bez/bez in(spd=[0, 0, 0],inf=[90, 90, 90]%) out(spd=[0, 0, 0],inf=[90, 90, 90]%)
+            ↳ same value 0.60s
+          t=  5.520  [96, 96, 100]                lin/lin
+            ↳ 0.80s  bezier(0.33,0.33,0.10,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t=  6.320  [116, 116, 100]              bez/bez in(spd=[0, 0, 0],inf=[90, 90, 90]%) out(spd=[0, 0, 0],inf=[80, 80, 80]%)
+            ↳ same value 0.76s
+          t=  7.080  [116, 116, 100]              lin/lin
+            ↳ 1.00s  bezier(0.33,0.33,0.20,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t=  8.080  [144, 144, 100]              bez/bez in(spd=[0, 0, 0],inf=[80, 80, 80]%) out(spd=[0, 0, 0],inf=[80, 80, 80]%)
+            ↳ 1.84s  bezier(0.80,-0.00,0.20,1.00)  startVel=-0.00 endVel=0.00  => EASE IN-OUT (S)
+          t=  9.920  [116, 116, 100]              bez/bez in(spd=[0, 0, 0],inf=[80, 80, 80]%) out(spd=[0, 0, 0],inf=[16.667, 16.667, 16.667]%)
+      • Opacity kf×12
+          t= 21.400  [50]                         lin/hold
+            ↳ HOLD 0.08s
+          t= 21.480  [0]                          lin/hold
+            ↳ HOLD 0.10s
+          t= 21.580  [50]                         lin/hold
+            ↳ HOLD 0.12s
+          t= 21.700  [50]                         lin/hold
+            ↳ HOLD 0.12s
+          t= 21.820  [0]                          lin/hold
+            ↳ HOLD 0.06s
+          t= 21.880  [50]                         lin/hold
+            ↳ HOLD 0.06s
+          t= 21.940  [50]                         lin/hold
+            ↳ HOLD 0.06s
+          t= 22.000  [0]                          lin/hold
+            ↳ HOLD 0.06s
+          t= 22.060  [50]                         lin/hold
+            ↳ HOLD 0.06s
+          t= 22.120  [50]                         lin/hold
+            ↳ HOLD 0.14s
+          t= 22.256  [0]                          lin/hold
+            ↳ HOLD 0.14s
+          t= 22.392  [50]                         lin/hold
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[16] id=1715 "" type=AV par=1716 22.820→25.480s src=1717 blend=2 matte=0 
+  ▸ 
+    ▸ ADBE Mask Parade
+      ▸ ADBE Mask Atom
+        · ADBE Mask Feather = [111, 111, 0, 0]
+    ▸ ADBE Effect Parade
+      ▸ ADBE Gradient Wipe
+        · Transition Completion = [0.22, 0, 0, 0]
+        · Transition Softness = [0.12, 0, 0, 0]
+        · ADBE Gradient Wipe-0005 = [1, 0, 0, 0]
+    ▸ ADBE Transform Group
+      · Position = [2838.6, 2184.8, 0, 0]
+      · Scale = [173.45, 173.45, 100, 0]
+      • Opacity kf×2
+          t= 25.260  [100]                        lin/lin
+            ↳ LINEAR 0.02s
+          t= 25.280  [0]                          lin/lin
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[17] id=1960 "" type=AV par=1716 22.820→25.480s src=1717 blend=2 matte=0 
+  ▸ 
+    ▸ ADBE Mask Parade
+      ▸ ADBE Mask Atom
+        · ADBE Mask Feather = [111, 111, 0, 0]
+    ▸ ADBE Effect Parade
+      ▸ ADBE Gradient Wipe
+        · Transition Completion = [0.38, 0, 0, 0]
+        · Transition Softness = [0.12, 0, 0, 0]
+        · ADBE Gradient Wipe-0005 = [1, 0, 0, 0]
+      ▸ PEDG2
+        · Exposure = [0.5, 0, 0, 0]
+        · Iris Sampling Quality = [3, 0, 0, 0]
+        · Iris Iterations = [10, 0, 0, 0]
+        · Radii Easing = [90, 0, 0, 0]
+        · Color Inner = [255, 255, 0, 0]
+        · Quality Preset Iris = [3, 0, 0, 0]
+        · Resolution = [75, 0, 0, 0]
+        · Steps Multiplier = [0.5, 0, 0, 0]
+        · Glow Iterations = [8, 0, 0, 0]
+        · View = [1, 0, 0, 0]
+        · Iris Sample Quality = [50, 0, 0, 0]
+        · Debug View = [3, 0, 0, 0]
+        · Edge Behaviour (Deprecated) = [2, 0, 0, 0]
+        · Renderer (Deprecated) = [1, 0, 0, 0]
+        · Simplified Exposure = [1, 0, 0, 0]
+        · Iris Cull Small Values = [1, 0, 0, 0]
+        · Render Quality (Quantization) = [6, 0, 0, 0]
+    ▸ ADBE Transform Group
+      · Position = [2838.6, 2184.8, 0, 0]
+      · Scale = [173.45, 173.45, 100, 0]
+      • Opacity kf×2
+          t= 25.260  [100]                        lin/lin
+            ↳ LINEAR 0.02s
+          t= 25.280  [0]                          lin/lin
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[18] id=1718 "" type=AV par=1716 22.820→25.480s src=1717 blend=10 matte=0 
+  ▸ 
+    ▸ ADBE Effect Parade
+      ▸ ADBE Exposure2
+        · Exposure = [0.39, 0, 0, 0]
+    ▸ ADBE Transform Group
+      · Position = [2838.6, 2184.8, 0, 0]
+      · Scale = [173.45, 173.45, 100, 0]
+      • Opacity kf×2
+          t= 25.260  [100]                        lin/lin
+            ↳ LINEAR 0.02s
+          t= 25.280  [0]                          lin/lin
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[19] id=1959 "" type=AV par=- 25.260→29.020s src=209 blend=2 matte=1 
+  ▸ 
+    ▸ ADBE Effect Parade
+      ▸ ADBE OFMotionBlur
+        · Vector Detail = [50, 0, 0, 0]
+      ▸ ADBE Camera Lens Blur
+        • Blur Radius kf×4
+            t=  6.320  [0]                          bez/bez in(spd=[0],inf=[33.333]%) out(spd=[0],inf=[80]%)
+              ↳ same value 0.76s
+            t=  7.080  [0]                          lin/lin
+              ↳ 1.40s  bezier(0.33,0.33,0.20,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+            t=  8.480  [30]                         bez/bez in(spd=[0],inf=[80]%) out(spd=[0],inf=[80]%)
+              ↳ 1.44s  bezier(0.80,-0.00,0.20,1.00)  startVel=-0.00 endVel=0.00  => EASE IN-OUT (S)
+            t=  9.920  [0]                          bez/bez in(spd=[0],inf=[80]%) out(spd=[0],inf=[16.667]%)
+    ▸ ADBE Transform Group
+      · Anchor = [0.47454, 1, 0, 0]
+      • Position kf×2
+          t= 27.120  [1016.2, 3840, 0]            lin/lin
+            ↳ 1.80s  bezier(0.33,0.33,0.00,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t= 28.920  [1066.2, 4673, 0]            bez/bez in(spd=[0],inf=[100]%) out(spd=[0],inf=[100]%)
+      • Scale kf×9
+          t=  4.120  [116, 116, 100]              lin/lin
+            ↳ 0.80s  bezier(0.33,0.33,0.10,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t=  4.920  [96, 96, 100]                bez/bez in(spd=[0, 0, 0],inf=[90, 90, 90]%) out(spd=[0, 0, 0],inf=[90, 90, 90]%)
+            ↳ same value 0.60s
+          t=  5.520  [96, 96, 100]                lin/lin
+            ↳ 0.80s  bezier(0.33,0.33,0.10,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t=  6.320  [116, 116, 100]              bez/bez in(spd=[0, 0, 0],inf=[90, 90, 90]%) out(spd=[0, 0, 0],inf=[80, 80, 80]%)
+            ↳ same value 0.76s
+          t=  7.080  [116, 116, 100]              lin/lin
+            ↳ 1.00s  bezier(0.33,0.33,0.20,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t=  8.080  [144, 144, 100]              bez/bez in(spd=[0, 0, 0],inf=[80, 80, 80]%) out(spd=[0, 0, 0],inf=[80, 80, 80]%)
+            ↳ 1.84s  bezier(0.80,-0.00,0.20,1.00)  startVel=-0.00 endVel=0.00  => EASE IN-OUT (S)
+          t=  9.920  [116, 116, 100]              bez/bez in(spd=[0, 0, 0],inf=[80, 80, 80]%) out(spd=[0, 0, 0],inf=[16.667, 16.667, 16.667]%)
+            ↳ same value 17.20s
+          t= 27.120  [116, 116, 100]              lin/lin
+            ↳ 1.80s  bezier(0.33,0.33,0.00,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t= 28.920  [150, 150, 115.38]           bez/bez in(spd=[0, 0, 0],inf=[100, 100, 100]%) out(spd=[0, 0, 0],inf=[100, 100, 100]%)
+      • Opacity kf×2
+          t= 14.720  [0]                          lin/lin
+            ↳ LINEAR 0.40s
+          t= 15.120  [100]                        lin/lin
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[20] id=1716 "" type=AV par=- 18.260→25.260s src=209 blend=2 matte=1 
+  ▸ 
+    ▸ ADBE Effect Parade
+      ▸ ADBE OFMotionBlur
+        · Vector Detail = [50, 0, 0, 0]
+      ▸ ADBE Camera Lens Blur
+        • Blur Radius kf×4
+            t=  6.320  [0]                          bez/bez in(spd=[0],inf=[33.333]%) out(spd=[0],inf=[80]%)
+              ↳ same value 0.76s
+            t=  7.080  [0]                          lin/lin
+              ↳ 1.40s  bezier(0.33,0.33,0.20,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+            t=  8.480  [30]                         bez/bez in(spd=[0],inf=[80]%) out(spd=[0],inf=[80]%)
+              ↳ 1.44s  bezier(0.80,-0.00,0.20,1.00)  startVel=-0.00 endVel=0.00  => EASE IN-OUT (S)
+            t=  9.920  [0]                          bez/bez in(spd=[0],inf=[80]%) out(spd=[0],inf=[16.667]%)
+    ▸ ADBE Transform Group
+      · Anchor = [0.47454, 1, 0, 0]
+      • Position kf×17
+          t=  4.120  [1125, 3840, 0]              lin/lin
+            ↳ 0.80s  bezier(0.33,0.33,0.10,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t=  4.920  [1062, 3840, 0]              bez/bez in(spd=[0],inf=[90]%) out(spd=[0],inf=[90]%)
+            ↳ 0.60s
+          t=  5.520  [1062, 3840, 0]              lin/lin
+            ↳ 0.80s  bezier(0.33,0.33,0.10,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t=  6.320  [1125, 3840, 0]              bez/bez in(spd=[0],inf=[90]%) out(spd=[0],inf=[80]%)
+            ↳ 0.76s
+          t=  7.080  [1125, 3840, 0]              lin/lin
+            ↳ 1.00s  bezier(0.33,0.33,0.20,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t=  8.080  [1435, 4590, 0]              bez/bez in(spd=[0],inf=[80]%) out(spd=[0],inf=[80]%)
+            ↳ 1.84s  bezier(0.80,0.00,0.20,1.00)  startVel=0.00 endVel=0.00  => EASE IN-OUT (S)
+          t=  9.920  [1125, 3840, 0]              bez/bez in(spd=[0],inf=[80]%) out(spd=[0],inf=[16.667]%)
+            ↳ 1.18s
+          t= 11.100  [1125, 3840, 0]              lin/lin
+            ↳ 0.60s  bezier(0.33,0.33,0.20,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t= 11.700  [1125, 4160, 0]              bez/bez in(spd=[0],inf=[80]%) out(spd=[0],inf=[80]%)
+            ↳ 0.14s
+          t= 11.840  [1125, 4160, 0]              lin/lin
+            ↳ 0.40s  bezier(0.33,0.33,0.20,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t= 12.240  [1125, 4710, 0]              bez/bez in(spd=[0],inf=[80]%) out(spd=[0],inf=[80]%)
+            ↳ 0.08s
+          t= 12.320  [1125, 4710, 0]              lin/lin
+            ↳ 0.60s  bezier(0.33,0.33,0.20,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t= 12.920  [1125, 5010, 0]              bez/bez in(spd=[0],inf=[80]%) out(spd=[0],inf=[100]%)
+            ↳ 0.40s  bezier(1.00,0.00,0.67,0.67)  startVel=0.00 endVel=1.00  => ACCELERATE (slow start, fast end)
+          t= 13.320  [365, 5010, 0]               lin/lin
+            ↳ LINEAR 0.60s
+          t= 13.920  [1016.2, 3840, 0]            lin/lin
+            ↳ LINEAR 8.90s
+          t= 22.820  [1016.2, 3840, 0]            lin/lin
+            ↳ 1.20s  bezier(0.33,0.33,0.00,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t= 24.020  [-1023.8, 3840, 0]           bez/bez in(spd=[0],inf=[100]%) out(spd=[0],inf=[100]%)
+      • Scale kf×7
+          t=  4.120  [116, 116, 100]              lin/lin
+            ↳ 0.80s  bezier(0.33,0.33,0.10,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t=  4.920  [96, 96, 100]                bez/bez in(spd=[0, 0, 0],inf=[90, 90, 90]%) out(spd=[0, 0, 0],inf=[90, 90, 90]%)
+            ↳ same value 0.60s
+          t=  5.520  [96, 96, 100]                lin/lin
+            ↳ 0.80s  bezier(0.33,0.33,0.10,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t=  6.320  [116, 116, 100]              bez/bez in(spd=[0, 0, 0],inf=[90, 90, 90]%) out(spd=[0, 0, 0],inf=[80, 80, 80]%)
+            ↳ same value 0.76s
+          t=  7.080  [116, 116, 100]              lin/lin
+            ↳ 1.00s  bezier(0.33,0.33,0.20,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t=  8.080  [144, 144, 100]              bez/bez in(spd=[0, 0, 0],inf=[80, 80, 80]%) out(spd=[0, 0, 0],inf=[80, 80, 80]%)
+            ↳ 1.84s  bezier(0.80,-0.00,0.20,1.00)  startVel=-0.00 endVel=0.00  => EASE IN-OUT (S)
+          t=  9.920  [116, 116, 100]              bez/bez in(spd=[0, 0, 0],inf=[80, 80, 80]%) out(spd=[0, 0, 0],inf=[16.667, 16.667, 16.667]%)
+      • Opacity kf×2
+          t= 14.720  [0]                          lin/lin
+            ↳ LINEAR 0.40s
+          t= 15.120  [100]                        lin/lin
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[21] id=1472 "" type=AV par=- 14.800→18.260s src=209 blend=2 matte=1 
+  ▸ 
+    ▸ ADBE Effect Parade
+      ▸ ADBE OFMotionBlur
+        · Vector Detail = [50, 0, 0, 0]
+      ▸ ADBE Camera Lens Blur
+        • Blur Radius kf×4
+            t=  6.320  [0]                          bez/bez in(spd=[0],inf=[33.333]%) out(spd=[0],inf=[80]%)
+              ↳ same value 0.76s
+            t=  7.080  [0]                          lin/lin
+              ↳ 1.40s  bezier(0.33,0.33,0.20,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+            t=  8.480  [30]                         bez/bez in(spd=[0],inf=[80]%) out(spd=[0],inf=[80]%)
+              ↳ 1.44s  bezier(0.80,-0.00,0.20,1.00)  startVel=-0.00 endVel=0.00  => EASE IN-OUT (S)
+            t=  9.920  [0]                          bez/bez in(spd=[0],inf=[80]%) out(spd=[0],inf=[16.667]%)
+    ▸ ADBE Transform Group
+      · Anchor = [0.47454, 1, 0, 0]
+      • Position kf×17
+          t=  4.120  [1125, 3840, 0]              lin/lin
+            ↳ 0.80s  bezier(0.33,0.33,0.10,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t=  4.920  [1062, 3840, 0]              bez/bez in(spd=[0],inf=[90]%) out(spd=[0],inf=[90]%)
+            ↳ 0.60s
+          t=  5.520  [1062, 3840, 0]              lin/lin
+            ↳ 0.80s  bezier(0.33,0.33,0.10,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t=  6.320  [1125, 3840, 0]              bez/bez in(spd=[0],inf=[90]%) out(spd=[0],inf=[80]%)
+            ↳ 0.76s
+          t=  7.080  [1125, 3840, 0]              lin/lin
+            ↳ 1.00s  bezier(0.33,0.33,0.20,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t=  8.080  [1435, 4590, 0]              bez/bez in(spd=[0],inf=[80]%) out(spd=[0],inf=[80]%)
+            ↳ 1.84s  bezier(0.80,0.00,0.20,1.00)  startVel=0.00 endVel=0.00  => EASE IN-OUT (S)
+          t=  9.920  [1125, 3840, 0]              bez/bez in(spd=[0],inf=[80]%) out(spd=[0],inf=[16.667]%)
+            ↳ 1.18s
+          t= 11.100  [1125, 3840, 0]              lin/lin
+            ↳ 0.60s  bezier(0.33,0.33,0.20,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t= 11.700  [1125, 4160, 0]              bez/bez in(spd=[0],inf=[80]%) out(spd=[0],inf=[80]%)
+            ↳ 0.14s
+          t= 11.840  [1125, 4160, 0]              lin/lin
+            ↳ 0.40s  bezier(0.33,0.33,0.20,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t= 12.240  [1125, 4710, 0]              bez/bez in(spd=[0],inf=[80]%) out(spd=[0],inf=[80]%)
+            ↳ 0.08s
+          t= 12.320  [1125, 4710, 0]              lin/lin
+            ↳ 0.60s  bezier(0.33,0.33,0.20,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t= 12.920  [1125, 5010, 0]              bez/bez in(spd=[0],inf=[80]%) out(spd=[0],inf=[100]%)
+            ↳ 0.40s  bezier(1.00,0.00,0.67,0.67)  startVel=0.00 endVel=1.00  => ACCELERATE (slow start, fast end)
+          t= 13.320  [365, 5010, 0]               lin/lin
+            ↳ LINEAR 0.60s
+          t= 13.920  [1016.2, 3840, 0]            lin/lin
+            ↳ 8.70s
+          t= 22.620  [1016.2, 3840, 0]            bez/bez in(spd=[0],inf=[90]%) out(spd=[0],inf=[90]%)
+            ↳ 0.80s  bezier(0.90,0.00,0.00,1.00)  startVel=0.00 endVel=0.00  => EASE IN-OUT (S)
+          t= 23.420  [-1023.8, 3840, 0]           bez/bez in(spd=[0],inf=[100]%) out(spd=[0],inf=[16.667]%)
+      • Scale kf×7
+          t=  4.120  [116, 116, 100]              lin/lin
+            ↳ 0.80s  bezier(0.33,0.33,0.10,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t=  4.920  [96, 96, 100]                bez/bez in(spd=[0, 0, 0],inf=[90, 90, 90]%) out(spd=[0, 0, 0],inf=[90, 90, 90]%)
+            ↳ same value 0.60s
+          t=  5.520  [96, 96, 100]                lin/lin
+            ↳ 0.80s  bezier(0.33,0.33,0.10,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t=  6.320  [116, 116, 100]              bez/bez in(spd=[0, 0, 0],inf=[90, 90, 90]%) out(spd=[0, 0, 0],inf=[80, 80, 80]%)
+            ↳ same value 0.76s
+          t=  7.080  [116, 116, 100]              lin/lin
+            ↳ 1.00s  bezier(0.33,0.33,0.20,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t=  8.080  [144, 144, 100]              bez/bez in(spd=[0, 0, 0],inf=[80, 80, 80]%) out(spd=[0, 0, 0],inf=[80, 80, 80]%)
+            ↳ 1.84s  bezier(0.80,-0.00,0.20,1.00)  startVel=-0.00 endVel=0.00  => EASE IN-OUT (S)
+          t=  9.920  [116, 116, 100]              bez/bez in(spd=[0, 0, 0],inf=[80, 80, 80]%) out(spd=[0, 0, 0],inf=[16.667, 16.667, 16.667]%)
+      • Opacity kf×2
+          t= 14.720  [0]                          lin/lin
+            ↳ LINEAR 0.40s
+          t= 15.120  [100]                        lin/lin
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[22] id=1152 "" type=AV par=- 13.540→14.800s src=209 blend=2 matte=0 OFF 
+  ▸ 
+    ▸ ADBE Effect Parade
+      ▸ ADBE OFMotionBlur
+        · Vector Detail = [50, 0, 0, 0]
+      ▸ ADBE Camera Lens Blur
+        • Blur Radius kf×4
+            t=  6.320  [0]                          bez/bez in(spd=[0],inf=[33.333]%) out(spd=[0],inf=[80]%)
+              ↳ same value 0.76s
+            t=  7.080  [0]                          lin/lin
+              ↳ 1.40s  bezier(0.33,0.33,0.20,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+            t=  8.480  [30]                         bez/bez in(spd=[0],inf=[80]%) out(spd=[0],inf=[80]%)
+              ↳ 1.44s  bezier(0.80,-0.00,0.20,1.00)  startVel=-0.00 endVel=0.00  => EASE IN-OUT (S)
+            t=  9.920  [0]                          bez/bez in(spd=[0],inf=[80]%) out(spd=[0],inf=[16.667]%)
+    ▸ ADBE Transform Group
+      · Anchor = [0.47454, 1, 0, 0]
+      • Position kf×14
+          t=  4.120  [1125, 3840, 0]              lin/lin
+            ↳ 0.80s  bezier(0.33,0.33,0.10,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t=  4.920  [1062, 3840, 0]              bez/bez in(spd=[0],inf=[90]%) out(spd=[0],inf=[90]%)
+            ↳ 0.60s
+          t=  5.520  [1062, 3840, 0]              lin/lin
+            ↳ 0.80s  bezier(0.33,0.33,0.10,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t=  6.320  [1125, 3840, 0]              bez/bez in(spd=[0],inf=[90]%) out(spd=[0],inf=[80]%)
+            ↳ 0.76s
+          t=  7.080  [1125, 3840, 0]              lin/lin
+            ↳ 1.00s  bezier(0.33,0.33,0.20,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t=  8.080  [1435, 4590, 0]              bez/bez in(spd=[0],inf=[80]%) out(spd=[0],inf=[80]%)
+            ↳ 1.84s  bezier(0.80,0.00,0.20,1.00)  startVel=0.00 endVel=0.00  => EASE IN-OUT (S)
+          t=  9.920  [1125, 3840, 0]              bez/bez in(spd=[0],inf=[80]%) out(spd=[0],inf=[16.667]%)
+            ↳ 1.18s
+          t= 11.100  [1125, 3840, 0]              lin/lin
+            ↳ 0.60s  bezier(0.33,0.33,0.20,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t= 11.700  [1125, 4160, 0]              bez/bez in(spd=[0],inf=[80]%) out(spd=[0],inf=[80]%)
+            ↳ 0.14s
+          t= 11.840  [1125, 4160, 0]              lin/lin
+            ↳ 0.40s  bezier(0.33,0.33,0.20,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t= 12.240  [1125, 4710, 0]              bez/bez in(spd=[0],inf=[80]%) out(spd=[0],inf=[80]%)
+            ↳ 0.08s
+          t= 12.320  [1125, 4710, 0]              lin/lin
+            ↳ 0.60s  bezier(0.33,0.33,0.20,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t= 12.920  [1125, 5010, 0]              bez/bez in(spd=[0],inf=[80]%) out(spd=[0],inf=[100]%)
+            ↳ 0.40s  bezier(1.00,0.00,0.67,0.67)  startVel=0.00 endVel=1.00  => ACCELERATE (slow start, fast end)
+          t= 13.320  [365, 5010, 0]               lin/lin
+      • Scale kf×7
+          t=  4.120  [116, 116, 100.09]           lin/lin
+            ↳ 0.80s  bezier(0.33,0.33,0.10,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t=  4.920  [96, 96, 97.959]             bez/bez in(spd=[0, 0, 0],inf=[90, 90, 90]%) out(spd=[0, 0, 0],inf=[90, 90, 90]%)
+            ↳ 0.60s  bezier(0.90,0.00,0.67,0.67)  startVel=0.00 endVel=1.00  => ACCELERATE (slow start, fast end)
+          t=  5.520  [96, 96, 100]                lin/lin
+            ↳ 0.80s  bezier(0.33,0.33,0.10,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t=  6.320  [116, 116, 100]              bez/bez in(spd=[0, 0, 0],inf=[90, 90, 90]%) out(spd=[0, 0, 0],inf=[80, 80, 80]%)
+            ↳ same value 0.76s
+          t=  7.080  [116, 116, 100]              lin/lin
+            ↳ 1.00s  bezier(0.33,0.33,0.20,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t=  8.080  [144, 144, 100.7]            bez/bez in(spd=[0, 0, 0],inf=[80, 80, 80]%) out(spd=[0, 0, 0],inf=[80, 80, 80]%)
+            ↳ 1.84s  bezier(0.80,-0.00,0.20,1.00)  startVel=-0.00 endVel=0.00  => EASE IN-OUT (S)
+          t=  9.920  [116, 116, 100]              bez/bez in(spd=[0, 0, 0],inf=[80, 80, 80]%) out(spd=[0, 0, 0],inf=[16.667, 16.667, 16.667]%)
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[23] id=925 "أستاذ علوم الأرض " type=text par=923 6.080→8.720s src=- blend=2 matte=1 
+  ▸ 
+    MARKER t=7.080 ['IN', 'chapter', 'https://aniom.net', '_PRESET_MANAGER', 'ATOMX_EXTENSION_BY_ANIOM']
+    ▸ ADBE Text Properties
+      TEXT t=None 'أستاذ علوم الأرض والبيئة \r' font=ABCFavoritArabicVariableUnlicensedTrial-Bold size=100.0 fill=[1, 1, 1, 1] stroke=[1, 0.13735, 0.12279, 0.12606] sw=None trk=295.58847
+      ▸ ADBE Text Animators
+        ▸ ADBE Text Animator
+          ▸ ADBE Text Selectors
+            ▸ ADBE Text Expressible Selector
+              · ADBE Text Range Type2 = [3, 0, 0, 0]
+              · ADBE Text Expressible Amount = [0, 0, 0, 0]
+                EXPR[ADBE Text Expressible Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar _waopo01=["Pseudo/zodostudio/IWAOPo01","marker","numKeys","comment","key","time","active","IN","name","","undefined","effect","Delay","Style","Random Start","Animation Type","length","abs","floor"];var nam'
+          ▸ ADBE Text Animator Properties
+            · ADBE Text Position 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Position 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Scale 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Scale 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Rotation = [0, 0, 0, 0]
+              EXPR[ADBE Text Rotation]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Opacity = [0, 0, 0, 0]
+              EXPR[ADBE Text Opacity]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Tracking Amount = [0, 0, 0, 0]
+              EXPR[ADBE Text Tracking Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+    ▸ ADBE Mask Parade
+      ▸ ADBE Mask Atom
+        · ADBE Mask Feather = [102, 102, 0, 0]
+        · ADBE Mask Offset = [57, 0, 0, 0]
+    ▸ ADBE Effect Parade
+      ▸ Pseudo/zodostudio/IWAOPo01
+        · Position = [0, 0.078125, 0, 0]
+        · Scale = [0.046296, 0.026042, 0, 0]
+    ▸ ADBE Transform Group
+      · Position = [576.22, 842.86, 0, 0]
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[24] id=924 " خلدون سوالمة " type=text par=923 5.720→8.720s src=- blend=2 matte=1 
+  ▸ 
+    MARKER t=6.720 ['IN', 'chapter', 'https://aniom.net', '_PRESET_MANAGER', 'ATOMX_EXTENSION_BY_ANIOM']
+    MARKER t=8.120 ['OUT', 'chapter', 'https://aniom.net', '_PRESET_MANAGER', 'ATOMX_EXTENSION_BY_ANIOM']
+    ▸ ADBE Text Properties
+      TEXT t=None ' خلدون سوالمة\r\r' font=thmanyahserifdisplay-Bold size=200.0 fill=[1, 1, 0.99999, 1] stroke=[1, 0.13735, 0.12279, 0.12606] sw=None trk=284.74026
+      ▸ ADBE Text Animators
+        ▸ ADBE Text Animator
+          ▸ ADBE Text Selectors
+            ▸ ADBE Text Expressible Selector
+              · ADBE Text Range Type2 = [3, 0, 0, 0]
+              · ADBE Text Expressible Amount = [0, 0, 0, 0]
+                EXPR[ADBE Text Expressible Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar _waopo01=["Pseudo/zodostudio/IWAOPo01","marker","numKeys","comment","key","time","active","IN","name","","undefined","effect","Delay","Style","Random Start","Animation Type","length","abs","floor"];var nam'
+          ▸ ADBE Text Animator Properties
+            · ADBE Text Position 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Position 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Scale 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Scale 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Rotation = [0, 0, 0, 0]
+              EXPR[ADBE Text Rotation]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Opacity = [0, 0, 0, 0]
+              EXPR[ADBE Text Opacity]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Tracking Amount = [0, 0, 0, 0]
+              EXPR[ADBE Text Tracking Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+        ▸ ADBE Text Animator
+          ▸ ADBE Text Selectors
+            ▸ ADBE Text Expressible Selector
+              · ADBE Text Range Type2 = [3, 0, 0, 0]
+              · ADBE Text Expressible Amount = [0, 0, 0, 0]
+                EXPR[ADBE Text Expressible Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar _waopo01=["Pseudo/zodostudio/OWAOPo01","marker","numKeys","comment","key","time","active","OUT","name","","undefined","effect","Delay","Style","Random Start","Animation Type","length","abs","floor"];var na'
+          ▸ ADBE Text Animator Properties
+            · ADBE Text Position 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Position 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Scale 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Scale 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Rotation = [0, 0, 0, 0]
+              EXPR[ADBE Text Rotation]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Opacity = [0, 0, 0, 0]
+              EXPR[ADBE Text Opacity]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Tracking Amount = [0, 0, 0, 0]
+              EXPR[ADBE Text Tracking Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+    ▸ ADBE Effect Parade
+      ▸ Pseudo/zodostudio/IWAOPo01
+        · Position = [0, 0.078125, 0, 0]
+        · Scale = [0.046296, 0.026042, 0, 0]
+      ▸ Pseudo/zodostudio/OWAOPo01
+        · Position = [0, 0.078125, 0, 0]
+        · Scale = [0.046296, 0.026042, 0, 0]
+    ▸ ADBE Transform Group
+      · Anchor = [-563.15, -5.7993, 0, 0]
+      · Position = [220.07, 636.06, 0, 0]
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[25] id=923 "Shape Layer 4" type=shape par=453 5.720→8.720s src=- blend=2 matte=0 
+  ▸ 
+    ▸ ADBE Root Vectors Group
+      ▸ ADBE Vector Group
+        ▸ ADBE Vectors Group
+          ▸ ADBE Vector Shape - Group
+            · ADBE Vector Shape Direction = [2, 0, 0, 0]
+          ▸ ADBE Vector Graphic - Stroke
+            · ADBE Vector Stroke Color = [255, 255, 0, 0]
+          ▸ ADBE Vector Graphic - Fill
+            · ADBE Vector Fill Color = [255, 9, 85, 225]
+        ▸ ADBE Vector Transform Group
+          · ADBE Vector Position = [-2.9822, 731.65, 0, 0]
+    ▸ ADBE Mask Parade
+      ▸ ADBE Mask Atom
+        · ADBE Mask Feather = [100, 100, 0, 0]
+      ▸ ADBE Mask Atom
+        · ADBE Mask Feather = [200, 200, 0, 0]
+    ▸ ADBE Effect Parade
+      ▸ PEDG2
+        · Exposure = [0.3, 0, 0, 0]
+        · Iris Sampling Quality = [3, 0, 0, 0]
+        · Iris Iterations = [10, 0, 0, 0]
+        · Radii Easing = [90, 0, 0, 0]
+        · Gamma Correction = [100, 0, 0, 0]
+        · Color Inner = [255, 255, 0, 0]
+        · Quality Preset Iris = [3, 0, 0, 0]
+        · Resolution = [75, 0, 0, 0]
+        · Steps Multiplier = [0.5, 0, 0, 0]
+        · Glow Iterations = [8, 0, 0, 0]
+        · View = [1, 0, 0, 0]
+        · Iris Sample Quality = [50, 0, 0, 0]
+        · Debug View = [3, 0, 0, 0]
+        · Edge Behaviour (Deprecated) = [2, 0, 0, 0]
+        · Renderer (Deprecated) = [1, 0, 0, 0]
+        · Simplified Exposure = [1, 0, 0, 0]
+        · Iris Cull Small Values = [1, 0, 0, 0]
+        · Render Quality (Quantization) = [6, 0, 0, 0]
+      ▸ ADBE Gaussian Blur 2
+        · Blurriness = [200, 0, 0, 0]
+    ▸ ADBE Transform Group
+      · Anchor = [-2.9822, 731.65, 0, 0]
+      · Position = [1121.6, 2763.8, 0, 0]
+      · Scale = [68.966, 68.966, 100, 0]
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[26] id=991 "Shape Layer 5" type=shape par=453 4.380→6.060s src=- blend=2 matte=0 
+  ▸ 
+    ▸ ADBE Root Vectors Group
+      ▸ ADBE Vector Group
+        ▸ ADBE Vectors Group
+          ▸ ADBE Vector Graphic - G-Stroke
+            · ADBE Vector Grad Start Pt = [317.18, 20.698, 0, 0]
+            · ADBE Vector Grad End Pt = [-656.53, -16.301, 0, 0]
+            · ADBE Vector Stroke Width = [20, 0, 0, 0]
+            · ADBE Vector Stroke Line Cap = [2, 0, 0, 0]
+            · ADBE Vector Stroke Line Join = [2, 0, 0, 0]
+            · ADBE Vector Stroke Miter Limit = [4, 0, 0, 0]
+            ▸ ADBE Vector Stroke Taper
+              · ADBE Vector Taper Start Length = [46, 0, 0, 0]
+          ▸ ADBE Vector Graphic - Fill
+            · ADBE Vector Fill Color = [255, 255, 255, 255]
+      ▸ ADBE Vector Filter - Trim
+        • ADBE Vector Trim Start kf×2
+            t=  4.600  [100]                        bez/bez in(spd=[0],inf=[16.667]%) out(spd=[0],inf=[33.333]%)
+              ↳ 0.44s  bezier(0.33,-0.00,0.67,0.67)  startVel=-0.00 endVel=1.00  => ACCELERATE (slow start, fast end)
+            t=  5.040  [0]                          lin/lin
+        • ADBE Vector Trim End kf×2
+            t=  4.900  [100]                        bez/bez in(spd=[0],inf=[16.667]%) out(spd=[0],inf=[33.333]%)
+              ↳ 0.40s  bezier(0.33,-0.00,0.67,0.67)  startVel=-0.00 endVel=1.00  => ACCELERATE (slow start, fast end)
+            t=  5.300  [0]                          lin/lin
+    ▸ ADBE Effect Parade
+      ▸ PEDG2
+        · Iris Sampling Quality = [3, 0, 0, 0]
+        · Iris Iterations = [10, 0, 0, 0]
+        · Radii Easing = [90, 0, 0, 0]
+        · Color Inner = [255, 255, 0, 0]
+        · Quality Preset Iris = [3, 0, 0, 0]
+        · Resolution = [75, 0, 0, 0]
+        · Steps Multiplier = [0.5, 0, 0, 0]
+        · Glow Iterations = [8, 0, 0, 0]
+        · View = [1, 0, 0, 0]
+        · Iris Sample Quality = [50, 0, 0, 0]
+        · Debug View = [3, 0, 0, 0]
+        · Edge Behaviour (Deprecated) = [2, 0, 0, 0]
+        · Renderer (Deprecated) = [1, 0, 0, 0]
+        · Simplified Exposure = [1, 0, 0, 0]
+        · Iris Cull Small Values = [1, 0, 0, 0]
+        · Render Quality (Quantization) = [6, 0, 0, 0]
+    ▸ ADBE Transform Group
+      · Position = [1042.4, 1848.3, 0, 0]
+      · Scale = [103.73, 103.73, 100, 0]
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[27] id=453 "" type=AV par=- 4.320→13.520s src=209 blend=2 matte=0 
+  ▸ 
+    ▸ ADBE Effect Parade
+      ▸ ADBE OFMotionBlur
+        · Vector Detail = [50, 0, 0, 0]
+      ▸ ADBE Camera Lens Blur
+        • Blur Radius kf×4
+            t=  6.520  [0]                          bez/bez in(spd=[0],inf=[33.333]%) out(spd=[0],inf=[80]%)
+              ↳ same value 0.76s
+            t=  7.280  [0]                          lin/lin
+              ↳ 1.40s  bezier(0.33,0.33,0.20,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+            t=  8.680  [30]                         bez/bez in(spd=[0],inf=[80]%) out(spd=[0],inf=[80]%)
+              ↳ 1.44s  bezier(0.80,-0.00,0.20,1.00)  startVel=-0.00 endVel=0.00  => EASE IN-OUT (S)
+            t= 10.120  [0]                          bez/bez in(spd=[0],inf=[80]%) out(spd=[0],inf=[16.667]%)
+    ▸ ADBE Transform Group
+      · Anchor = [0.47454, 1, 0, 0]
+      • Position kf×14
+          t=  4.320  [1125, 3840, 0]              lin/lin
+            ↳ 0.80s  bezier(0.33,0.33,0.10,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t=  5.120  [1062, 3840, 0]              bez/bez in(spd=[0],inf=[90]%) out(spd=[0],inf=[90]%)
+            ↳ 0.60s
+          t=  5.720  [1062, 3840, 0]              lin/lin
+            ↳ 0.80s  bezier(0.33,0.33,0.10,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t=  6.520  [1125, 3840, 0]              bez/bez in(spd=[0],inf=[90]%) out(spd=[0],inf=[80]%)
+            ↳ 0.76s
+          t=  7.280  [1125, 3840, 0]              lin/lin
+            ↳ 1.00s  bezier(0.33,0.33,0.20,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t=  8.280  [1435, 4590, 0]              bez/bez in(spd=[0],inf=[80]%) out(spd=[0],inf=[80]%)
+            ↳ 1.84s  bezier(0.80,0.00,0.20,1.00)  startVel=0.00 endVel=0.00  => EASE IN-OUT (S)
+          t= 10.120  [1125, 3840, 0]              bez/bez in(spd=[0],inf=[80]%) out(spd=[0],inf=[16.667]%)
+            ↳ 1.18s
+          t= 11.300  [1125, 3840, 0]              lin/lin
+            ↳ 0.60s  bezier(0.33,0.33,0.20,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t= 11.900  [1125, 4160, 0]              bez/bez in(spd=[0],inf=[80]%) out(spd=[0],inf=[80]%)
+            ↳ 0.14s
+          t= 12.040  [1125, 4160, 0]              lin/lin
+            ↳ 0.40s  bezier(0.33,0.33,0.20,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t= 12.440  [1125, 4710, 0]              bez/bez in(spd=[0],inf=[80]%) out(spd=[0],inf=[80]%)
+            ↳ 0.08s
+          t= 12.520  [1125, 4710, 0]              lin/lin
+            ↳ 0.60s  bezier(0.33,0.33,0.20,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t= 13.120  [1125, 5010, 0]              bez/bez in(spd=[0],inf=[80]%) out(spd=[0],inf=[100]%)
+            ↳ 0.40s  bezier(1.00,0.00,0.67,0.67)  startVel=0.00 endVel=1.00  => ACCELERATE (slow start, fast end)
+          t= 13.520  [484, 5010, 0]               lin/lin
+      • Scale kf×7
+          t=  4.320  [116, 116, 100.09]           lin/lin
+            ↳ 0.80s  bezier(0.33,0.33,0.10,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t=  5.120  [96, 96, 97.959]             bez/bez in(spd=[0, 0, 0],inf=[90, 90, 90]%) out(spd=[0, 0, 0],inf=[90, 90, 90]%)
+            ↳ 0.60s  bezier(0.90,0.00,0.67,0.67)  startVel=0.00 endVel=1.00  => ACCELERATE (slow start, fast end)
+          t=  5.720  [96, 96, 100]                lin/lin
+            ↳ 0.80s  bezier(0.33,0.33,0.10,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t=  6.520  [116, 116, 100]              bez/bez in(spd=[0, 0, 0],inf=[90, 90, 90]%) out(spd=[0, 0, 0],inf=[80, 80, 80]%)
+            ↳ same value 0.76s
+          t=  7.280  [116, 116, 100]              lin/lin
+            ↳ 1.00s  bezier(0.33,0.33,0.20,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t=  8.280  [144, 144, 100.7]            bez/bez in(spd=[0, 0, 0],inf=[80, 80, 80]%) out(spd=[0, 0, 0],inf=[80, 80, 80]%)
+            ↳ 1.84s  bezier(0.80,-0.00,0.20,1.00)  startVel=-0.00 endVel=0.00  => EASE IN-OUT (S)
+          t= 10.120  [116, 116, 100]              bez/bez in(spd=[0, 0, 0],inf=[80, 80, 80]%) out(spd=[0, 0, 0],inf=[16.667, 16.667, 16.667]%)
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[28] id=1151 "وسريـــع" type=text par=453 12.720→13.520s src=- blend=2 matte=2 
+  ▸ 
+    MARKER t=13.320 ['IN', 'chapter', 'https://aniom.net', '_PRESET_MANAGER', 'ATOMX_EXTENSION_BY_ANIOM']
+    ▸ ADBE Text Properties
+      TEXT t=None 'وسريـــع\r' font=thmanyahserifdisplay-Bold size=200.0 fill=[1, 1, 1, 1] stroke=[1, 1, 1, 1] sw=3.0 trk=54.02563
+      ▸ ADBE Text Animators
+        ▸ ADBE Text Animator
+          ▸ ADBE Text Selectors
+            ▸ ADBE Text Expressible Selector
+              · ADBE Text Range Type2 = [3, 0, 0, 0]
+              · ADBE Text Expressible Amount = [0, 0, 0, 0]
+                EXPR[ADBE Text Expressible Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar _waopo01=["Pseudo/zodostudio/IWAOPo01","marker","numKeys","comment","key","time","active","IN","name","","undefined","effect","Delay","Style","Random Start","Animation Type","length","abs","floor"];var nam'
+          ▸ ADBE Text Animator Properties
+            · ADBE Text Position 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Position 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Scale 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Scale 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Rotation = [0, 0, 0, 0]
+              EXPR[ADBE Text Rotation]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Opacity = [0, 0, 0, 0]
+              EXPR[ADBE Text Opacity]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Tracking Amount = [0, 0, 0, 0]
+              EXPR[ADBE Text Tracking Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+    ▸ ADBE Mask Parade
+      ▸ ADBE Mask Atom
+        · ADBE Mask Feather = [102, 102, 0, 0]
+        · ADBE Mask Offset = [57, 0, 0, 0]
+    ▸ ADBE Effect Parade
+      ▸ ADBE Ramp
+        · Start of Ramp = [0.5, 0.6533, 0, 0]
+          EXPR[Start of Ramp]: '// جلب حدود طبقة النص\r\nbox = sourceRectAtTime(time, true);\r\n\r\n// حساب نقطة المكرز بالطبقة للوصول إلى المنتصف أفقياً والأعلى رأسياً\r\nx = box.left + (box.width / 2);\r\ny = box.top;\r\n\r\n// تحويل الإحداثيات المحلية لطبقة النص إلى إحداثيات المشهد '
+        · Start Color = [255, 255, 255, 255]
+        · End of Ramp = [0.5, 0.60075, 0, 0]
+          EXPR[End of Ramp]: '// جلب حدود طبقة النص\r\nbox = sourceRectAtTime(time, true);\r\n\r\n// حساب نقطة المركز أفقياً مع تحديد الحد الأسفل رأسياً\r\nx = box.left + (box.width / 2);\r\ny = box.top + box.height;\r\n\r\n// تحويل الإحداثيات المحلية إلى إحداثيات المشهد (Comp)\r\ntoCo'
+        · End Color = [255, 9, 85, 225]
+      ▸ Pseudo/zodostudio/IWAOPo01
+        · Position = [0, 0.078125, 0, 0]
+        · Scale = [0.046296, 0.026042, 0, 0]
+      ▸ ADBE Gaussian Blur 2
+        • Blurriness kf×2
+            t= 13.220  [0]                          lin/lin
+              ↳ LINEAR 0.60s
+            t= 13.820  [100]                        lin/lin
+    ▸ ADBE Transform Group
+      · Anchor = [-298.78, -10.373, 0, 0]
+      • Position kf×2
+          t= 13.680  [447.37, -43.192, 0]         bez/bez in(spd=[0],inf=[16.667]%) out(spd=[0],inf=[70]%)
+            ↳ 0.80s  bezier(0.70,0.00,0.67,0.67)  startVel=0.00 endVel=1.00  => ACCELERATE (slow start, fast end)
+          t= 14.480  [-747.11, -43.192, 0]        lin/lin
+      · Scale = [123.21, 123.21, 97.623, 0]
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[29] id=1150 "بعلوم الأرض؟ 20" type=text par=1151 12.720→13.520s src=- blend=2 matte=2 OFF 
+  ▸ 
+    MARKER t=13.320 ['IN', 'chapter', 'https://aniom.net', '_PRESET_MANAGER', 'ATOMX_EXTENSION_BY_ANIOM']
+    ▸ ADBE Text Properties
+      TEXT t=None 'بعلوم الأرض؟\r' font=thmanyahserifdisplay-Bold size=200.0 fill=[1, 0.03529, 0.33333, 0.88627] stroke=[1, 1, 1, 1] sw=3.0 trk=54.02563
+      ▸ ADBE Text Animators
+        ▸ ADBE Text Animator
+          ▸ ADBE Text Selectors
+            ▸ ADBE Text Expressible Selector
+              · ADBE Text Range Type2 = [3, 0, 0, 0]
+              · ADBE Text Expressible Amount = [0, 0, 0, 0]
+                EXPR[ADBE Text Expressible Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar _waopo01=["Pseudo/zodostudio/IWAOPo01","marker","numKeys","comment","key","time","active","IN","name","","undefined","effect","Delay","Style","Random Start","Animation Type","length","abs","floor"];var nam'
+          ▸ ADBE Text Animator Properties
+            · ADBE Text Position 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Position 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Scale 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Scale 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Rotation = [0, 0, 0, 0]
+              EXPR[ADBE Text Rotation]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Opacity = [0, 0, 0, 0]
+              EXPR[ADBE Text Opacity]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Tracking Amount = [0, 0, 0, 0]
+              EXPR[ADBE Text Tracking Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+    ▸ ADBE Effect Parade
+      ▸ PEDG2
+        · Radius = [500, 0, 0, 0]
+        · Iris Sampling Quality = [3, 0, 0, 0]
+        · Iris Iterations = [10, 0, 0, 0]
+        · Radii Easing = [90, 0, 0, 0]
+        · Color Inner = [255, 255, 0, 0]
+        · Quality Preset Iris = [3, 0, 0, 0]
+        · Resolution = [75, 0, 0, 0]
+        · Steps Multiplier = [0.5, 0, 0, 0]
+        · Glow Iterations = [8, 0, 0, 0]
+        · View = [1, 0, 0, 0]
+        · Iris Sample Quality = [50, 0, 0, 0]
+        · Debug View = [3, 0, 0, 0]
+        · Edge Behaviour (Deprecated) = [2, 0, 0, 0]
+        · Renderer (Deprecated) = [1, 0, 0, 0]
+        · Simplified Exposure = [1, 0, 0, 0]
+        · Iris Cull Small Values = [1, 0, 0, 0]
+        · Render Quality (Quantization) = [6, 0, 0, 0]
+      ▸ Pseudo/zodostudio/IWAOPo01
+        · Position = [0, 0.078125, 0, 0]
+        · Scale = [0.046296, 0.026042, 0, 0]
+      ▸ ADBE Gaussian Blur 2
+        • Blurriness kf×2
+            t= 13.220  [0]                          lin/lin
+              ↳ LINEAR 0.60s
+            t= 13.820  [100]                        lin/lin
+    ▸ ADBE Transform Group
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[30] id=1149 "ومحــدد" type=text par=453 12.040→13.520s src=- blend=2 matte=2 
+  ▸ 
+    MARKER t=12.640 ['IN', 'chapter', 'https://aniom.net', '_PRESET_MANAGER', 'ATOMX_EXTENSION_BY_ANIOM']
+    ▸ ADBE Text Properties
+      TEXT t=None 'ومحــدد\r' font=thmanyahserifdisplay-Bold size=200.0 fill=[1, 1, 1, 1] stroke=[1, 1, 1, 1] sw=3.0 trk=54.02563
+      ▸ ADBE Text Animators
+        ▸ ADBE Text Animator
+          ▸ ADBE Text Selectors
+            ▸ ADBE Text Expressible Selector
+              · ADBE Text Range Type2 = [3, 0, 0, 0]
+              · ADBE Text Expressible Amount = [0, 0, 0, 0]
+                EXPR[ADBE Text Expressible Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar _waopo01=["Pseudo/zodostudio/IWAOPo01","marker","numKeys","comment","key","time","active","IN","name","","undefined","effect","Delay","Style","Random Start","Animation Type","length","abs","floor"];var nam'
+          ▸ ADBE Text Animator Properties
+            · ADBE Text Position 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Position 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Scale 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Scale 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Rotation = [0, 0, 0, 0]
+              EXPR[ADBE Text Rotation]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Opacity = [0, 0, 0, 0]
+              EXPR[ADBE Text Opacity]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Tracking Amount = [0, 0, 0, 0]
+              EXPR[ADBE Text Tracking Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+    ▸ ADBE Mask Parade
+      ▸ ADBE Mask Atom
+        · ADBE Mask Feather = [102, 102, 0, 0]
+        · ADBE Mask Offset = [57, 0, 0, 0]
+    ▸ ADBE Effect Parade
+      ▸ ADBE Ramp
+        · Start of Ramp = [0.5, 0.6533, 0, 0]
+          EXPR[Start of Ramp]: '// جلب حدود طبقة النص\r\nbox = sourceRectAtTime(time, true);\r\n\r\n// حساب نقطة المكرز بالطبقة للوصول إلى المنتصف أفقياً والأعلى رأسياً\r\nx = box.left + (box.width / 2);\r\ny = box.top;\r\n\r\n// تحويل الإحداثيات المحلية لطبقة النص إلى إحداثيات المشهد '
+        · Start Color = [255, 255, 255, 255]
+        · End of Ramp = [0.5, 0.60075, 0, 0]
+          EXPR[End of Ramp]: '// جلب حدود طبقة النص\r\nbox = sourceRectAtTime(time, true);\r\n\r\n// حساب نقطة المركز أفقياً مع تحديد الحد الأسفل رأسياً\r\nx = box.left + (box.width / 2);\r\ny = box.top + box.height;\r\n\r\n// تحويل الإحداثيات المحلية إلى إحداثيات المشهد (Comp)\r\ntoCo'
+        · End Color = [255, 9, 85, 225]
+      ▸ Pseudo/zodostudio/IWAOPo01
+        · Position = [0, 0.078125, 0, 0]
+        · Scale = [0.046296, 0.026042, 0, 0]
+      ▸ ADBE Gaussian Blur 2
+        • Blurriness kf×2
+            t= 12.540  [0]                          lin/lin
+              ↳ LINEAR 0.60s
+            t= 13.140  [100]                        lin/lin
+    ▸ ADBE Transform Group
+      · Anchor = [305.18, -29.709, 0, 0]
+      · Position = [1581.9, 411.18, 0, 0]
+      · Scale = [123.21, 123.21, 97.623, 0]
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[31] id=1148 "بعلوم الأرض؟ 19" type=text par=1149 12.040→13.520s src=- blend=2 matte=2 OFF 
+  ▸ 
+    MARKER t=12.640 ['IN', 'chapter', 'https://aniom.net', '_PRESET_MANAGER', 'ATOMX_EXTENSION_BY_ANIOM']
+    ▸ ADBE Text Properties
+      TEXT t=None 'بعلوم الأرض؟\r' font=thmanyahserifdisplay-Bold size=200.0 fill=[1, 0.03529, 0.33333, 0.88627] stroke=[1, 1, 1, 1] sw=3.0 trk=54.02563
+      ▸ ADBE Text Animators
+        ▸ ADBE Text Animator
+          ▸ ADBE Text Selectors
+            ▸ ADBE Text Expressible Selector
+              · ADBE Text Range Type2 = [3, 0, 0, 0]
+              · ADBE Text Expressible Amount = [0, 0, 0, 0]
+                EXPR[ADBE Text Expressible Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar _waopo01=["Pseudo/zodostudio/IWAOPo01","marker","numKeys","comment","key","time","active","IN","name","","undefined","effect","Delay","Style","Random Start","Animation Type","length","abs","floor"];var nam'
+          ▸ ADBE Text Animator Properties
+            · ADBE Text Position 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Position 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Scale 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Scale 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Rotation = [0, 0, 0, 0]
+              EXPR[ADBE Text Rotation]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Opacity = [0, 0, 0, 0]
+              EXPR[ADBE Text Opacity]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Tracking Amount = [0, 0, 0, 0]
+              EXPR[ADBE Text Tracking Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+    ▸ ADBE Effect Parade
+      ▸ PEDG2
+        · Radius = [500, 0, 0, 0]
+        · Iris Sampling Quality = [3, 0, 0, 0]
+        · Iris Iterations = [10, 0, 0, 0]
+        · Radii Easing = [90, 0, 0, 0]
+        · Color Inner = [255, 255, 0, 0]
+        · Quality Preset Iris = [3, 0, 0, 0]
+        · Resolution = [75, 0, 0, 0]
+        · Steps Multiplier = [0.5, 0, 0, 0]
+        · Glow Iterations = [8, 0, 0, 0]
+        · View = [1, 0, 0, 0]
+        · Iris Sample Quality = [50, 0, 0, 0]
+        · Debug View = [3, 0, 0, 0]
+        · Edge Behaviour (Deprecated) = [2, 0, 0, 0]
+        · Renderer (Deprecated) = [1, 0, 0, 0]
+        · Simplified Exposure = [1, 0, 0, 0]
+        · Iris Cull Small Values = [1, 0, 0, 0]
+        · Render Quality (Quantization) = [6, 0, 0, 0]
+      ▸ Pseudo/zodostudio/IWAOPo01
+        · Position = [0, 0.078125, 0, 0]
+        · Scale = [0.046296, 0.026042, 0, 0]
+      ▸ ADBE Gaussian Blur 2
+        • Blurriness kf×2
+            t= 12.540  [0]                          lin/lin
+              ↳ LINEAR 0.60s
+            t= 13.140  [100]                        lin/lin
+    ▸ ADBE Transform Group
+      · Anchor = [310.18, -29.709, 0, 0]
+      · Position = [310.18, -29.709, 0, 0]
+      · Scale = [100, 100, 100, 0]
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[32] id=1147 "واضــح" type=text par=453 11.500→13.520s src=- blend=2 matte=2 
+  ▸ 
+    MARKER t=12.100 ['IN', 'chapter', 'https://aniom.net', '_PRESET_MANAGER', 'ATOMX_EXTENSION_BY_ANIOM']
+    ▸ ADBE Text Properties
+      TEXT t=None 'واضــح\r' font=thmanyahserifdisplay-Bold size=200.0 fill=[1, 1, 1, 1] stroke=[1, 1, 1, 1] sw=3.0 trk=54.02563
+      ▸ ADBE Text Animators
+        ▸ ADBE Text Animator
+          ▸ ADBE Text Selectors
+            ▸ ADBE Text Expressible Selector
+              · ADBE Text Range Type2 = [3, 0, 0, 0]
+              · ADBE Text Expressible Amount = [0, 0, 0, 0]
+                EXPR[ADBE Text Expressible Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar _waopo01=["Pseudo/zodostudio/IWAOPo01","marker","numKeys","comment","key","time","active","IN","name","","undefined","effect","Delay","Style","Random Start","Animation Type","length","abs","floor"];var nam'
+          ▸ ADBE Text Animator Properties
+            · ADBE Text Position 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Position 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Scale 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Scale 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Rotation = [0, 0, 0, 0]
+              EXPR[ADBE Text Rotation]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Opacity = [0, 0, 0, 0]
+              EXPR[ADBE Text Opacity]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Tracking Amount = [0, 0, 0, 0]
+              EXPR[ADBE Text Tracking Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+    ▸ ADBE Mask Parade
+      ▸ ADBE Mask Atom
+        · ADBE Mask Feather = [102, 102, 0, 0]
+        · ADBE Mask Offset = [57, 0, 0, 0]
+    ▸ ADBE Effect Parade
+      ▸ ADBE Ramp
+        · Start of Ramp = [0.5, 0.6533, 0, 0]
+          EXPR[Start of Ramp]: '// جلب حدود طبقة النص\r\nbox = sourceRectAtTime(time, true);\r\n\r\n// حساب نقطة المكرز بالطبقة للوصول إلى المنتصف أفقياً والأعلى رأسياً\r\nx = box.left + (box.width / 2);\r\ny = box.top;\r\n\r\n// تحويل الإحداثيات المحلية لطبقة النص إلى إحداثيات المشهد '
+        · Start Color = [255, 255, 255, 255]
+        · End of Ramp = [0.5, 0.60075, 0, 0]
+          EXPR[End of Ramp]: '// جلب حدود طبقة النص\r\nbox = sourceRectAtTime(time, true);\r\n\r\n// حساب نقطة المركز أفقياً مع تحديد الحد الأسفل رأسياً\r\nx = box.left + (box.width / 2);\r\ny = box.top + box.height;\r\n\r\n// تحويل الإحداثيات المحلية إلى إحداثيات المشهد (Comp)\r\ntoCo'
+        · End Color = [255, 9, 85, 225]
+      ▸ Pseudo/zodostudio/IWAOPo01
+        · Position = [0, 0.078125, 0, 0]
+        · Scale = [0.046296, 0.026042, 0, 0]
+      ▸ ADBE Gaussian Blur 2
+        • Blurriness kf×2
+            t= 12.000  [0]                          lin/lin
+              ↳ LINEAR 0.60s
+            t= 12.600  [100]                        lin/lin
+    ▸ ADBE Transform Group
+      · Anchor = [-257.79, -41.995, 0, 0]
+      • Position kf×2
+          t= 13.680  [532.38, 872.76, 0]          bez/bez in(spd=[0],inf=[16.667]%) out(spd=[0],inf=[70]%)
+            ↳ 0.80s  bezier(0.70,0.00,0.67,0.67)  startVel=0.00 endVel=1.00  => ACCELERATE (slow start, fast end)
+          t= 14.480  [-491.42, 872.76, 0]         lin/lin
+      · Scale = [123.21, 123.21, 97.623, 0]
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[33] id=1146 "بعلوم الأرض؟ 18" type=text par=1147 11.500→13.520s src=- blend=2 matte=2 OFF 
+  ▸ 
+    MARKER t=12.100 ['IN', 'chapter', 'https://aniom.net', '_PRESET_MANAGER', 'ATOMX_EXTENSION_BY_ANIOM']
+    ▸ ADBE Text Properties
+      TEXT t=None 'بعلوم الأرض؟\r' font=thmanyahserifdisplay-Bold size=200.0 fill=[1, 0.03529, 0.33333, 0.88627] stroke=[1, 1, 1, 1] sw=3.0 trk=54.02563
+      ▸ ADBE Text Animators
+        ▸ ADBE Text Animator
+          ▸ ADBE Text Selectors
+            ▸ ADBE Text Expressible Selector
+              · ADBE Text Range Type2 = [3, 0, 0, 0]
+              · ADBE Text Expressible Amount = [0, 0, 0, 0]
+                EXPR[ADBE Text Expressible Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar _waopo01=["Pseudo/zodostudio/IWAOPo01","marker","numKeys","comment","key","time","active","IN","name","","undefined","effect","Delay","Style","Random Start","Animation Type","length","abs","floor"];var nam'
+          ▸ ADBE Text Animator Properties
+            · ADBE Text Position 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Position 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Scale 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Scale 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Rotation = [0, 0, 0, 0]
+              EXPR[ADBE Text Rotation]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Opacity = [0, 0, 0, 0]
+              EXPR[ADBE Text Opacity]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Tracking Amount = [0, 0, 0, 0]
+              EXPR[ADBE Text Tracking Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+    ▸ ADBE Effect Parade
+      ▸ PEDG2
+        · Radius = [500, 0, 0, 0]
+        · Iris Sampling Quality = [3, 0, 0, 0]
+        · Iris Iterations = [10, 0, 0, 0]
+        · Radii Easing = [90, 0, 0, 0]
+        · Color Inner = [255, 255, 0, 0]
+        · Quality Preset Iris = [3, 0, 0, 0]
+        · Resolution = [75, 0, 0, 0]
+        · Steps Multiplier = [0.5, 0, 0, 0]
+        · Glow Iterations = [8, 0, 0, 0]
+        · View = [1, 0, 0, 0]
+        · Iris Sample Quality = [50, 0, 0, 0]
+        · Debug View = [3, 0, 0, 0]
+        · Edge Behaviour (Deprecated) = [2, 0, 0, 0]
+        · Renderer (Deprecated) = [1, 0, 0, 0]
+        · Simplified Exposure = [1, 0, 0, 0]
+        · Iris Cull Small Values = [1, 0, 0, 0]
+        · Render Quality (Quantization) = [6, 0, 0, 0]
+      ▸ Pseudo/zodostudio/IWAOPo01
+        · Position = [0, 0.078125, 0, 0]
+        · Scale = [0.046296, 0.026042, 0, 0]
+      ▸ ADBE Gaussian Blur 2
+        • Blurriness kf×2
+            t= 12.000  [0]                          lin/lin
+              ↳ LINEAR 0.60s
+            t= 12.600  [100]                        lin/lin
+    ▸ ADBE Transform Group
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[34] id=972 "" type=AV par=453 6.520→10.140s src=973 blend=2 matte=0 
+  ▸ 
+    ▸ ADBE Effect Parade
+      ▸ CC Page Turn
+        · Controls = [1, 0, 0, 0]
+        • Fold Position kf×2
+            t=  6.520  [1.0104, 0.48544]            lin/lin
+              ↳ 1.76s  bezier(0.33,0.33,0.67,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+            t=  8.280  [0.28644, 0.48544]           bez/bez in(spd=[0],inf=[33.333]%) out(spd=[0],inf=[16.667]%)
+        · Fold Direction = [90, 0, 0, 0]
+        · Fold Radius = [240, 0, 0, 0]
+        · Light Direction = [-47, 0, 0, 0]
+        · Back Opacity = [100, 0, 0, 0]
+      ▸ ADBE Camera Lens Blur
+        • Blur Radius kf×4
+            t=  6.520  [30]                         bez/bez in(spd=[0],inf=[80]%) out(spd=[-0],inf=[80]%)
+              ↳ 1.76s  bezier(0.80,0.00,0.20,1.00)  startVel=0.00 endVel=0.00  => EASE IN-OUT (S)
+            t=  8.280  [0]                          bez/bez in(spd=[-0],inf=[80]%) out(spd=[0],inf=[16.667]%)
+              ↳ same value 0.40s
+            t=  8.680  [0]                          bez/bez in(spd=[0],inf=[80]%) out(spd=[0],inf=[80]%)
+              ↳ 1.44s  bezier(0.80,0.00,0.20,1.00)  startVel=0.00 endVel=0.00  => EASE IN-OUT (S)
+            t= 10.120  [30]                         bez/bez in(spd=[0],inf=[80]%) out(spd=[0],inf=[80]%)
+    ▸ ADBE Transform Group
+      • Position kf×4
+          t=  6.520  [1131.6, 1371, 0]            bez/bez in(spd=[0],inf=[33.333]%) out(spd=[0],inf=[80]%)
+            ↳ 1.76s  bezier(0.80,0.00,0.20,1.00)  startVel=0.00 endVel=0.00  => EASE IN-OUT (S)
+          t=  8.280  [491.56, 1319, 0]            bez/bez in(spd=[0],inf=[80]%) out(spd=[0],inf=[16.667]%)
+            ↳ 0.40s
+          t=  8.680  [491.56, 1319, 0]            bez/bez in(spd=[0],inf=[80]%) out(spd=[0],inf=[80]%)
+            ↳ 1.44s  bezier(0.80,0.00,0.67,0.67)  startVel=0.00 endVel=1.00  => ACCELERATE (slow start, fast end)
+          t= 10.120  [-408.44, 1322, 0]           lin/lin
+      · Scale = [69.861, 69.861, 100, 0]
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[35] id=766 "انسوا كل هالحكــ" type=text par=- 4.380→6.860s src=- blend=2 matte=2 
+  ▸ 
+    MARKER t=4.980 ['IN', 'chapter', 'https://aniom.net', '_PRESET_MANAGER', 'ATOMX_EXTENSION_BY_ANIOM']
+    ▸ ADBE Text Properties
+      TEXT t=None 'انسوا كل\rهالحكـــي\r' font=thmanyahserifdisplay-Bold size=200.0 fill=[1, 1, 1, 1] stroke=[1, 1, 1, 1] sw=3.0 trk=54.02563
+      ▸ ADBE Text Animators
+        ▸ ADBE Text Animator
+          ▸ ADBE Text Selectors
+            ▸ ADBE Text Expressible Selector
+              · ADBE Text Range Type2 = [3, 0, 0, 0]
+              · ADBE Text Expressible Amount = [0, 0, 0, 0]
+                EXPR[ADBE Text Expressible Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar _waopo01=["Pseudo/zodostudio/IWAOPo01","marker","numKeys","comment","key","time","active","IN","name","","undefined","effect","Delay","Style","Random Start","Animation Type","length","abs","floor"];var nam'
+          ▸ ADBE Text Animator Properties
+            · ADBE Text Position 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Position 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Scale 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Scale 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Rotation = [0, 0, 0, 0]
+              EXPR[ADBE Text Rotation]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Opacity = [0, 0, 0, 0]
+              EXPR[ADBE Text Opacity]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Tracking Amount = [0, 0, 0, 0]
+              EXPR[ADBE Text Tracking Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+    ▸ ADBE Mask Parade
+      ▸ ADBE Mask Atom
+        · ADBE Mask Feather = [102, 102, 0, 0]
+        · ADBE Mask Offset = [57, 0, 0, 0]
+    ▸ ADBE Effect Parade
+      ▸ ADBE Ramp
+        · Start of Ramp = [0.5, 0.6533, 0, 0]
+          EXPR[Start of Ramp]: '// جلب حدود طبقة النص\r\nbox = sourceRectAtTime(time, true);\r\n\r\n// حساب نقطة المكرز بالطبقة للوصول إلى المنتصف أفقياً والأعلى رأسياً\r\nx = box.left + (box.width / 2);\r\ny = box.top;\r\n\r\n// تحويل الإحداثيات المحلية لطبقة النص إلى إحداثيات المشهد '
+        · Start Color = [255, 255, 255, 255]
+        · End of Ramp = [0.5, 0.60075, 0, 0]
+          EXPR[End of Ramp]: '// جلب حدود طبقة النص\r\nbox = sourceRectAtTime(time, true);\r\n\r\n// حساب نقطة المركز أفقياً مع تحديد الحد الأسفل رأسياً\r\nx = box.left + (box.width / 2);\r\ny = box.top + box.height;\r\n\r\n// تحويل الإحداثيات المحلية إلى إحداثيات المشهد (Comp)\r\ntoCo'
+        · End Color = [255, 9, 85, 225]
+      ▸ Pseudo/zodostudio/IWAOPo01
+        · Position = [0, 0.078125, 0, 0]
+        · Scale = [0.046296, 0.026042, 0, 0]
+      ▸ ADBE Gaussian Blur 2
+        • Blurriness kf×2
+            t=  4.880  [0]                          lin/lin
+              ↳ LINEAR 0.60s
+            t=  5.480  [100]                        lin/lin
+    ▸ ADBE Transform Group
+      • Position kf×2
+          t=  5.540  [1099.2, 637.8, 0]           bez/bez in(spd=[0],inf=[16.667]%) out(spd=[0],inf=[90]%)
+            ↳ 0.60s  bezier(0.90,0.00,0.67,0.67)  startVel=0.00 endVel=1.00  => ACCELERATE (slow start, fast end)
+          t=  6.140  [1099.2, -642.2, 0]          lin/lin
+      · Scale = [125, 125, 100.81, 0]
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[36] id=765 "بعلوم الأرض؟ 17" type=text par=766 4.380→6.860s src=- blend=2 matte=2 
+  ▸ 
+    MARKER t=4.980 ['IN', 'chapter', 'https://aniom.net', '_PRESET_MANAGER', 'ATOMX_EXTENSION_BY_ANIOM']
+    ▸ ADBE Text Properties
+      TEXT t=None 'بعلوم الأرض؟\r' font=thmanyahserifdisplay-Bold size=200.0 fill=[1, 0.03529, 0.33333, 0.88627] stroke=[1, 1, 1, 1] sw=3.0 trk=54.02563
+      ▸ ADBE Text Animators
+        ▸ ADBE Text Animator
+          ▸ ADBE Text Selectors
+            ▸ ADBE Text Expressible Selector
+              · ADBE Text Range Type2 = [3, 0, 0, 0]
+              · ADBE Text Expressible Amount = [0, 0, 0, 0]
+                EXPR[ADBE Text Expressible Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar _waopo01=["Pseudo/zodostudio/IWAOPo01","marker","numKeys","comment","key","time","active","IN","name","","undefined","effect","Delay","Style","Random Start","Animation Type","length","abs","floor"];var nam'
+          ▸ ADBE Text Animator Properties
+            · ADBE Text Position 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Position 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Scale 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Scale 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Rotation = [0, 0, 0, 0]
+              EXPR[ADBE Text Rotation]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Opacity = [0, 0, 0, 0]
+              EXPR[ADBE Text Opacity]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Tracking Amount = [0, 0, 0, 0]
+              EXPR[ADBE Text Tracking Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+    ▸ ADBE Effect Parade
+      ▸ PEDG2
+        · Radius = [500, 0, 0, 0]
+        · Iris Sampling Quality = [3, 0, 0, 0]
+        · Iris Iterations = [10, 0, 0, 0]
+        · Radii Easing = [90, 0, 0, 0]
+        · Color Inner = [255, 255, 0, 0]
+        · Quality Preset Iris = [3, 0, 0, 0]
+        · Resolution = [75, 0, 0, 0]
+        · Steps Multiplier = [0.5, 0, 0, 0]
+        · Glow Iterations = [8, 0, 0, 0]
+        · View = [1, 0, 0, 0]
+        · Iris Sample Quality = [50, 0, 0, 0]
+        · Debug View = [3, 0, 0, 0]
+        · Edge Behaviour (Deprecated) = [2, 0, 0, 0]
+        · Renderer (Deprecated) = [1, 0, 0, 0]
+        · Simplified Exposure = [1, 0, 0, 0]
+        · Iris Cull Small Values = [1, 0, 0, 0]
+        · Render Quality (Quantization) = [6, 0, 0, 0]
+      ▸ Pseudo/zodostudio/IWAOPo01
+        · Position = [0, 0.078125, 0, 0]
+        · Scale = [0.046296, 0.026042, 0, 0]
+      ▸ ADBE Gaussian Blur 2
+        • Blurriness kf×2
+            t=  4.880  [0]                          lin/lin
+              ↳ LINEAR 0.60s
+            t=  5.480  [100]                        lin/lin
+    ▸ ADBE Transform Group
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[37] id=456 "Camera 1" type=cam par=- 0.000→29.220s src=- blend=0 matte=0 3D 
+  ▸ 
+    ▸ ADBE Transform Group
+      · Anchor = [1080, 1920, 0, 0]
+        EXPR[Anchor]: 'transform.position'
+      • Position kf×5
+          t=  0.000  [1080, 1920, -2330]          lin/lin
+            ↳ 0.40s  bezier(0.33,0.33,0.83,1.00)  startVel=1.00 endVel=0.00  => DECELERATE (fast start, soft landing)
+          t=  0.400  [1080, 1920, -3000]          bez/bez in(spd=[0],inf=[16.667]%) out(spd=[0],inf=[80]%)
+            ↳ 1.00s  bezier(0.80,0.00,0.20,1.00)  startVel=0.00 endVel=0.00  => EASE IN-OUT (S)
+          t=  1.400  [1080, 2026, -6560]          bez/bez in(spd=[0],inf=[80]%) out(spd=[0],inf=[80]%)
+            ↳ 1.00s  bezier(0.80,0.00,0.10,1.00)  startVel=0.00 endVel=0.00  => EASE IN-OUT (S)
+          t=  2.400  [1600, 1716, -9495]          bez/bez in(spd=[0],inf=[90]%) out(spd=[0],inf=[90]%)
+            ↳ 1.72s  bezier(0.90,0.00,0.10,1.00)  startVel=0.00 endVel=0.00  => EASE IN-OUT (S)
+          t=  4.120  [1645, 3843, -12320]         bez/bez in(spd=[0],inf=[90]%) out(spd=[0],inf=[90]%)
+      · Scale = [100, 100, 100, 0]
+      · Opacity = [100, 0, 0, 0]
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+    ▸ ADBE Camera Options Group
+      · ADBE Camera Depth of Field = [1, 0, 0, 0]
+      • ADBE Camera Focus Distance kf×4
+          t=  0.400  [2952]                       bez/bez in(spd=[0],inf=[33.333]%) out(spd=[0],inf=[80]%)
+            ↳ 1.00s  bezier(0.80,-0.00,0.20,1.00)  startVel=-0.00 endVel=0.00  => EASE IN-OUT (S)
+          t=  1.400  [2949]                       bez/bez in(spd=[0],inf=[80]%) out(spd=[0],inf=[80]%)
+            ↳ 1.00s  bezier(0.80,0.00,0.10,1.00)  startVel=0.00 endVel=0.00  => EASE IN-OUT (S)
+          t=  2.400  [3027]                       bez/bez in(spd=[0],inf=[90]%) out(spd=[0],inf=[90]%)
+            ↳ 1.72s  bezier(0.90,-0.00,0.10,1.00)  startVel=-0.00 endVel=0.00  => EASE IN-OUT (S)
+          t=  4.120  [2321]                       bez/bez in(spd=[0],inf=[90]%) out(spd=[0],inf=[90]%)
+      · ADBE Camera Aperture = [1267.3, 0, 0, 0]
+      · ADBE Camera Split Blur Level = [100, 100, 0, 0]
+[38] id=460 "هاي بدها حفــظ" type=text par=459 1.860→4.860s src=- blend=2 matte=1 3D 
+  ▸ 
+    MARKER t=2.860 ['IN', 'chapter', 'https://aniom.net', '_PRESET_MANAGER', 'ATOMX_EXTENSION_BY_ANIOM']
+    MARKER t=4.260 ['OUT', 'chapter', 'https://aniom.net', '_PRESET_MANAGER', 'ATOMX_EXTENSION_BY_ANIOM']
+    ▸ ADBE Text Properties
+      TEXT t=None 'هاي بدها حفــظ\r' font=thmanyahserifdisplay-Bold size=200.0 fill=[1, 1, 0.99999, 1] stroke=[1, 0.13735, 0.12279, 0.12606] sw=None trk=284.74026
+      ▸ ADBE Text Animators
+        ▸ ADBE Text Animator
+          ▸ ADBE Text Selectors
+            ▸ ADBE Text Expressible Selector
+              · ADBE Text Range Type2 = [3, 0, 0, 0]
+              · ADBE Text Expressible Amount = [0, 0, 0, 0]
+                EXPR[ADBE Text Expressible Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar _waopo01=["Pseudo/zodostudio/IWAOPo01","marker","numKeys","comment","key","time","active","IN","name","","undefined","effect","Delay","Style","Random Start","Animation Type","length","abs","floor"];var nam'
+          ▸ ADBE Text Animator Properties
+            · ADBE Text Position 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Position 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Scale 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Scale 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Rotation = [0, 0, 0, 0]
+              EXPR[ADBE Text Rotation]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Opacity = [0, 0, 0, 0]
+              EXPR[ADBE Text Opacity]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Tracking Amount = [0, 0, 0, 0]
+              EXPR[ADBE Text Tracking Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+        ▸ ADBE Text Animator
+          ▸ ADBE Text Selectors
+            ▸ ADBE Text Expressible Selector
+              · ADBE Text Range Type2 = [3, 0, 0, 0]
+              · ADBE Text Expressible Amount = [0, 0, 0, 0]
+                EXPR[ADBE Text Expressible Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar _waopo01=["Pseudo/zodostudio/OWAOPo01","marker","numKeys","comment","key","time","active","OUT","name","","undefined","effect","Delay","Style","Random Start","Animation Type","length","abs","floor"];var na'
+          ▸ ADBE Text Animator Properties
+            · ADBE Text Position 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Position 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Scale 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Scale 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Rotation = [0, 0, 0, 0]
+              EXPR[ADBE Text Rotation]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Opacity = [0, 0, 0, 0]
+              EXPR[ADBE Text Opacity]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Tracking Amount = [0, 0, 0, 0]
+              EXPR[ADBE Text Tracking Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+    ▸ ADBE Effect Parade
+      ▸ Pseudo/zodostudio/IWAOPo01
+        · Position = [0, 0.078125, 0, 0]
+        · Scale = [0.046296, 0.026042, 0, 0]
+      ▸ Pseudo/zodostudio/OWAOPo01
+        · Position = [0, 0.078125, 0, 0]
+        · Scale = [0.046296, 0.026042, 0, 0]
+    ▸ ADBE Transform Group
+      · Anchor = [3.4047, -37.363, 0, 0]
+      · Position = [130.37, 750.75, 0, 0]
+      · Scale = [100, 100, 100, 0]
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[39] id=459 "Shape Layer 3" type=shape par=- 1.860→4.860s src=- blend=2 matte=0 3D 
+  ▸ 
+    ▸ ADBE Root Vectors Group
+      ▸ ADBE Vector Group
+        ▸ ADBE Vectors Group
+          ▸ ADBE Vector Shape - Group
+            · ADBE Vector Shape Direction = [2, 0, 0, 0]
+          ▸ ADBE Vector Graphic - Stroke
+            · ADBE Vector Stroke Color = [255, 255, 0, 0]
+          ▸ ADBE Vector Graphic - Fill
+            · ADBE Vector Fill Color = [255, 9, 85, 225]
+        ▸ ADBE Vector Transform Group
+          · ADBE Vector Position = [-2.9822, 731.65, 0, 0]
+    ▸ ADBE Mask Parade
+      ▸ ADBE Mask Atom
+        · ADBE Mask Feather = [100, 100, 0, 0]
+      ▸ ADBE Mask Atom
+        · ADBE Mask Feather = [200, 200, 0, 0]
+    ▸ ADBE Effect Parade
+      ▸ PEDG2
+        · Exposure = [0.3, 0, 0, 0]
+        · Iris Sampling Quality = [3, 0, 0, 0]
+        · Iris Iterations = [10, 0, 0, 0]
+        · Radii Easing = [90, 0, 0, 0]
+        · Gamma Correction = [100, 0, 0, 0]
+        · Color Inner = [255, 255, 0, 0]
+        · Quality Preset Iris = [3, 0, 0, 0]
+        · Resolution = [75, 0, 0, 0]
+        · Steps Multiplier = [0.5, 0, 0, 0]
+        · Glow Iterations = [8, 0, 0, 0]
+        · View = [1, 0, 0, 0]
+        · Iris Sample Quality = [50, 0, 0, 0]
+        · Debug View = [3, 0, 0, 0]
+        · Edge Behaviour (Deprecated) = [2, 0, 0, 0]
+        · Renderer (Deprecated) = [1, 0, 0, 0]
+        · Simplified Exposure = [1, 0, 0, 0]
+        · Iris Cull Small Values = [1, 0, 0, 0]
+        · Render Quality (Quantization) = [6, 0, 0, 0]
+      ▸ ADBE Gaussian Blur 2
+        · Blurriness = [200, 0, 0, 0]
+    ▸ ADBE Transform Group
+      · Anchor = [-2.9822, 731.65, 0, 0]
+      · Position = [1482, 1252.6, -6495, 0]
+      · Scale = [100, 100, 100, 0]
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[40] id=458 "هاي صعبة كثيـــر" type=text par=457 0.780→4.860s src=- blend=2 matte=1 3D 
+  ▸ 
+    MARKER t=1.780 ['IN', 'chapter', 'https://aniom.net', '_PRESET_MANAGER', 'ATOMX_EXTENSION_BY_ANIOM']
+    MARKER t=3.180 ['OUT', 'chapter', 'https://aniom.net', '_PRESET_MANAGER', 'ATOMX_EXTENSION_BY_ANIOM']
+    ▸ ADBE Text Properties
+      TEXT t=None 'هاي صعبة كثيـــر\r' font=thmanyahserifdisplay-Bold size=200.0 fill=[1, 1, 0.99999, 1] stroke=[1, 0.13735, 0.12279, 0.12606] sw=None trk=284.74026
+      ▸ ADBE Text Animators
+        ▸ ADBE Text Animator
+          ▸ ADBE Text Selectors
+            ▸ ADBE Text Expressible Selector
+              · ADBE Text Range Type2 = [3, 0, 0, 0]
+              · ADBE Text Expressible Amount = [0, 0, 0, 0]
+                EXPR[ADBE Text Expressible Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar _waopo01=["Pseudo/zodostudio/IWAOPo01","marker","numKeys","comment","key","time","active","IN","name","","undefined","effect","Delay","Style","Random Start","Animation Type","length","abs","floor"];var nam'
+          ▸ ADBE Text Animator Properties
+            · ADBE Text Position 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Position 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Scale 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Scale 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Rotation = [0, 0, 0, 0]
+              EXPR[ADBE Text Rotation]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Opacity = [0, 0, 0, 0]
+              EXPR[ADBE Text Opacity]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Tracking Amount = [0, 0, 0, 0]
+              EXPR[ADBE Text Tracking Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+        ▸ ADBE Text Animator
+          ▸ ADBE Text Selectors
+            ▸ ADBE Text Expressible Selector
+              · ADBE Text Range Type2 = [3, 0, 0, 0]
+              · ADBE Text Expressible Amount = [0, 0, 0, 0]
+                EXPR[ADBE Text Expressible Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar _waopo01=["Pseudo/zodostudio/OWAOPo01","marker","numKeys","comment","key","time","active","OUT","name","","undefined","effect","Delay","Style","Random Start","Animation Type","length","abs","floor"];var na'
+          ▸ ADBE Text Animator Properties
+            · ADBE Text Position 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Position 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Scale 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Scale 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Rotation = [0, 0, 0, 0]
+              EXPR[ADBE Text Rotation]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Opacity = [0, 0, 0, 0]
+              EXPR[ADBE Text Opacity]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Tracking Amount = [0, 0, 0, 0]
+              EXPR[ADBE Text Tracking Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+    ▸ ADBE Effect Parade
+      ▸ Pseudo/zodostudio/IWAOPo01
+        · Position = [0, 0.078125, 0, 0]
+        · Scale = [0.046296, 0.026042, 0, 0]
+      ▸ Pseudo/zodostudio/OWAOPo01
+        · Position = [0, 0.078125, 0, 0]
+        · Scale = [0.046296, 0.026042, 0, 0]
+    ▸ ADBE Transform Group
+      · Anchor = [3.4047, -37.363, 0, 0]
+      · Position = [130.37, 750.75, 0, 0]
+      · Scale = [100, 100, 100, 0]
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[41] id=457 "Shape Layer 2" type=shape par=- 0.780→4.860s src=- blend=2 matte=0 3D 
+  ▸ 
+    ▸ ADBE Root Vectors Group
+      ▸ ADBE Vector Group
+        ▸ ADBE Vectors Group
+          ▸ ADBE Vector Shape - Group
+            · ADBE Vector Shape Direction = [2, 0, 0, 0]
+          ▸ ADBE Vector Graphic - Stroke
+            · ADBE Vector Stroke Color = [255, 255, 0, 0]
+          ▸ ADBE Vector Graphic - Fill
+            · ADBE Vector Fill Color = [255, 9, 85, 225]
+        ▸ ADBE Vector Transform Group
+          · ADBE Vector Position = [-2.9822, 731.65, 0, 0]
+    ▸ ADBE Mask Parade
+      ▸ ADBE Mask Atom
+        · ADBE Mask Feather = [100, 100, 0, 0]
+      ▸ ADBE Mask Atom
+        · ADBE Mask Feather = [200, 200, 0, 0]
+    ▸ ADBE Effect Parade
+      ▸ PEDG2
+        · Exposure = [0.3, 0, 0, 0]
+        · Iris Sampling Quality = [3, 0, 0, 0]
+        · Iris Iterations = [10, 0, 0, 0]
+        · Radii Easing = [90, 0, 0, 0]
+        · Gamma Correction = [100, 0, 0, 0]
+        · Color Inner = [255, 255, 0, 0]
+        · Quality Preset Iris = [3, 0, 0, 0]
+        · Resolution = [75, 0, 0, 0]
+        · Steps Multiplier = [0.5, 0, 0, 0]
+        · Glow Iterations = [8, 0, 0, 0]
+        · View = [1, 0, 0, 0]
+        · Iris Sample Quality = [50, 0, 0, 0]
+        · Debug View = [3, 0, 0, 0]
+        · Edge Behaviour (Deprecated) = [2, 0, 0, 0]
+        · Renderer (Deprecated) = [1, 0, 0, 0]
+        · Simplified Exposure = [1, 0, 0, 0]
+        · Iris Cull Small Values = [1, 0, 0, 0]
+        · Render Quality (Quantization) = [6, 0, 0, 0]
+      ▸ ADBE Gaussian Blur 2
+        · Blurriness = [200, 0, 0, 0]
+    ▸ ADBE Transform Group
+      · Anchor = [-2.9822, 731.65, 0, 0]
+      · Position = [992.02, 2002.6, -3560, 0]
+      · Scale = [100, 100, 100, 0]
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[42] id=454 "هاي سهلـــة" type=text par=455 0.000→4.860s src=- blend=2 matte=1 3D 
+  ▸ 
+    MARKER t=1.000 ['IN', 'chapter', 'https://aniom.net', '_PRESET_MANAGER', 'ATOMX_EXTENSION_BY_ANIOM']
+    MARKER t=2.400 ['OUT', 'chapter', 'https://aniom.net', '_PRESET_MANAGER', 'ATOMX_EXTENSION_BY_ANIOM']
+    ▸ ADBE Text Properties
+      TEXT t=None 'هاي سهلـــة\r' font=thmanyahserifdisplay-Bold size=200.0 fill=[1, 1, 0.99999, 1] stroke=[1, 0.13735, 0.12279, 0.12606] sw=None trk=284.74026
+      ▸ ADBE Text Animators
+        ▸ ADBE Text Animator
+          ▸ ADBE Text Selectors
+            ▸ ADBE Text Expressible Selector
+              · ADBE Text Range Type2 = [3, 0, 0, 0]
+              · ADBE Text Expressible Amount = [0, 0, 0, 0]
+                EXPR[ADBE Text Expressible Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar _waopo01=["Pseudo/zodostudio/IWAOPo01","marker","numKeys","comment","key","time","active","IN","name","","undefined","effect","Delay","Style","Random Start","Animation Type","length","abs","floor"];var nam'
+          ▸ ADBE Text Animator Properties
+            · ADBE Text Position 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Position 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Scale 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Scale 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Rotation = [0, 0, 0, 0]
+              EXPR[ADBE Text Rotation]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Opacity = [0, 0, 0, 0]
+              EXPR[ADBE Text Opacity]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Tracking Amount = [0, 0, 0, 0]
+              EXPR[ADBE Text Tracking Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/IWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+        ▸ ADBE Text Animator
+          ▸ ADBE Text Selectors
+            ▸ ADBE Text Expressible Selector
+              · ADBE Text Range Type2 = [3, 0, 0, 0]
+              · ADBE Text Expressible Amount = [0, 0, 0, 0]
+                EXPR[ADBE Text Expressible Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar _waopo01=["Pseudo/zodostudio/OWAOPo01","marker","numKeys","comment","key","time","active","OUT","name","","undefined","effect","Delay","Style","Random Start","Animation Type","length","abs","floor"];var na'
+          ▸ ADBE Text Animator Properties
+            · ADBE Text Position 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Position 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Scale 3D = [0, 0, 0, 0]
+              EXPR[ADBE Text Scale 3D]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Rotation = [0, 0, 0, 0]
+              EXPR[ADBE Text Rotation]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Opacity = [0, 0, 0, 0]
+              EXPR[ADBE Text Opacity]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+            · ADBE Text Tracking Amount = [0, 0, 0, 0]
+              EXPR[ADBE Text Tracking Amount]: '//////EXPRESSION BY ZODOSTUDIO\nvar result = value; var namFx="Pseudo/zodostudio/OWAOPo01";\ntry{result = effect(namFx)(thisProperty.name)+value}catch(err){};\nresult;'
+    ▸ ADBE Effect Parade
+      ▸ Pseudo/zodostudio/IWAOPo01
+        · Position = [0, 0.078125, 0, 0]
+        · Scale = [0.046296, 0.026042, 0, 0]
+      ▸ Pseudo/zodostudio/OWAOPo01
+        · Position = [0, 0.078125, 0, 0]
+        · Scale = [0.046296, 0.026042, 0, 0]
+    ▸ ADBE Transform Group
+      · Anchor = [3.4047, -37.363, 0, 0]
+      · Position = [130.37, 750.75, 0, 0]
+      · Scale = [100, 100, 100, 0]
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[43] id=455 "Shape Layer 1" type=shape par=- 0.000→4.860s src=- blend=2 matte=0 3D 
+  ▸ 
+    ▸ ADBE Root Vectors Group
+      ▸ ADBE Vector Group
+        ▸ ADBE Vectors Group
+          ▸ ADBE Vector Shape - Group
+            · ADBE Vector Shape Direction = [2, 0, 0, 0]
+          ▸ ADBE Vector Graphic - Stroke
+            · ADBE Vector Stroke Color = [255, 255, 0, 0]
+          ▸ ADBE Vector Graphic - Fill
+            · ADBE Vector Fill Color = [255, 9, 85, 225]
+        ▸ ADBE Vector Transform Group
+          · ADBE Vector Position = [-2.9822, 731.65, 0, 0]
+    ▸ ADBE Mask Parade
+      ▸ ADBE Mask Atom
+        · ADBE Mask Feather = [100, 100, 0, 0]
+      ▸ ADBE Mask Atom
+        · ADBE Mask Feather = [200, 200, 0, 0]
+    ▸ ADBE Effect Parade
+      ▸ PEDG2
+        · Exposure = [0.3, 0, 0, 0]
+        · Iris Sampling Quality = [3, 0, 0, 0]
+        · Iris Iterations = [10, 0, 0, 0]
+        · Radii Easing = [90, 0, 0, 0]
+        · Gamma Correction = [100, 0, 0, 0]
+        · Color Inner = [255, 255, 0, 0]
+        · Quality Preset Iris = [3, 0, 0, 0]
+        · Resolution = [75, 0, 0, 0]
+        · Steps Multiplier = [0.5, 0, 0, 0]
+        · Glow Iterations = [8, 0, 0, 0]
+        · View = [1, 0, 0, 0]
+        · Iris Sample Quality = [50, 0, 0, 0]
+        · Debug View = [3, 0, 0, 0]
+        · Edge Behaviour (Deprecated) = [2, 0, 0, 0]
+        · Renderer (Deprecated) = [1, 0, 0, 0]
+        · Simplified Exposure = [1, 0, 0, 0]
+        · Iris Cull Small Values = [1, 0, 0, 0]
+        · Render Quality (Quantization) = [6, 0, 0, 0]
+      ▸ ADBE Gaussian Blur 2
+        · Blurriness = [200, 0, 0, 0]
+    ▸ ADBE Transform Group
+      · Anchor = [-2.9822, 731.65, 0, 0]
+      · Position = [1137, 1291.6, 0, 0]
+      · Scale = [100, 100, 100, 0]
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[44] id=223 "" type=AV par=- 0.000→4.320s src=209 blend=2 matte=0 3D 
+  ▸ 
+    ▸ ADBE Effect Parade
+      ▸ ADBE OFMotionBlur
+        · Vector Detail = [50, 0, 0, 0]
+    ▸ ADBE Transform Group
+      · Anchor = [0.47454, 1, 0, 0]
+      • Position kf×2
+          t=  2.400  [1887.3, 3782.1, -8828]      bez/bez in(spd=[0],inf=[90]%) out(spd=[0],inf=[90]%)
+            ↳ 1.72s  bezier(0.90,0.00,0.10,1.00)  startVel=0.00 endVel=0.00  => EASE IN-OUT (S)
+          t=  4.120  [1678.3, 5331.1, -9995]      bez/bez in(spd=[0],inf=[90]%) out(spd=[0],inf=[90]%)
+      · Scale = [90, 90, 90, 0]
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+    ▸ ADBE Plane Options Group
+      · ADBE Plane Subdivision = [4, 0, 0, 0]
+[45] id=1309 "" type=AV par=- 13.520→29.220s src=57 blend=2 matte=0 
+  ▸ 
+    ▸ ADBE Effect Parade
+      ▸ ADBE Ramp
+        · Start of Ramp = [0.51202, 0.49759, 0, 0]
+        · Start Color = [255, 255, 255, 255]
+        · End of Ramp = [0.51202, 0.82043, 0, 0]
+        · End Color = [255, 7.9059, 63.976, 168]
+    ▸ ADBE Transform Group
+      · Position = [1080, 1920, 0, 0]
+      · Scale = [100, 100, 100, 0]
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[46] id=58 "" type=AV par=453 0.000→29.220s src=57 blend=2 matte=0 
+  ▸ 
+    ▸ ADBE Effect Parade
+      ▸ ADBE Ramp
+        · Start of Ramp = [0.51202, 0.49759, 0, 0]
+        · Start Color = [255, 255, 255, 255]
+        · End of Ramp = [0.51202, 0.82043, 0, 0]
+        · End Color = [255, 7.9059, 63.976, 168]
+    ▸ ADBE Transform Group
+      · Position = [986.21, 2184.8, 0, 0]
+      · Scale = [86.207, 86.207, 100, 0]
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]

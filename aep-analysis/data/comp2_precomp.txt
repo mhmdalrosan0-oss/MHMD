@@ -1,0 +1,67 @@
+[0] id=56 "" type=AV par=- 0.000→29.220s src=55 blend=2 matte=0 ADJ 
+  ▸ 
+    ▸ ADBE Effect Parade
+      ▸ ADBE Lumetri
+        · HDR White = [100, 0, 0, 0]
+        · White Balance = [255, 235, 229, 227]
+        · Temperature = [-0.62607, 0, 0, 0]
+        · Tint = [-0.64993, 0, 0, 0]
+        · Whites = [-11, 0, 0, 0]
+        · Color Space = [29, 0, 0, 0]
+        · HDR Range = [100, 0, 0, 0]
+        · HDR White = [100, 0, 0, 0]
+        · Custom Layer = [1, 0, 0, 0]
+    ▸ ADBE Transform Group
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[1] id=42 "" type=AV par=- 0.000→0.760s src=21 blend=2 matte=0 OFF 
+  ▸ 
+    ▸ ADBE Transform Group
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[2] id=41 "" type=AV par=- 0.760→5.680s src=21 blend=2 matte=0 OFF 
+  ▸ 
+    ▸ ADBE Transform Group
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[3] id=40 "" type=AV par=- 5.680→18.380s src=21 blend=2 matte=0 OFF 
+  ▸ 
+    ▸ ADBE Transform Group
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[4] id=39 "" type=AV par=- 18.380→20.520s src=21 blend=2 matte=0 OFF 
+  ▸ 
+    ▸ ADBE Transform Group
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[5] id=38 "" type=AV par=- 20.520→21.640s src=21 blend=2 matte=0 OFF 
+  ▸ 
+    ▸ ADBE Transform Group
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[6] id=37 "" type=AV par=- 21.640→29.220s src=21 blend=2 matte=0 OFF 
+  ▸ 
+    ▸ ADBE Transform Group
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[7] id=36 "" type=AV par=- 0.000→0.760s src=13 blend=2 matte=0 
+  ▸ 
+    ▸ ADBE Transform Group
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[8] id=35 "" type=AV par=- 0.760→5.680s src=13 blend=2 matte=0 
+  ▸ 
+    ▸ ADBE Transform Group
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[9] id=34 "" type=AV par=- 5.680→18.380s src=13 blend=2 matte=0 
+  ▸ 
+    ▸ ADBE Transform Group
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[10] id=33 "" type=AV par=- 18.380→20.520s src=13 blend=2 matte=0 
+  ▸ 
+    ▸ ADBE Transform Group
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[11] id=32 "" type=AV par=- 20.520→21.640s src=13 blend=2 matte=0 
+  ▸ 
+    ▸ ADBE Transform Group
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[12] id=31 "" type=AV par=- 21.640→22.880s src=13 blend=2 matte=0 
+  ▸ 
+    ▸ ADBE Transform Group
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
+[13] id=30 "" type=AV par=- 22.880→29.220s src=13 blend=2 matte=0 
+  ▸ 
+    ▸ ADBE Transform Group
+      · ADBE Envir Appear in Reflect = [1, 0, 0, 0]
